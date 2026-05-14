@@ -61,24 +61,53 @@
                 <div class="col-span-3 btns text-gray-500 flex items-center gap-16 justify-end">
 
                     <!-- Search for desktop -->
-                    <form class="not-3xl:hidden">
-                        <div
-                            class="input-group bg-slate-50 py-8 px-16 rounded-full flex gap-12 items-center max-w-225 focus-within:ring-1 focus-within:ring-gray-300">
-                            <label for="header_search" aria-label="Search anything" class="shrink-0">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M14.1931 5.58187C16.525 7.91369 16.525 11.6943 14.1931 14.0261C11.8613 16.358 8.08069 16.358 5.74887 14.0261C3.41704 11.6943 3.41704 7.91369 5.74887 5.58187C8.08069 3.25005 11.8613 3.25005 14.1931 5.58187"
-                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M14.15 14.0601L20 19.9901" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </label>
-                            <input type="search" name="header_search" id="header_search"
-                                placeholder="Search products..." class="w-full text-14 outline-none">
+
+                    <div x-data="dropdown()" class="flex relative" @click.outside="close">
+                        <form class="not-3xl:hidden">
+                            <div
+                                class="input-group bg-slate-50 py-8 px-16 rounded-full flex gap-12 items-center max-w-225 focus-within:ring-1 focus-within:ring-gray-300">
+                                <label for="header_search" aria-label="Search anything" class="shrink-0">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.1931 5.58187C16.525 7.91369 16.525 11.6943 14.1931 14.0261C11.8613 16.358 8.08069 16.358 5.74887 14.0261C3.41704 11.6943 3.41704 7.91369 5.74887 5.58187C8.08069 3.25005 11.8613 3.25005 14.1931 5.58187"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M14.15 14.0601L20 19.9901" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </label>
+                                <input type="search" name="header_search" id="header_search"
+                                    placeholder="Search products..." class="w-full text-14 outline-none"
+                                    @click="open = true">
+                            </div>
+                        </form>
+                        <div x-cloak x-show="open" x-transition
+                            class="absolute top-full mt-12 right-0 w-320 bg-white rounded-xl shadow-lg border border-gray-300 overflow-hidden p-20 divide-gray-100 divide-y">
+                            <div class="flex items-center justify-between mb-12 pb-12">
+                                <h3 class="text-14 font-medium text-neutral-600">
+                                    Recent Searches
+                                </h3>
+                                <button class="text-xs text-neutral-400 hover:text-black transition">
+                                    Clear
+                                </button>
+                            </div>
+                            <div class="flex flex-wrap gap-10">
+                                <button
+                                    class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
+                                    Hydralock
+                                </button>
+                                <button
+                                    class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
+                                    Ceramide Cream
+                                </button>
+                                <button
+                                    class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
+                                    Acne Repair
+                                </button>
+                            </div>
                         </div>
-                    </form>
+                    </div>
 
                     <!-- Search for mobile -->
                     <div class="3xl:hidden flex" x-data="popup">
@@ -100,11 +129,11 @@
                             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-200"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                            class="fixed left-1/2 top-1/2 z-50 w-full max-w-320 -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white shadow-2xl overflow-hidden">
+                            class="fixed left-1/2 top-1/2 z-50 w-full max-w-320 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white shadow-lg overflow-hidden">
                             <div class="border-b border-neutral-100 px-24 py-20">
                                 <form>
                                     <div
-                                        class="input-group bg-[#F6F6F6] py-8 px-16 rounded-full flex gap-12 items-center w-full focus-within:ring-1 focus-within:ring-gray-300">
+                                        class="input-group bg-light py-8 px-16 rounded-full flex gap-12 items-center w-full focus-within:ring-1 focus-within:ring-gray-300">
                                         <label for="header_search" aria-label="Search anything" class="shrink-0">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -132,15 +161,15 @@
                                     </div>
                                     <div class="flex flex-wrap gap-10">
                                         <button
-                                            class="rounded-full bg-[#F6F6F6] px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
+                                            class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
                                             Hydralock
                                         </button>
                                         <button
-                                            class="rounded-full bg-[#F6F6F6] px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
+                                            class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
                                             Ceramide Cream
                                         </button>
                                         <button
-                                            class="rounded-full bg-[#F6F6F6] px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
+                                            class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
                                             Acne Repair
                                         </button>
                                     </div>
@@ -150,18 +179,37 @@
                     </div>
 
                     <!-- Profile -->
-                    <button>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 20V19.25C20 16.9028 18.0972 15 15.75 15H8.25C5.90279 15 4 16.9028 4 19.25V20"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
+                    <div x-data="dropdown()" class="flex relative">
+                        <button @click="toggle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20 20V19.25C20 16.9028 18.0972 15 15.75 15H8.25C5.90279 15 4 16.9028 4 19.25V20"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div x-cloak x-show="open" x-transition @click.outside="close"
+                            class="absolute top-full mt-20 right-0 w-180 bg-white rounded-xl shadow-lg border border-gray-300 overflow-hidden py-4 divide-gray-100 divide-y">
+                            <a href="#" class="block px-16 py-8 hover:bg-light">
+                                Dashboard
+                            </a>
+                            <a href="#" class="block px-16 py-8 hover:bg-light">
+                                Profile
+                            </a>
+                            <a href="#" class="block px-16 py-8 hover:bg-light">
+                                Settings
+                            </a>
+                            <a href="#" class="block px-16 py-8 hover:bg-light text-red-500">
+                                Logout
+                            </a>
+                        </div>
+                    </div>
 
                     <!-- Cart -->
-                    <button>
+                    <button class="relative">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M8.49854 9.99951C8.49854 11.9333 10.0662 13.501 12 13.501V13.501C13.9338 13.501 15.5015 11.9333 15.5015 9.99951"
@@ -176,6 +224,8 @@
                                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
+                        <span
+                            class="absolute -top-7 -right-7 border size-20 grid place-items-center rounded-full bg-heading text-[10px] text-white">2</span>
                     </button>
 
                     <!-- Mobile menu -->
@@ -824,7 +874,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col gap-16">
-                            <h3 class="text-24">
+                            <h3 class="text-20">
                                 Skin Research & Analysis
                             </h3>
                             <p class="font-light text-gray-700">
@@ -840,7 +890,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col gap-16">
-                            <h3 class="text-24">
+                            <h3 class="text-20">
                                 Thoughtful Formulation
                             </h3>
                             <p class="font-light text-gray-700">
@@ -856,7 +906,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col gap-16">
-                            <h3 class="text-24">
+                            <h3 class="text-20">
                                 Clear Routines & Consistent Care
                             </h3>
                             <p class="font-light text-gray-700">
@@ -1089,7 +1139,7 @@
     </footer>
 
     <button x-data="backToTop" x-show="visible" x-transition @click="scrollTop"
-        class="btn style_1 aspect-square fixed bottom-30 right-30 z-9999">
+        class="btn style_1 aspect-square fixed not-xl:p-12 bottom-15 right-15 xl:bottom-30 xl:right-30 z-9999">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
             class="lucide lucide-arrow-up-icon lucide-arrow-up">
