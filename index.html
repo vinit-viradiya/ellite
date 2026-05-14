@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#fdeae7">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find the Right Solution for Your Skin">
+
+    <title>Ellitee</title>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <script src="assets/js/alpine.js" defer></script>
+
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="topbar text-center bg-brand-100 py-8 text-14">
+        <div class="marquee_wrapper max-w-500 border-x border-brand-500 mx-auto">
+            <div class="marquee">
+                <div class="marquee_item">
+                    Get 5% OFF + Additional 10% Cashback on Bundle
+                </div>
+                <div class="marquee_item">
+                    Get 5% OFF + Additional 10% Cashback on Bundle
+                </div>
+            </div>
+            <div class="marquee">
+                <div class="marquee_item">
+                    Get 5% OFF + Additional 10% Cashback on Bundle
+                </div>
+                <div class="marquee_item">
+                    Get 5% OFF + Additional 10% Cashback on Bundle
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="sticky top-0 z-99999 font-light py-20 sm:py-24 shadow bg-white">
+        <nav class="container">
+            <div class="flex justify-between 3xl:grid items-center grid-cols-12">
+                <div class="col-span-3">
+                    <a href="/">
+                        <img src="assets/images/Logo.svg" alt="" class="w-100 sm:w-auto">
+                    </a>
+                </div>
+                <ul class="col-span-6 hidden xl:flex gap-40 justify-center">
+                    <li><a href="#">Shop Products</a></li>
+                    <li><a href="#">New Launches</a></li>
+                    <li><a href="#">AI Skin Insight</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+                <div class="col-span-3 btns text-gray-500 flex items-center gap-16 justify-end">
+
+                    <!-- Search for desktop -->
+                    <form class="not-3xl:hidden">
+                        <div
+                            class="input-group bg-slate-50 py-8 px-16 rounded-full flex gap-12 items-center max-w-225 focus-within:ring-1 focus-within:ring-gray-300">
+                            <label for="header_search" aria-label="Search anything" class="shrink-0">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.1931 5.58187C16.525 7.91369 16.525 11.6943 14.1931 14.0261C11.8613 16.358 8.08069 16.358 5.74887 14.0261C3.41704 11.6943 3.41704 7.91369 5.74887 5.58187C8.08069 3.25005 11.8613 3.25005 14.1931 5.58187"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14.15 14.0601L20 19.9901" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </label>
+                            <input type="search" name="header_search" id="header_search"
+                                placeholder="Search products..." class="w-full text-14 outline-none">
+                        </div>
+                    </form>
+
+                    <!-- Search for mobile -->
+                    <div class="3xl:hidden flex" x-data="popup">
+                        <button @click="show">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.1931 5.58187C16.525 7.91369 16.525 11.6943 14.1931 14.0261C11.8613 16.358 8.08069 16.358 5.74887 14.0261C3.41704 11.6943 3.41704 7.91369 5.74887 5.58187C8.08069 3.25005 11.8613 3.25005 14.1931 5.58187"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14.15 14.0601L20 19.9901" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div x-cloak x-show="open" x-transition.opacity @click="hide"
+                            class="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm">
+                        </div>
+                        <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="fixed left-1/2 top-1/2 z-50 w-full max-w-320 -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white shadow-2xl overflow-hidden">
+                            <div class="border-b border-neutral-100 px-24 py-20">
+                                <form>
+                                    <div
+                                        class="input-group bg-[#F6F6F6] py-8 px-16 rounded-full flex gap-12 items-center w-full focus-within:ring-1 focus-within:ring-gray-300">
+                                        <label for="header_search" aria-label="Search anything" class="shrink-0">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.1931 5.58187C16.525 7.91369 16.525 11.6943 14.1931 14.0261C11.8613 16.358 8.08069 16.358 5.74887 14.0261C3.41704 11.6943 3.41704 7.91369 5.74887 5.58187C8.08069 3.25005 11.8613 3.25005 14.1931 5.58187"
+                                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M14.15 14.0601L20 19.9901" stroke="currentColor"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </label>
+                                        <input type="search" name="header_search" id="header_search"
+                                            placeholder="Search products..."
+                                            class="w-full text-14 outline-none placeholder:text-neutral-700">
+                                    </div>
+                                </form>
+                                <div class="mt-20">
+                                    <div class="flex items-center justify-between mb-12">
+                                        <h3 class="text-14 font-medium text-neutral-600">
+                                            Recent Searches
+                                        </h3>
+                                        <button class="text-xs text-neutral-400 hover:text-black transition">
+                                            Clear
+                                        </button>
+                                    </div>
+                                    <div class="flex flex-wrap gap-10">
+                                        <button
+                                            class="rounded-full bg-[#F6F6F6] px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
+                                            Hydralock
+                                        </button>
+                                        <button
+                                            class="rounded-full bg-[#F6F6F6] px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
+                                            Ceramide Cream
+                                        </button>
+                                        <button
+                                            class="rounded-full bg-[#F6F6F6] px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
+                                            Acne Repair
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile -->
+                    <button>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 20V19.25C20 16.9028 18.0972 15 15.75 15H8.25C5.90279 15 4 16.9028 4 19.25V20"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <!-- Cart -->
+                    <button>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.49854 9.99951C8.49854 11.9333 10.0662 13.501 12 13.501V13.501C13.9338 13.501 15.5015 11.9333 15.5015 9.99951"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M8.49854 6.99825V6.49804C8.49854 4.56424 10.0662 2.99658 12 2.99658V2.99658C13.9338 2.99658 15.5015 4.56424 15.5015 6.49804V6.99825"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.46174 6.99805C5.40519 6.99805 4.53076 7.81958 4.46485 8.87407L4.00566 16.2212C3.92814 17.4615 4.36678 18.6787 5.21766 19.5844C6.06855 20.4901 7.25599 21.0039 8.49871 21.0039H15.5013C16.744 21.0039 17.9315 20.4902 18.7824 19.5844C19.6333 18.6787 20.0719 17.4615 19.9944 16.2212L19.5352 8.87407C19.4693 7.81958 18.5948 6.99805 17.5383 6.99805H6.46174Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <!-- Mobile menu -->
+                    <div class="flex" x-data="offcanvas">
+                        <button class="xl:hidden" @click="show">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 5H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3 12H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3 19H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div x-cloak x-show="open" x-transition.opacity @click="hide"
+                            class="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm">
+                        </div>
+                        <aside x-cloak x-show="open" x-transition:enter="transition duration-300"
+                            x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+                            x-transition:leave="transition duration-300" x-transition:leave-start="translate-x-0"
+                            x-transition:leave-end="-translate-x-full"
+                            class="fixed left-0 top-0 h-full w-288 bg-white shadow-2xl p-24 text-black z-50">
+                            <button @click="hide" class="absolute top-24 right-24">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <nav>
+                                <ul class="space-y-12">
+                                    <li><a class="block" href="#">Shop Products</a></li>
+                                    <li><a class="block" href="#">New Launches</a></li>
+                                    <li><a class="block" href="#">AI Skin Insight</a></li>
+                                    <li><a class="block" href="#">Testimonial</a></li>
+                                    <li><a class="block" href="#">About Us</a></li>
+                                </ul>
+                            </nav>
+                        </aside>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Section 1 -->
+        <section>
+            <div class="swiper hero_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="banner_wrapper">
+                            <img src="assets/images/banner1.webp" alt="" class="w-full h-400 xl:h-600 object-cover">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner_wrapper">
+                            <img src="assets/images/banner2.webp" alt="" class="w-full h-400 xl:h-600 object-cover">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner_wrapper">
+                            <img src="assets/images/banner3.webp" alt="" class="w-full h-400 xl:h-600 object-cover">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner_wrapper">
+                            <img src="assets/images/banner1.webp" alt="" class="w-full h-400 xl:h-600 object-cover">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner_wrapper">
+                            <img src="assets/images/banner2.webp" alt="" class="w-full h-400 xl:h-600 object-cover">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner_wrapper">
+                            <img src="assets/images/banner3.webp" alt="" class="w-full h-400 xl:h-600 object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute flex bottom-15 xl:bottom-24 left-15 xl:left-64 z-99 items-center gap-16">
+                    <button class="hero_swiper_prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="swiper-pagination static!"></div>
+                    <button class="hero_swiper_next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="py-12 xl:py-24 bg-brand-100">
+            <div class="marquee_wrapper">
+                <div class="marquee">
+                    <div class="marquee_item">
+                        <img src="assets/icons/chemical-free.svg" alt="">
+                        <span>Paraben & Sulphate Free</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/plant-based.svg" alt="">
+                        <span>Plant Based Ingredients</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/tested.svg" alt="">
+                        <span>Clinically Tested</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/vegan.svg" alt="">
+                        <span>100% Vegan</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/cruelty-free.svg" alt="">
+                        <span>Cruelty-Free</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/chemical-free.svg" alt="">
+                        <span>Paraben & Sulphate Free</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/plant-based.svg" alt="">
+                        <span>Plant Based Ingredients</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/tested.svg" alt="">
+                        <span>Clinically Tested</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/vegan.svg" alt="">
+                        <span>100% Vegan</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/cruelty-free.svg" alt="">
+                        <span>Cruelty-Free</span>
+                    </div>
+                </div>
+                <div class="marquee">
+                    <div class="marquee_item">
+                        <img src="assets/icons/chemical-free.svg" alt="">
+                        <span>Paraben & Sulphate Free</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/plant-based.svg" alt="">
+                        <span>Plant Based Ingredients</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/tested.svg" alt="">
+                        <span>Clinically Tested</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/vegan.svg" alt="">
+                        <span>100% Vegan</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/cruelty-free.svg" alt="">
+                        <span>Cruelty-Free</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/chemical-free.svg" alt="">
+                        <span>Paraben & Sulphate Free</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/plant-based.svg" alt="">
+                        <span>Plant Based Ingredients</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/tested.svg" alt="">
+                        <span>Clinically Tested</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/vegan.svg" alt="">
+                        <span>100% Vegan</span>
+                    </div>
+                    <div class="marquee_item">
+                        <img src="assets/icons/cruelty-free.svg" alt="">
+                        <span>Cruelty-Free</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="pt-55 pb-100">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-40">
+                <div class="3xl:pl-[calc((100vw-1640px)/2)] px-gutter">
+                    <h2 class="text-48 max-w-550">
+                        Find the Right Solution for Your Skin
+                    </h2>
+                    <div class="swiper solution_swiper text-white">
+                        <div class="swiper-wrapper py-40 xl:py-80">
+                            <div class="swiper-slide">
+                                <div class="flex items-end aspect-[.78/1] z-1 relative rounded-2xl overflow-hidden">
+                                    <div class="absolute inset-0 -z-1">
+                                        <img src="assets/images/solution-1.webp" alt="" class="size-full object-cover">
+                                    </div>
+                                    <div class="flex p-16 gap-24 justify-between items-center w-full">
+                                        <h3>Pegmentation 1</h3>
+                                        <a href="#">
+                                            <svg class="shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 12H5" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14 17L19 12" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14 7L19 12" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="absolute inset-0 -z-1 bg-linear-0 from-black/30 to-transparent to-25%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="flex items-end aspect-[.78/1] z-1 relative rounded-2xl overflow-hidden">
+                                    <div class="absolute inset-0 -z-1">
+                                        <img src="assets/images/solution-1.webp" alt="" class="size-full object-cover">
+                                    </div>
+                                    <div class="flex p-16 gap-24 justify-between items-center w-full">
+                                        <h3>Pegmentation 1</h3>
+                                        <a href="#">
+                                            <svg class="shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 12H5" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14 17L19 12" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14 7L19 12" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="absolute inset-0 -z-1 bg-linear-0 from-black/30 to-transparent to-25%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="flex items-end aspect-[.78/1] z-1 relative rounded-2xl overflow-hidden">
+                                    <div class="absolute inset-0 -z-1">
+                                        <img src="assets/images/solution-1.webp" alt="" class="size-full object-cover">
+                                    </div>
+                                    <div class="flex p-16 gap-24 justify-between items-center w-full">
+                                        <h3>Pegmentation 1</h3>
+                                        <a href="#">
+                                            <svg class="shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 12H5" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14 17L19 12" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14 7L19 12" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="absolute inset-0 -z-1 bg-linear-0 from-black/30 to-transparent to-25%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="flex items-end aspect-[.78/1] z-1 relative rounded-2xl overflow-hidden">
+                                    <div class="absolute inset-0 -z-1">
+                                        <img src="assets/images/solution-1.webp" alt="" class="size-full object-cover">
+                                    </div>
+                                    <div class="flex p-16 gap-24 justify-between items-center w-full">
+                                        <h3>Pegmentation 4</h3>
+                                        <a href="#">
+                                            <svg class="shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 12H5" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14 17L19 12" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14 7L19 12" stroke="white" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="absolute inset-0 -z-1 bg-linear-0 from-black/30 to-transparent to-25%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-48 items-center">
+                            <div class="swiper-pagination static!"></div>
+                            <div class="flex gap-24">
+                                <button class="solution_swiper_prev p-12 rounded-full bg-zinc-50">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button class="solution_swiper_next p-12 rounded-full bg-zinc-50">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center px-gutter">
+                    <img src="assets/images/model-1.webp" alt="Model">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="py-100 3xl:pl-[calc((100vw-1640px)/2)]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-32 xl:gap-64 items-center">
+                <div class="not-3xl:pl-gutter lg:col-span-5 flex flex-col gap-24">
+                    <div class="badge purple">
+                        New Launch
+                    </div>
+                    <h2 class="text-48">
+                        Lorem ipsum urna scelerisque pellentesque nulla vitae nec.
+                    </h2>
+                    <p class="text-gray-700 font-light">
+                        Lorem ipsum dolor sit amet consectetur. Cras cursus ac viverra enim. Odio quis eget faucibus
+                        ridiculus tempor sagittis. Diam lectus viverra luctus urna at eros.
+                    </p>
+                    <a href="#" class="btn style_1">
+                        <span>View Products</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M14 17L19 12" stroke="#09090B" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M14 7L19 12" stroke="#09090B" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="not-3xl:pl-gutter lg:col-span-7">
+                    <div class="swiper new_pro_swiper">
+                        <div class="swiper-wrapper pb-40 xl:pb-80">
+                            <div class="swiper-slide">
+                                <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-20">
+                                    <div class="bg-white p-16 aspect-[.78/1] relative z-1 rounded-2xl overflow-hidden">
+                                        <div class="flex justify-between items-center">
+                                            <span class="badge purple">New Launch</span>
+                                            <button class="bg-slate-50 p-8 rounded-full">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                        stroke="#6A7282" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="absolute inset-0 size-full -z-1">
+                                            <img src="assets/images/product-img-1.webp" alt=""
+                                                class="size-full object-contain">
+                                        </div>
+                                        <a href="#" class="opacity-0 absolute inset-0 -z-1">View Product</a>
+                                    </div>
+                                    <h3 class="text-20 line-clamp-2 text-gray-950">
+                                        Pigmentation & Skin Balance Routine Combo
+                                    </h3>
+                                    <a href="#" class="btn style_1 w-full">
+                                        View Product
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-20">
+                                    <div class="bg-white p-16 aspect-[.78/1] relative z-1">
+                                        <div class="flex justify-between items-center">
+                                            <span class="badge purple">New Launch</span>
+                                            <button class="bg-slate-50 p-8 rounded-full">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                        stroke="#6A7282" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="absolute inset-0 size-full -z-1">
+                                            <img src="assets/images/product-img-1.webp" alt=""
+                                                class="size-full object-contain">
+                                        </div>
+                                        <a href="#" class="opacity-0 absolute inset-0 -z-1">View Product</a>
+                                    </div>
+                                    <h3 class="text-20 line-clamp-2 text-gray-950">
+                                        Pigmentation & Skin Balance Routine Combo
+                                    </h3>
+                                    <a href="#" class="btn style_1 w-full">
+                                        View Product
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-20">
+                                    <div class="bg-white p-16 aspect-[.78/1] relative z-1">
+                                        <div class="flex justify-between items-center">
+                                            <span class="badge purple">New Launch</span>
+                                            <button class="bg-slate-50 p-8 rounded-full">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                        stroke="#6A7282" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="absolute inset-0 size-full -z-1">
+                                            <img src="assets/images/product-img-1.webp" alt=""
+                                                class="size-full object-contain">
+                                        </div>
+                                        <a href="#" class="opacity-0 absolute inset-0 -z-1">View Product</a>
+                                    </div>
+                                    <h3 class="text-20 line-clamp-2 text-gray-950">
+                                        Pigmentation & Skin Balance Routine Combo
+                                    </h3>
+                                    <a href="#" class="btn style_1 w-full">
+                                        View Product
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-20">
+                                    <div class="bg-white p-16 aspect-[.78/1] relative z-1">
+                                        <div class="flex justify-between items-center">
+                                            <span class="badge purple">New Launch</span>
+                                            <button class="bg-slate-50 p-8 rounded-full">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                        stroke="#6A7282" stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="absolute inset-0 size-full -z-1">
+                                            <img src="assets/images/product-img-1.webp" alt=""
+                                                class="size-full object-contain">
+                                        </div>
+                                        <a href="#" class="opacity-0 absolute inset-0 -z-1">View Product</a>
+                                    </div>
+                                    <h3 class="text-20 line-clamp-2 text-gray-950">
+                                        Pigmentation & Skin Balance Routine Combo
+                                    </h3>
+                                    <a href="#" class="btn style_1 w-full">
+                                        View Product
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-48 items-center pr-[calc((100vw-1640px)/2)]">
+                            <div class="swiper-pagination static!"></div>
+                            <div class="flex gap-24">
+                                <button class="new_pro_swiper_prev p-12 rounded-full bg-zinc-50">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button class="new_pro_swiper_next p-12 rounded-full bg-zinc-50">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="py-100">
+            <div class="container">
+                <h2 class="text-48 mb-8 xl:mb-16">
+                    What Makes Ellitee Different
+                </h2>
+                <p class="text-gray-700 font-light mb-24 xl:mb-48">
+                    Skin insights, thoughtful formulations, and complete transparency — working together.
+                </p>
+                <div class="grid 2xl:grid-cols-3 2xl:text-center gap-20 4xl:gap-40 lg:max-w-720 2xl:max-w-full">
+                    <div
+                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
+                        <div class="bg-slate-50 p-48 flex justify-center rounded-2xl shrink-0">
+                            <img src="assets/icons/face-scan.svg" alt="" class="w-100">
+                        </div>
+                        <div class="flex flex-col gap-8 4xl:gap-16">
+                            <h3 class="text-20 text-gray-950">
+                                Data-Guided Skin Insights
+                            </h3>
+                            <p class="font-light text-gray-700">
+                                Understand your skin concerns through structured analysis and visible indicators —
+                                helping
+                                reduce guesswork and routine confusion.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
+                        <div class="bg-slate-50 p-48 flex justify-center rounded-2xl shrink-0">
+                            <img src="assets/icons/formula.svg" alt="" class="w-100">
+                        </div>
+                        <div class="flex flex-col gap-8 4xl:gap-16">
+                            <h3 class="text-20 text-gray-950">
+                                Dermatologically Evaluated Formulas
+                            </h3>
+                            <p class="font-light text-gray-700">
+                                Every product is evaluated for safety, tolerance, and daily usability designed to work
+                                consistently without disrupting the skin barrier.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
+                        <div class="bg-slate-50 p-48 flex justify-center rounded-2xl shrink-0">
+                            <img src="assets/icons/ingredient.svg" alt="" class="w-100">
+                        </div>
+                        <div class="flex flex-col gap-8 4xl:gap-16">
+                            <h3 class="text-20 text-gray-950">
+                                Ingredient Transparency
+                            </h3>
+                            <p class="font-light text-gray-700">
+                                We use only what your skin needs, in purposeful concentrations — with no unnecessary
+                                fillers, fragrance overload, or hidden additives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="py-100">
+            <div class="container">
+                <div class="grid lg:grid-cols-12 items-center gap-32 xl:gap-64 relative z-1">
+                    <div class="lg:col-span-7">
+                        <h2 class="text-48 mb-24 xl:mb-48">
+                            The Problem We Set Out to Solve
+                        </h2>
+                        <div class="flex flex-col gap-12 xl:gap-24 text-gray-700 font-light">
+                            <p>
+                                Skincare today is overwhelming. Endless products, conflicting advice, and aggressive
+                                formulas often leave skin confused, irritated, or worse than before.
+                            </p>
+                            <p>
+                                We saw people guessing what their skin needed — reacting to problems instead of
+                                understanding them.
+                            </p>
+                            <p>
+                                Ellitee was created to change that.
+                            </p>
+                            <p>
+                                By focusing on smarter formulations, clear routines, and decisions guided by skin
+                                science — not trends — we help skin improve steadily and sustainably.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute lg:static -z-1 lg:col-span-5 inset-0 flex">
+                        <img src="assets/images/product-demo.webp" alt=""
+                            class="size-full object-contain not-lg:opacity-40">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="py-100">
+            <div class="container">
+                <div class="grid lg:grid-cols-12 gap-16 xl:gap-64">
+                    <div class="col-span-6 3xl:col-span-4">
+                        <h2 class="text-48">
+                            How We Solve Your Skin Concerns
+                        </h2>
+                    </div>
+                    <div class="not-3xl:hidden col-span-4"></div>
+                    <div class="col-span-6 3xl:col-span-4">
+                        <p class="mb-24">
+                            Lorem ipsum dolor sit amet consectetur. Cras cursus ac viverra enim. Odio quis eget faucibus
+                            ridiculus tempor sagittis. Diam lectus viverra luctus urna at eros.
+                        </p>
+                        <button class="btn style_1">
+                            <span>Call to Action</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 17L19 12" stroke="#09090B" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 7L19 12" stroke="#09090B" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-40">
+                    <div class="flex flex-col gap-40 3xl:p-40">
+                        <div class="relative aspect-1.25/1">
+                            <div class="absolute inset-0">
+                                <img src="assets/images/skin-solution-3.webp" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-16">
+                            <h3 class="text-24">
+                                Skin Research & Analysis
+                            </h3>
+                            <p class="font-light text-gray-700">
+                                We study how real skin behaves across different concerns, environments, and routines —
+                                especially within Indian climates and lifestyles.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-40 3xl:p-40">
+                        <div class="relative aspect-1.25/1">
+                            <div class="absolute inset-0">
+                                <img src="assets/images/skin-solution-2.webp" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-16">
+                            <h3 class="text-24">
+                                Thoughtful Formulation
+                            </h3>
+                            <p class="font-light text-gray-700">
+                                Based on research insights, we formulate products using only essential ingredients in
+                                balanced, skin-respectful concentrations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-40 3xl:p-40">
+                        <div class="relative aspect-1.25/1">
+                            <div class="absolute inset-0">
+                                <img src="assets/images/skin-solution-1.webp" alt="" class="size-full object-contain">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-16">
+                            <h3 class="text-24">
+                                Clear Routines & Consistent Care
+                            </h3>
+                            <p class="font-light text-gray-700">
+                                We design routines where each product has a defined role, making it easy to use the
+                                right products in the right order — without confusion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8 -->
+        <section>
+            <div class="image h-400 xl:h-600">
+                <img src="assets/images/banner3.webp" alt="" class="size-full object-cover">
+            </div>
+        </section>
+
+        <!-- Section 9 -->
+        <section class="py-100">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 items-center gap-20 xl:gap-40">
+                    <div class="image">
+                        <img src="assets/images/face-scanning.webp" alt="" class="mx-auto">
+                    </div>
+                    <div class="flex flex-col gap-24">
+                        <h2 class="text-48">
+                            AI-Powered Skincare, Designed for Your Skin
+                        </h2>
+                        <div class="flex flex-col gap-12 xl:gap-24 text-gray-700 font-light">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur. Cras cursus ac viverra enim. Odio quis eget
+                                faucibus ridiculus tempor sagittis. Diam lectus viverra luctus urna at eros. Lorem ipsum
+                                dolor sit amet consectetur. Cras cursus ac viverra enim. Odio quis eget faucibus
+                                ridiculus tempor sagittis. Diam lectus viverra luctus urna at eros.
+                            </p>
+                        </div>
+                        <div class="btn style_1">
+                            <span>Call to Action</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 17L19 12" stroke="#09090B" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 7L19 12" stroke="#09090B" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10 -->
+        <section class="py-100">
+            <div class="container">
+                <h2 class="text-48 mb-8 xl:mb-16">
+                    The Future of Personal Care is Here
+                </h2>
+                <p class="text-gray-700 font-light mb-24 xl:mb-48">
+                    Science-guided care designed around how your skin actually behaves.
+                </p>
+                <div class="grid grid-cols-2 2xl:grid-cols-4 2xl:text-center gap-20 4xl:gap-40">
+                    <div
+                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
+                        <div class="bg-slate-50 p-35 lg:p-48 flex justify-center rounded-2xl shrink-0">
+                            <img src="assets/icons/biotech.svg" alt="" class="w-100">
+                        </div>
+                        <div class="flex flex-col gap-8 4xl:gap-16">
+                            <h3 class="text-20 text-gray-950">
+                                Biotech
+                            </h3>
+                            <p class="not-sm:text-14 font-light text-gray-700">
+                                Science-driven, sustainable formulation
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
+                        <div class="bg-slate-50 p-35 lg:p-48 flex justify-center rounded-2xl shrink-0">
+                            <img src="assets/icons/transparent.svg" alt="" class="w-100">
+                        </div>
+                        <div class="flex flex-col gap-8 4xl:gap-16">
+                            <h3 class="text-20 text-gray-950">
+                                Transparent
+                            </h3>
+                            <p class="not-sm:text-14 font-light text-gray-700">
+                                Ethical, traceable, and trustworthy
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
+                        <div class="bg-slate-50 p-35 lg:p-48 flex justify-center rounded-2xl shrink-0">
+                            <img src="assets/icons/personalize.svg" alt="" class="w-100">
+                        </div>
+                        <div class="flex flex-col gap-8 4xl:gap-16">
+                            <h3 class="text-20 text-gray-950">
+                                Personalized
+                            </h3>
+                            <p class="not-sm:text-14 font-light text-gray-700">
+                                AI-powered routines for individual skin
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
+                        <div class="bg-slate-50 p-35 lg:p-48 flex justify-center rounded-2xl shrink-0">
+                            <img src="assets/icons/regenerative.svg" alt="" class="w-100">
+                        </div>
+                        <div class="flex flex-col gap-8 4xl:gap-16">
+                            <h3 class="text-20 text-gray-950">
+                                Regenerative
+                            </h3>
+                            <p class="not-sm:text-14 font-light text-gray-700">
+                                Signals deep, cellular renewal
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pt-100 text-heading border-t border-black/10">
+        <div class="container space-y-24 xl:space-y-48">
+            <div class="grid gap-100 sm:grid-cols-2 lg:grid-cols-3 xl:flex justify-between">
+                <div class="lg:col-span-3">
+                    <a href="/">
+                        <img src="assets/images/logo.svg" alt="Ellitee">
+                    </a>
+                    <p class="mt-32 mb-16 max-w-430">
+                        Thoughtful skincare, guided by science. Designed for Indian skin, environment, and everyday
+                        routines.
+                    </p>
+                    <ul class="flex items-center gap-16">
+                        <li>
+                            <a href="#" target="_blank" aria-label="Instagram account">
+                                <img src="assets/icons/ig.svg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" aria-label="LinkedIn account">
+                                <img src="assets/icons/linkedin.svg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" aria-label="Facebook account">
+                                <img src="assets/icons/fb.svg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-16">
+                    <span class="font-semibold text-18 ">Links</span>
+                    <ul class="text-14 flex flex-col gap-10">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Our Products</a></li>
+                        <li><a href="#">Skin Insights</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-16">
+                    <span class="font-semibold text-18 ">Our Policy</span>
+                    <ul class="text-14 flex flex-col gap-10">
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Grievance Policy</a></li>
+                        <li><a href="#">Refunds & Cancellations Policy</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-16">
+                    <span class="font-semibold text-18 ">Contact Us</span>
+                    <ul class="text-14 flex flex-col gap-10">
+                        <li>
+                            <a href="#" class="flex items-start gap-10">
+                                <svg class="shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.5266 13.806C11.6987 13.8851 11.8926 13.9031 12.0764 13.8572C12.2601 13.8113 12.4227 13.7042 12.5375 13.5535L12.8333 13.166C12.9885 12.959 13.1898 12.791 13.4213 12.6753C13.6527 12.5596 13.9079 12.4993 14.1666 12.4993H16.6666C17.1087 12.4993 17.5326 12.6749 17.8451 12.9875C18.1577 13.3001 18.3333 13.724 18.3333 14.166V16.666C18.3333 17.108 18.1577 17.532 17.8451 17.8445C17.5326 18.1571 17.1087 18.3327 16.6666 18.3327C12.6884 18.3327 8.87307 16.7523 6.06002 13.9393C3.24698 11.1262 1.66663 7.31093 1.66663 3.33268C1.66663 2.89065 1.84222 2.46673 2.15478 2.15417C2.46734 1.84161 2.89127 1.66602 3.33329 1.66602H5.83329C6.27532 1.66602 6.69924 1.84161 7.0118 2.15417C7.32436 2.46673 7.49996 2.89065 7.49996 3.33268V5.83268C7.49996 6.09142 7.43972 6.34661 7.324 6.57804C7.20829 6.80946 7.04029 7.01077 6.83329 7.16602L6.44329 7.45852C6.29031 7.57533 6.18248 7.7415 6.13812 7.92881C6.09376 8.11611 6.11561 8.313 6.19996 8.48602C7.33886 10.7992 9.21198 12.67 11.5266 13.806Z"
+                                        stroke="#0E0E0E" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span>+91 9510514689</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-start gap-10">
+                                <svg class="shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18.3333 5.83398L10.8408 10.6065C10.5865 10.7542 10.2977 10.8319 10.0037 10.8319C9.70968 10.8319 9.42088 10.7542 9.16663 10.6065L1.66663 5.83398M3.33329 3.33398H16.6666C17.5871 3.33398 18.3333 4.08018 18.3333 5.00065V15.0007C18.3333 15.9211 17.5871 16.6673 16.6666 16.6673H3.33329C2.41282 16.6673 1.66663 15.9211 1.66663 15.0007V5.00065C1.66663 4.08018 2.41282 3.33398 3.33329 3.33398Z"
+                                        stroke="#0E0E0E" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span>contact@ellitee.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-start gap-10">
+                                <svg class="shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.6667 8.33268C16.6667 12.4935 12.0509 16.8268 10.5009 18.1652C10.3565 18.2738 10.1807 18.3325 10 18.3325C9.81938 18.3325 9.6436 18.2738 9.49921 18.1652C7.94921 16.8268 3.33337 12.4935 3.33337 8.33268C3.33337 6.56457 4.03575 4.86888 5.286 3.61864C6.53624 2.36839 8.23193 1.66602 10 1.66602C11.7682 1.66602 13.4638 2.36839 14.7141 3.61864C15.9643 4.86888 16.6667 6.56457 16.6667 8.33268Z"
+                                        stroke="#0E0E0E" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M10 10.8327C11.3808 10.8327 12.5 9.71339 12.5 8.33268C12.5 6.95197 11.3808 5.83268 10 5.83268C8.61933 5.83268 7.50004 6.95197 7.50004 8.33268C7.50004 9.71339 8.61933 10.8327 10 10.8327Z"
+                                        stroke="#0E0E0E" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span class="max-w-320">
+                                    Ellitee LLP <br> SH-403 Shiven Shoppers, Adajan DN, Surat - 395009, Gujarat, India
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center py-24 border-t border-heading/20">
+                &copy; 2026-Ellitee™ All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <button x-data="backToTop" x-show="visible" x-transition @click="scrollTop"
+        class="btn style_1 aspect-square fixed bottom-30 right-30 z-9999">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up-icon lucide-arrow-up">
+            <path d="m5 12 7-7 7 7" />
+            <path d="M12 19V5" />
+        </svg>
+    </button>
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
