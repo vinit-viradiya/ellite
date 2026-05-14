@@ -230,6 +230,14 @@ if (document.querySelector('.testimonials_swiper')) {
             nextEl: ".testimonials_swiper_next",
         },
         breakpoints: {
+            992: {
+                slidesPerView: 1.5,
+                spaceBetween: 40,
+            },
+            1200: {
+                slidesPerView: 1.8,
+                spaceBetween: 40,
+            },
             1600: {
                 slidesPerView: 2.2,
                 spaceBetween: 40,
@@ -268,8 +276,6 @@ document.addEventListener('alpine:init', () => {
 // -------------------------------------------------------------
 // Accordion
 // -------------------------------------------------------------
-
-// app.js
 
 function accordion(defaultOpen = false) {
     return {
