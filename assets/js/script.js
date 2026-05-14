@@ -210,6 +210,36 @@ if (document.querySelector('.top_seller_swiper')) {
 
 
 // -------------------------------------------------------------
+// testimonials_swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.testimonials_swiper')) {
+    var swiper = new Swiper(".testimonials_swiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 3500,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar",
+        },
+        navigation: {
+            prevEl: ".testimonials_swiper_prev",
+            nextEl: ".testimonials_swiper_next",
+        },
+        breakpoints: {
+            1600: {
+                slidesPerView: 2.2,
+                spaceBetween: 40,
+            },
+        },
+    });
+}
+
+
+// -------------------------------------------------------------
 // Back to top button
 // -------------------------------------------------------------
 
@@ -233,3 +263,38 @@ document.addEventListener('alpine:init', () => {
         }
     }))
 })
+
+
+// -------------------------------------------------------------
+// Accordion
+// -------------------------------------------------------------
+
+// app.js
+
+function accordion(defaultOpen = false) {
+    return {
+
+        open: defaultOpen,
+        height: 0,
+
+        init() {
+            this.$nextTick(() => {
+                this.setHeight()
+            })
+        },
+
+        toggle() {
+            this.open = !this.open
+
+            this.$nextTick(() => {
+                this.setHeight()
+            })
+        },
+
+        setHeight() {
+            this.height = this.open
+                ? this.$refs.content.scrollHeight
+                : 0
+        }
+    }
+}
