@@ -1675,8 +1675,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="text-center py-24 border-t border-heading/20">
-                &copy; 2026-Ellitee™ All Rights Reserved
+            <div class="text-center py-24 border-t border-heading/20" x-data="{ year: new Date().getFullYear() }">
+                &copy; <span x-text="year">2026</span>-Ellitee™ All Rights Reserved
             </div>
         </div>
     </footer>
