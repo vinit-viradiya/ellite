@@ -837,6 +837,9 @@
   .py-40 {
     padding-block: calc(var(--spacing) * 40);
   }
+  .py-50 {
+    padding-block: calc(var(--spacing) * 50);
+  }
   .py-100 {
     padding-block: var(--spacing-100);
   }
