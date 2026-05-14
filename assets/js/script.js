@@ -121,8 +121,8 @@ if (document.querySelector('.solution_swiper')) {
                 spaceBetween: 25,
             },
             1600: {
-                slidesPerView: 2.5,
-                spaceBetween: 25,
+                slidesPerView: 2.35,
+                spaceBetween: 40,
             },
         },
     });

@@ -80,7 +80,7 @@ html {
     }
 
     .btn.style_1 {
-        @apply bg-brand-100 py-8 px-16 rounded-full font-light flex gap-8 items-center text-black w-fit justify-center text-center
+        @apply bg-black text-white py-8 px-16 rounded-full font-light flex gap-8 items-center text-black w-fit justify-center text-center
     }
 
     .marquee_wrapper {
