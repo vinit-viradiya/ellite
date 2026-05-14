@@ -1295,7 +1295,6 @@ html {
     text-align: center;
     --tw-font-weight: var(--font-weight-light);
     font-weight: var(--font-weight-light);
-    color: var(--color-black);
     color: var(--color-white);
   }
   .marquee_wrapper {
@@ -1387,15 +1386,6 @@ html {
 .hero_swiper .swiper-pagination {
   display: flex;
   gap: 6px;
-}
-.solution_swiper .swiper-pagination-horizontal, .testimonials_swiper .swiper-pagination-horizontal, .top_seller_swiper .swiper-pagination-horizontal, .new_pro_swiper .swiper-pagination-horizontal {
-  height: 8px !important;
-  border-radius: 8px !important;
-  overflow: hidden;
-  background-color: var(--color-zinc-50);
-}
-.solution_swiper .swiper-pagination-progressbar-fill, .testimonials_swiper .swiper-pagination-progressbar-fill, .top_seller_swiper .swiper-pagination-progressbar-fill, .new_pro_swiper .swiper-pagination-progressbar-fill {
-  background-color: var(--color-gray-300) !important;
 }
 @property --tw-translate-x {
   syntax: "*";
