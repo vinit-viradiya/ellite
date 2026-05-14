@@ -54,6 +54,21 @@ document.addEventListener('alpine:init', () => {
 
 
 // -------------------------------------------------------------
+// Offers swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.offers_swiper')) {
+    var swiper = new Swiper(".offers_swiper", {
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+    });
+}
+
+
+// -------------------------------------------------------------
 // Hero swiper
 // -------------------------------------------------------------
 
@@ -63,7 +78,7 @@ if (document.querySelector('.hero_swiper')) {
         effect: "fade",
         loop: true,
         autoplay: {
-            delay: 2500,
+            delay: 3500,
         },
         pagination: {
             el: ".swiper-pagination",
@@ -86,7 +101,7 @@ if (document.querySelector('.solution_swiper')) {
         spaceBetween: 16,
         loop: true,
         autoplay: {
-            delay: 2500,
+            delay: 3500,
         },
         pagination: {
             el: ".swiper-pagination",
@@ -124,7 +139,7 @@ if (document.querySelector('.new_pro_swiper')) {
         spaceBetween: 16,
         loop: true,
         autoplay: {
-            delay: 2500,
+            delay: 3500,
         },
         pagination: {
             el: ".swiper-pagination",
@@ -149,6 +164,44 @@ if (document.querySelector('.new_pro_swiper')) {
             },
             1600: {
                 slidesPerView: 2.3,
+                spaceBetween: 40,
+            },
+        },
+    });
+}
+
+// -------------------------------------------------------------
+// top_seller_swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.top_seller_swiper')) {
+    var swiper = new Swiper(".top_seller_swiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 3500,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar",
+        },
+        navigation: {
+            prevEl: ".top_seller_swiper_prev",
+            nextEl: ".top_seller_swiper_next",
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 1.6,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1600: {
+                slidesPerView: 4,
                 spaceBetween: 40,
             },
         },
