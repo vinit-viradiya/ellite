@@ -103,10 +103,6 @@ if (document.querySelector('.solution_swiper')) {
         autoplay: {
             delay: 3500,
         },
-        pagination: {
-            el: ".swiper-pagination",
-            type: "progressbar",
-        },
         navigation: {
             prevEl: ".solution_swiper_prev",
             nextEl: ".solution_swiper_next",
@@ -140,10 +136,6 @@ if (document.querySelector('.new_pro_swiper')) {
         loop: true,
         autoplay: {
             delay: 3500,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            type: "progressbar",
         },
         navigation: {
             prevEl: ".new_pro_swiper_prev",
@@ -182,10 +174,6 @@ if (document.querySelector('.top_seller_swiper')) {
         autoplay: {
             delay: 3500,
         },
-        pagination: {
-            el: ".swiper-pagination",
-            type: "progressbar",
-        },
         navigation: {
             prevEl: ".top_seller_swiper_prev",
             nextEl: ".top_seller_swiper_next",
@@ -220,10 +208,6 @@ if (document.querySelector('.testimonials_swiper')) {
         spaceBetween: 20,
         autoplay: {
             delay: 3500,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            type: "progressbar",
         },
         navigation: {
             prevEl: ".testimonials_swiper_prev",
