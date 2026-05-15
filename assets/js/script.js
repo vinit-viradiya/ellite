@@ -232,6 +232,25 @@ if (document.querySelector('.testimonials_swiper')) {
 
 
 // -------------------------------------------------------------
+// coupons_swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.coupons_swiper')) {
+    var swiper = new Swiper(".coupons_swiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 5000,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+}
+
+
+// -------------------------------------------------------------
 // Back to top button
 // -------------------------------------------------------------
 
