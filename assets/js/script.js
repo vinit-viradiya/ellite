@@ -232,25 +232,6 @@ if (document.querySelector('.testimonials_swiper')) {
 
 
 // -------------------------------------------------------------
-// coupons_swiper
-// -------------------------------------------------------------
-
-if (document.querySelector('.coupons_swiper')) {
-    var swiper = new Swiper(".coupons_swiper", {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 20,
-        autoplay: {
-            delay: 5000,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-    });
-}
-
-
-// -------------------------------------------------------------
 // Back to top button
 // -------------------------------------------------------------
 
@@ -306,4 +287,43 @@ function accordion(defaultOpen = false) {
                 : 0
         }
     }
+}
+
+// -------------------------------------------------------------
+// coupons_swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.coupons_swiper')) {
+    var swiper = new Swiper(".coupons_swiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 5000,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+}
+
+// -------------------------------------------------------------
+// product_imgs_swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.product_imgs_swiper')) {
+    var swiper = new Swiper(".product_imgs_swiper", {
+        loop: true,
+        spaceBetween: 12,
+        slidesPerView: 5,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".product_imgs_swiper2", {
+        loop: true,
+        spaceBetween: 12,
+        thumbs: {
+            swiper: swiper,
+        },
+    });
 }

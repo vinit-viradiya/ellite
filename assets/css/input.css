@@ -145,14 +145,6 @@ html {
     button {
         @apply cursor-pointer
     }
-
-    .swiper {
-        @apply select-none cursor-grab
-    }
-
-    .swiper:active {
-        @apply cursor-grabbing
-    }
 }
 
 .hero_swiper .swiper-pagination-bullet {
