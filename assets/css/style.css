@@ -45,6 +45,8 @@
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
@@ -485,6 +487,9 @@
   .aspect-1\.25\/1 {
     aspect-ratio: 1.25/1;
   }
+  .aspect-\[\.9\] {
+    aspect-ratio: .9;
+  }
   .aspect-\[\.53\/1\] {
     aspect-ratio: .53/1;
   }
@@ -499,6 +504,12 @@
   }
   .aspect-\[1\.55\/1\] {
     aspect-ratio: 1.55/1;
+  }
+  .aspect-\[1\/1\] {
+    aspect-ratio: 1/1;
+  }
+  .aspect-\[video\] {
+    aspect-ratio: video;
   }
   .aspect-square {
     aspect-ratio: 1 / 1;
@@ -1176,6 +1187,10 @@
   .text-40 {
     font-size: var(--text-40);
     line-height: var(--tw-leading, var(--text-40--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);

@@ -286,31 +286,31 @@
                                         class="swiper product_imgs_swiper2 cursor-grab">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[.95/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-2.webp"
                                                         class="absolute inset-0 size-full object-contain" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[.95/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-1.webp"
                                                         class="absolute inset-0 size-full object-contain" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[.95/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-2.webp"
                                                         class="absolute inset-0 size-full object-contain" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[.95/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-1.webp"
                                                         class="absolute inset-0 size-full object-contain" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[.95/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-2.webp"
                                                         class="absolute inset-0 size-full object-contain" />
                                                 </div>
@@ -353,6 +353,15 @@
                                                     <div
                                                         class="bg-white rounded-md overflow-hidden aspect-square relative">
                                                         <img fetchpriority="high" src="assets/images/product-img-1.webp"
+                                                            class="absolute size-full inset-0 object-contain" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="bg-slate-50 rounded-lg p-6">
+                                                    <div
+                                                        class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                        <img fetchpriority="high" src="assets/images/product-img-2.webp"
                                                             class="absolute size-full inset-0 object-contain" />
                                                     </div>
                                                 </div>
@@ -1581,8 +1590,9 @@
         <!-- Fixed add to cart for mobile -->
         <div class="fixed inset-0 top-auto bg-white p-6 rounded-xl z-9999 md:hidden">
             <div class="border-6 border-brand-100 bg-white rounded-lg p-12 flex flex-col gap-4">
-                <p class="text-2xl">
-                    CalmGel Anti-Acne Gel Moisturizer
+                <p class="text-2xl flex items-center justify-between">
+                    <span class="line-clamp-1">CalmGel Anti-Acne Gel Moisturizer</span>
+                    <span class="text-base">50g</span>
                 </p>
                 <div class="flex flex-col gap-4">
                     <div class="flex gap-2 text-gray-700">
@@ -1593,9 +1603,8 @@
                         <img src="assets/icons/star-unfilled.svg" alt="">
                         <span class="ml-10">4.0 (220 Reviews)</span>
                     </div>
-                    <span>50g</span>
                 </div>
-                <button class="btn style_1">
+                <button class="btn style_1 mt-4">
                     <img src="assets/icons/cart.svg" alt="">
                     <span>Add To Cart | ₹499</span>
                 </button>
