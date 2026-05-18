@@ -275,7 +275,9 @@
             <div class="container">
                 <div class="flex gap-32">
                     <div class="w-full grow grid grid-cols-1 gap-80">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-32">
+
+                        <!-- Section 1 -->
+                        <section class="grid grid-cols-1 md:grid-cols-2 gap-y-32">
                             <div>
                                 <div class="sticky top-130 space-y-32 md:pr-32">
                                     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
@@ -512,9 +514,20 @@
                                         <div class="overflow-hidden transition-all duration-300 ease-in-out"
                                             :style="`height: ${height}px`">
                                             <div x-ref="content" class="pt-16 text-gray-700">
-                                                No. Ellitee Skin Insights is designed to guide skincare routines based
-                                                on visible skin patterns. It does not diagnose medical conditions or
-                                                replace professional advice.
+                                                <ul class="flex flex-col gap-12">
+                                                    <li class="flex gap-8 items-start">
+                                                        <img src="assets/icons/check.svg" alt="" class="shrink-0 mt-2">
+                                                        <span>
+                                                            Extremely dry skin may require.
+                                                        </span>
+                                                    </li>
+                                                    <li class="flex gap-8 items-start">
+                                                        <img src="assets/icons/check.svg" alt="" class="shrink-0 mt-2">
+                                                        <span>
+                                                            Extremely dry skin may require.
+                                                        </span>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -533,17 +546,30 @@
                                         <div class="overflow-hidden transition-all duration-300 ease-in-out"
                                             :style="`height: ${height}px`">
                                             <div x-ref="content" class="pt-16 text-gray-700">
-                                                No. Ellitee Skin Insights is designed to guide skincare routines based
-                                                on visible skin patterns. It does not diagnose medical conditions or
-                                                replace professional advice.
+                                                <ul class="flex flex-col gap-12">
+                                                    <li class="flex gap-8 items-start">
+                                                        <img src="assets/icons/check.svg" alt="" class="shrink-0 mt-2">
+                                                        <span>
+                                                            Extremely dry skin may require.
+                                                        </span>
+                                                    </li>
+                                                    <li class="flex gap-8 items-start">
+                                                        <img src="assets/icons/check.svg" alt="" class="shrink-0 mt-2">
+                                                        <span>
+                                                            Extremely dry skin may require.
+                                                        </span>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="grid gap-48">
-                            <div class="flex justify-between items-center">
+                        </section>
+
+                        <!-- Section 2 -->
+                        <section class="grid gap-48">
+                            <div class="flex flex-wrap gap-12 justify-between items-center">
                                 <h2 class="text-36">
                                     What CalmGel Feels Like On Real Skin
                                 </h2>
@@ -624,13 +650,15 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="grid gap-48">
+                        </section>
+
+                        <!-- Section 3 -->
+                        <section class="grid gap-48">
                             <h2 class="text-36">
                                 What CalmGel Does
                             </h2>
-                            <div class="grid grid-cols-4 text-center gap-32">
-                                <div class="grid gap-20">
+                            <div class="grid sm:grid-cols-2 lg:grid-cols-4 text-center gap-22 3xl:gap-32">
+                                <div class="grid grid-cols-1 gap-20">
                                     <div class="p-10 rounded-2xl bg-slate-50 relative aspect-[1.55/1]">
                                         <img src="assets/images/benifit_2.webp" alt="Hydrates Without Heaviness"
                                             class="absolute inset-0 size-full object-cover rounded-md">
@@ -639,7 +667,7 @@
                                         Hydrates <br> Without Heaviness
                                     </h3>
                                 </div>
-                                <div class="grid gap-20">
+                                <div class="grid grid-cols-1 gap-20">
                                     <div class="p-10 rounded-2xl bg-slate-50 relative aspect-[1.55/1]">
                                         <img src="assets/images/benifit_3.webp" alt="Maintains clear-looking skin"
                                             class="absolute inset-0 size-full object-cover rounded-md">
@@ -648,7 +676,7 @@
                                         Maintains <br> clear-looking skin
                                     </h3>
                                 </div>
-                                <div class="grid gap-20">
+                                <div class="grid grid-cols-1 gap-20">
                                     <div class="p-10 rounded-2xl bg-slate-50 relative aspect-[1.55/1]">
                                         <img src="assets/images/benifit_4.webp" alt="Balances Excess Oil & Shine"
                                             class="absolute inset-0 size-full object-cover rounded-md">
@@ -657,7 +685,7 @@
                                         Balances Excess <br> Oil & Shine
                                     </h3>
                                 </div>
-                                <div class="grid gap-20">
+                                <div class="grid grid-cols-1 gap-20">
                                     <div class="p-10 rounded-2xl bg-slate-50 relative aspect-[1.55/1]">
                                         <img src="assets/images/benifit_1.webp" alt="Supports A Healthy Skin Barrier"
                                             class="absolute inset-0 size-full object-cover rounded-md">
@@ -667,15 +695,17 @@
                                     </h3>
                                 </div>
                             </div>
-                        </div>
-                        <div class="grid gap-48">
+                        </section>
+
+                        <!-- Section 4 -->
+                        <section class="grid gap-48">
                             <h2 class="text-36">
                                 Why CalmGel Works For Acne-Prone Skin
                             </h2>
-                            <div class="grid grid-cols-4 text-center gap-32">
-                                <div class="grid gap-16">
+                            <div class="grid sm:grid-cols-2 3xl:grid-cols-4 text-center gap-32">
+                                <div class="flex flex-col gap-16">
                                     <div class="relative aspect-[1.55/1] xl:mb-26">
-                                        <img src="assets/images/gel2.webp" alt="Hydrates Without Heaviness"
+                                        <img src="assets/images/gel_2.webp" alt="Hydrates Without Heaviness"
                                             class="absolute inset-0 size-full object-contain rounded-md">
                                     </div>
                                     <h3 class="text-20">
@@ -686,9 +716,9 @@
                                         harshness.
                                     </p>
                                 </div>
-                                <div class="grid gap-16">
+                                <div class="flex flex-col gap-16">
                                     <div class="relative aspect-[1.55/1] xl:mb-26">
-                                        <img src="assets/images/gel4.webp" alt="Maintains clear-looking skin"
+                                        <img src="assets/images/gel_4.webp" alt="Maintains clear-looking skin"
                                             class="absolute inset-0 size-full object-contain rounded-md">
                                     </div>
                                     <h3 class="text-20">
@@ -699,9 +729,9 @@
                                         feeling heavy.
                                     </p>
                                 </div>
-                                <div class="grid gap-16">
+                                <div class="flex flex-col gap-16">
                                     <div class="relative aspect-[1.55/1] xl:mb-26">
-                                        <img src="assets/images/gel3.webp" alt="Balances Excess Oil & Shine"
+                                        <img src="assets/images/gel_3.webp" alt="Balances Excess Oil & Shine"
                                             class="absolute inset-0 size-full object-contain rounded-md">
                                     </div>
                                     <h3 class="text-20">
@@ -712,9 +742,9 @@
                                         time.
                                     </p>
                                 </div>
-                                <div class="grid gap-16">
+                                <div class="flex flex-col gap-16">
                                     <div class="relative aspect-[1.55/1] xl:mb-26">
-                                        <img src="assets/images/gel1.webp" alt="Supports A Healthy Skin Barrier"
+                                        <img src="assets/images/gel_1.webp" alt="Supports A Healthy Skin Barrier"
                                             class="absolute inset-0 size-full object-contain rounded-md">
                                     </div>
                                     <h3 class="text-20">
@@ -726,7 +756,95 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </section>
+
+                        <!-- Section 5 -->
+                        <section class="grid grid-cols-12 gap-24 xl:gap-48">
+                            <div class="col-span-12 lg:col-span-7 grid gap-48">
+                                <h2 class="text-36">
+                                    How to Apply
+                                </h2>
+                                <div x-data="accordionSlider()" x-init="start()" class="space-y-4">
+                                    <div class="pb-16">
+                                        <button @click="setActive(0)"
+                                            class="text-left text-28 transition-colors duration-300"
+                                            :class="active !== 0 && 'text-gray-500'">
+                                            01 Cleanse
+                                        </button>
+                                        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+                                            :style="active === 0 ? `height:${$refs.content0.scrollHeight}px` : 'height:0px'">
+                                            <div x-ref="content0" class="pt-16 text-gray-700">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
+                                                veritatis.
+                                            </div>
+                                        </div>
+                                        <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full">
+                                            <div class="progress border-b border-black transition-all duration-100"
+                                                :style="`width:${active === 0 ? progress + '%' : '0%'}`"></div>
+                                        </div>
+                                    </div>
+                                    <div class="pb-16">
+                                        <button @click="setActive(1)"
+                                            class="text-left text-28 transition-colors duration-300"
+                                            :class="active !== 1 && 'text-gray-500'">
+                                            02 Treat
+                                        </button>
+                                        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+                                            :style="active === 1 ? `height:${$refs.content1.scrollHeight}px` : 'height:0px'">
+                                            <div x-ref="content1" class="pt-16 text-gray-700">
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid
+                                                doloremque voluptate esse culpa ipsam optio minus cupiditate, eveniet
+                                                quidem vel!
+                                            </div>
+                                        </div>
+                                        <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full">
+                                            <div class="progress border-b border-black transition-all duration-100"
+                                                :style="`width:${active === 1 ? progress + '%' : '0%'}`"></div>
+                                        </div>
+                                    </div>
+                                    <div class="pb-16">
+                                        <button @click="setActive(2)"
+                                            class="text-left text-28 transition-colors duration-300"
+                                            :class="active !== 2 && 'text-gray-500'">
+                                            03 Apply CalmGel
+                                        </button>
+                                        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+                                            :style="active === 2 ? `height:${$refs.content2.scrollHeight}px` : 'height:0px'">
+                                            <div x-ref="content2" class="pt-16 text-gray-700">
+                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+                                                voluptatem vitae, fuga laborum iure velit suscipit, eius ab, odio nam
+                                                tempore dolorem dolores repellat repudiandae? In nesciunt eius nobis
+                                                veniam.
+                                            </div>
+                                        </div>
+                                        <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full">
+                                            <div class="progress border-b border-black transition-all duration-100"
+                                                :style="`width:${active === 2 ? progress + '%' : '0%'}`"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-5 not-lg:hidden">
+                                <div class="image">
+                                    <img src="assets/images/apply_cream.webp" alt="How to Apply">
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="banner_img">
+                                <img src="assets/images/banner4.webp" alt="" class="w-full">
+                            </div>
+                        </section>
+                        <section>
+                            <div class="banner_img">
+                                <img src="assets/images/banner5.webp" alt="" class="w-full">
+                            </div>
+                        </section>
+                        <section>
+                            <div class="banner_img">
+                                <img src="assets/images/banner6.webp" alt="" class="w-full">
+                            </div>
+                        </section>
                     </div>
                     <div class="not-2xl:hidden min-w-300 max-w-300">
                         <div class="sticky top-130 flex flex-col gap-28">

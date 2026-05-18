@@ -347,17 +347,71 @@ if (document.querySelector('.product_imgs_swiper')) {
 if (document.querySelector('.reels_swiper')) {
     var swiper = new Swiper(".reels_swiper", {
         loop: true,
-        slidesPerView: 1,
-        spaceBetween: 20,
+        slidesPerView: 2,
+        spaceBetween: 10,
         navigation: {
             prevEl: ".reels_swiper_prev",
             nextEl: ".reels_swiper_next",
         },
         breakpoints: {
-            320: {
+            576: {
+                slidesPerView: 3,
+                spaceBetween: 12,
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 12,
+            },
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 22,
+            },
+            1600: {
                 slidesPerView: 4,
                 spaceBetween: 32,
             },
         },
     });
+}
+
+
+// -------------------------------------------------------------
+// Accordion with progress bar
+// -------------------------------------------------------------
+
+function accordionSlider() {
+    return {
+        active: 0,
+        progress: 0,
+        timer: null,
+        duration: 5000,
+
+        start() {
+            this.runProgress();
+        },
+
+        runProgress() {
+            clearInterval(this.timer);
+
+            this.progress = 0;
+
+            this.timer = setInterval(() => {
+                this.progress += 1;
+
+                if (this.progress >= 100) {
+                    this.next();
+                }
+            }, this.duration / 100);
+        },
+
+        next() {
+            this.active = (this.active + 1) % 3;
+            this.runProgress();
+        },
+
+        setActive(index) {
+            this.active = index;
+            this.runProgress();
+        }
+    }
 }
