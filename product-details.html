@@ -219,8 +219,8 @@
                                     stroke-linejoin="round" />
                             </svg>
                             <div
-                                class="absolute -top-4 -right-8 border size-20 grid place-items-center rounded-full bg-black text-[10px] text-white">
-                                <span>2</span>
+                                class="absolute -top-4 -right-8 border size-20 grid place-items-center rounded-full bg-black text-[11px] text-white scale-95">
+                                2
                             </div>
                         </button>
 
@@ -559,7 +559,14 @@
                                 </div>
                                 <div class="flex flex-col gap-16 items-start">
                                     <span class="text-20">Select Size</span>
-                                    <button class="py-8 px-16 bg-brand-100 rounded-full text-14 font-light">50g</button>
+                                    <div class="flex gap-8">
+                                        <button
+                                            class="py-8 px-16 bg-brand-100 rounded-full text-14 font-light">150g</button>
+                                        <button
+                                            class="py-8 px-16 bg-slate-50 rounded-full text-14 font-light">100g</button>
+                                        <button
+                                            class="py-8 px-16 bg-slate-50 rounded-full text-14 font-light">50g</button>
+                                    </div>
                                 </div>
                                 <div class="grid grid-cols-1 2xl:hidden gap-12">
                                     <div class="bg-brand-100 p-6 rounded-xl">
@@ -578,7 +585,21 @@
                                                             </p>
                                                             <div class="border-b-2 border-dashed border-black/10 my-4">
                                                             </div>
-                                                            <span class="text-gray-700">Code: CALMGEL15</span>
+                                                            <div class="text-gray-700 flex items-center gap-6"
+                                                                x-data="couponCode($el)">
+                                                                <span>
+                                                                    Code:
+                                                                    <span class="coupon-code">CALMGEL15</span>
+                                                                </span>
+                                                                <button type="button" @click="copyCode"
+                                                                    class="flex items-center gap-2">
+                                                                    <img src="assets/icons/copy.svg" alt="">
+                                                                    <span x-show="copied" x-transition
+                                                                        class="text-sm text-green-600">
+                                                                        Copied!
+                                                                    </span>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="swiper-slide">
@@ -593,7 +614,21 @@
                                                             </p>
                                                             <div class="border-b-2 border-dashed border-black/10 my-4">
                                                             </div>
-                                                            <span class="text-gray-700">Code: CALMGEL15</span>
+                                                            <div class="text-gray-700 flex items-center gap-6"
+                                                                x-data="couponCode($el)">
+                                                                <span>
+                                                                    Code:
+                                                                    <span class="coupon-code">CALMGEL15</span>
+                                                                </span>
+                                                                <button type="button" @click="copyCode"
+                                                                    class="flex items-center gap-2">
+                                                                    <img src="assets/icons/copy.svg" alt="">
+                                                                    <span x-show="copied" x-transition
+                                                                        class="text-sm text-green-600">
+                                                                        Copied!
+                                                                    </span>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="swiper-slide">
@@ -608,7 +643,21 @@
                                                             </p>
                                                             <div class="border-b-2 border-dashed border-black/10 my-4">
                                                             </div>
-                                                            <span class="text-gray-700">Code: CALMGEL15</span>
+                                                            <div class="text-gray-700 flex items-center gap-6"
+                                                                x-data="couponCode($el)">
+                                                                <span>
+                                                                    Code:
+                                                                    <span class="coupon-code">CALMGEL15</span>
+                                                                </span>
+                                                                <button type="button" @click="copyCode"
+                                                                    class="flex items-center gap-2">
+                                                                    <img src="assets/icons/copy.svg" alt="">
+                                                                    <span x-show="copied" x-transition
+                                                                        class="text-sm text-green-600">
+                                                                        Copied!
+                                                                    </span>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="swiper-slide">
@@ -623,7 +672,21 @@
                                                             </p>
                                                             <div class="border-b-2 border-dashed border-black/10 my-4">
                                                             </div>
-                                                            <span class="text-gray-700">Code: CALMGEL15</span>
+                                                            <div class="text-gray-700 flex items-center gap-6"
+                                                                x-data="couponCode($el)">
+                                                                <span>
+                                                                    Code:
+                                                                    <span class="coupon-code">CALMGEL15</span>
+                                                                </span>
+                                                                <button type="button" @click="copyCode"
+                                                                    class="flex items-center gap-2">
+                                                                    <img src="assets/icons/copy.svg" alt="">
+                                                                    <span x-show="copied" x-transition
+                                                                        class="text-sm text-green-600">
+                                                                        Copied!
+                                                                    </span>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -968,21 +1031,24 @@
                         <!-- Section 6 -->
                         <section>
                             <div class="banner_img">
-                                <img src="assets/images/banner4.webp" alt="" class="w-full">
+                                <img src="assets/images/banner4.webp" alt=""
+                                    class="w-full h-400 xl:h-600 object-cover object-right">
                             </div>
                         </section>
 
                         <!-- Section 7 -->
                         <section>
                             <div class="banner_img">
-                                <img src="assets/images/banner5.webp" alt="" class="w-full">
+                                <img src="assets/images/banner5.webp" alt=""
+                                    class="w-full h-400 xl:h-600 object-cover object-right">
                             </div>
                         </section>
 
                         <!-- Section 8 -->
                         <section>
                             <div class="banner_img">
-                                <img src="assets/images/banner6.webp" alt="" class="w-full">
+                                <img src="assets/images/banner6.webp" alt=""
+                                    class="w-full h-400 xl:h-600 object-cover object-right">
                             </div>
                         </section>
 
@@ -1062,20 +1128,19 @@
                                                         Anti-Acne Daily Skin Care Routine Combo
                                                     </p>
                                                     <div class="border-b-2 border-dashed border-black/10 my-4"></div>
-                                                    <div class="text-gray-700 flex items-center gap-6">
-                                                        <span>Code: CALMGEL15</span>
-                                                        <button>
-                                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <rect x="6.99805" y="6.99805" width="14.0058"
-                                                                    height="14.0058" rx="2" stroke="currentColor"
-                                                                    stroke-width="1.5" stroke-linecap="round"
-                                                                    stroke-linejoin="round" />
-                                                                <path
-                                                                    d="M6.99825 17.0019H4.99742C3.89239 17.0019 2.99658 16.1061 2.99658 15.0011V4.99693C2.99658 3.8919 3.89239 2.99609 4.99742 2.99609H15.0016C16.1066 2.99609 17.0024 3.8919 17.0024 4.99693V6.99776"
-                                                                    stroke="currentColor" stroke-width="1.5"
-                                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                            </svg>
+                                                    <div class="text-gray-700 flex items-center gap-6"
+                                                        x-data="couponCode($el)">
+                                                        <span>
+                                                            Code:
+                                                            <span class="coupon-code">CALMGEL15</span>
+                                                        </span>
+                                                        <button type="button" @click="copyCode"
+                                                            class="flex items-center gap-2">
+                                                            <img src="assets/icons/copy.svg" alt="">
+                                                            <span x-show="copied" x-transition
+                                                                class="text-sm text-green-600">
+                                                                Copied!
+                                                            </span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -1090,20 +1155,19 @@
                                                         Anti-Acne Daily Skin Care Routine Combo
                                                     </p>
                                                     <div class="border-b-2 border-dashed border-black/10 my-4"></div>
-                                                    <div class="text-gray-700 flex items-center gap-6">
-                                                        <span>Code: CALMGEL15</span>
-                                                        <button>
-                                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <rect x="6.99805" y="6.99805" width="14.0058"
-                                                                    height="14.0058" rx="2" stroke="currentColor"
-                                                                    stroke-width="1.5" stroke-linecap="round"
-                                                                    stroke-linejoin="round" />
-                                                                <path
-                                                                    d="M6.99825 17.0019H4.99742C3.89239 17.0019 2.99658 16.1061 2.99658 15.0011V4.99693C2.99658 3.8919 3.89239 2.99609 4.99742 2.99609H15.0016C16.1066 2.99609 17.0024 3.8919 17.0024 4.99693V6.99776"
-                                                                    stroke="currentColor" stroke-width="1.5"
-                                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                            </svg>
+                                                    <div class="text-gray-700 flex items-center gap-6"
+                                                        x-data="couponCode($el)">
+                                                        <span>
+                                                            Code:
+                                                            <span class="coupon-code">CALMGEL15</span>
+                                                        </span>
+                                                        <button type="button" @click="copyCode"
+                                                            class="flex items-center gap-2">
+                                                            <img src="assets/icons/copy.svg" alt="">
+                                                            <span x-show="copied" x-transition
+                                                                class="text-sm text-green-600">
+                                                                Copied!
+                                                            </span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -1118,20 +1182,19 @@
                                                         Anti-Acne Daily Skin Care Routine Combo
                                                     </p>
                                                     <div class="border-b-2 border-dashed border-black/10 my-4"></div>
-                                                    <div class="text-gray-700 flex items-center gap-6">
-                                                        <span>Code: CALMGEL15</span>
-                                                        <button>
-                                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <rect x="6.99805" y="6.99805" width="14.0058"
-                                                                    height="14.0058" rx="2" stroke="currentColor"
-                                                                    stroke-width="1.5" stroke-linecap="round"
-                                                                    stroke-linejoin="round" />
-                                                                <path
-                                                                    d="M6.99825 17.0019H4.99742C3.89239 17.0019 2.99658 16.1061 2.99658 15.0011V4.99693C2.99658 3.8919 3.89239 2.99609 4.99742 2.99609H15.0016C16.1066 2.99609 17.0024 3.8919 17.0024 4.99693V6.99776"
-                                                                    stroke="currentColor" stroke-width="1.5"
-                                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                            </svg>
+                                                    <div class="text-gray-700 flex items-center gap-6"
+                                                        x-data="couponCode($el)">
+                                                        <span>
+                                                            Code:
+                                                            <span class="coupon-code">CALMGEL15</span>
+                                                        </span>
+                                                        <button type="button" @click="copyCode"
+                                                            class="flex items-center gap-2">
+                                                            <img src="assets/icons/copy.svg" alt="">
+                                                            <span x-show="copied" x-transition
+                                                                class="text-sm text-green-600">
+                                                                Copied!
+                                                            </span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -1146,20 +1209,19 @@
                                                         Anti-Acne Daily Skin Care Routine Combo
                                                     </p>
                                                     <div class="border-b-2 border-dashed border-black/10 my-4"></div>
-                                                    <div class="text-gray-700 flex items-center gap-6">
-                                                        <span>Code: CALMGEL15</span>
-                                                        <button>
-                                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <rect x="6.99805" y="6.99805" width="14.0058"
-                                                                    height="14.0058" rx="2" stroke="currentColor"
-                                                                    stroke-width="1.5" stroke-linecap="round"
-                                                                    stroke-linejoin="round" />
-                                                                <path
-                                                                    d="M6.99825 17.0019H4.99742C3.89239 17.0019 2.99658 16.1061 2.99658 15.0011V4.99693C2.99658 3.8919 3.89239 2.99609 4.99742 2.99609H15.0016C16.1066 2.99609 17.0024 3.8919 17.0024 4.99693V6.99776"
-                                                                    stroke="currentColor" stroke-width="1.5"
-                                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                            </svg>
+                                                    <div class="text-gray-700 flex items-center gap-6"
+                                                        x-data="couponCode($el)">
+                                                        <span>
+                                                            Code:
+                                                            <span class="coupon-code">CALMGEL15</span>
+                                                        </span>
+                                                        <button type="button" @click="copyCode"
+                                                            class="flex items-center gap-2">
+                                                            <img src="assets/icons/copy.svg" alt="">
+                                                            <span x-show="copied" x-transition
+                                                                class="text-sm text-green-600">
+                                                                Copied!
+                                                            </span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -1769,31 +1831,32 @@
         <section class="bg-slate-50 py-40 text-40 text-center px-gutter">
             <h2>CalmGel Balanced hydration without compromise.</h2>
         </section>
-
-        <!-- Fixed add to cart for mobile -->
-        <div class="fixed inset-0 top-auto bg-white p-6 rounded-xl z-9999 md:hidden">
-            <div class="border-6 border-brand-100 bg-white rounded-lg p-12 flex flex-col gap-4">
-                <p class="text-2xl flex items-center justify-between">
-                    <span class="line-clamp-1">CalmGel Anti-Acne Gel Moisturizer</span>
-                    <span class="text-base">50g</span>
-                </p>
-                <div class="flex flex-col gap-4">
-                    <div class="flex gap-2 text-gray-700">
-                        <img src="assets/icons/star-filled.svg" alt="">
-                        <img src="assets/icons/star-filled.svg" alt="">
-                        <img src="assets/icons/star-filled.svg" alt="">
-                        <img src="assets/icons/star-filled.svg" alt="">
-                        <img src="assets/icons/star-unfilled.svg" alt="">
-                        <span class="ml-10">4.0 (220 Reviews)</span>
-                    </div>
-                </div>
-                <button class="btn style_1 mt-4">
-                    <img src="assets/icons/cart.svg" alt="">
-                    <span>Add To Cart | ₹499</span>
-                </button>
-            </div>
-        </div>
     </main>
+
+    <!-- Fixed add to cart for mobile -->
+    <div x-data="quickCartHandler" class="quick_cart fixed inset-0 top-auto bg-white p-6 rounded-xl z-9999 md:hidden"
+        x-show="showCart" x-transition>
+        <div class="border-6 border-brand-100 bg-white rounded-lg p-12 flex flex-col gap-4">
+            <p class="text-2xl flex items-center justify-between">
+                <span class="line-clamp-1">CalmGel Anti-Acne Gel Moisturizer</span>
+                <span class="text-base">50g</span>
+            </p>
+            <div class="flex flex-col gap-4">
+                <div class="flex gap-2 text-gray-700">
+                    <img src="assets/icons/star-filled.svg" alt="">
+                    <img src="assets/icons/star-filled.svg" alt="">
+                    <img src="assets/icons/star-filled.svg" alt="">
+                    <img src="assets/icons/star-filled.svg" alt="">
+                    <img src="assets/icons/star-unfilled.svg" alt="">
+                    <span class="ml-10">4.0 (220 Reviews)</span>
+                </div>
+            </div>
+            <button class="btn style_1 mt-4">
+                <img src="assets/icons/cart.svg" alt="">
+                <span>Add To Cart | ₹499</span>
+            </button>
+        </div>
+    </div>
 
     <footer class="text-heading border-t border-black/10">
         <div class="container">
@@ -1900,7 +1963,7 @@
     </footer>
 
     <button x-cloak x-data="backToTop" x-show="visible" x-transition @click="scrollTop" aria-label="Back to top"
-        class="btn style_1 aspect-square fixed not-xl:p-12 bottom-15 right-15 xl:bottom-30 xl:right-30 z-9999">
+        class="btn style_1 aspect-square fixed not-xl:p-12 bottom-15 right-15 xl:bottom-30 xl:right-30 z-999">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
             class="lucide lucide-arrow-up-icon lucide-arrow-up">

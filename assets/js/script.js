@@ -415,3 +415,74 @@ function accordionSlider() {
         }
     }
 }
+
+
+// -------------------------------------------------------------
+// Copy to clipboard
+// -------------------------------------------------------------
+
+function couponCode(el) {
+    return {
+        copied: false,
+
+        copyCode() {
+            const code = el.querySelector('.coupon-code').innerText;
+
+            // Modern clipboard API
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(code);
+            } else {
+                // Fallback
+                const textArea = document.createElement('textarea');
+                textArea.value = code;
+
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-9999px';
+
+                document.body.appendChild(textArea);
+
+                textArea.focus();
+                textArea.select();
+
+                document.execCommand('copy');
+
+                textArea.remove();
+            }
+
+            this.copied = true;
+
+            setTimeout(() => {
+                this.copied = false;
+            }, 2000);
+        }
+    };
+}
+
+
+// -------------------------------------------------------------
+// Copy to clipboard
+// -------------------------------------------------------------
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('quickCartHandler', () => ({
+        showCart: true,
+
+        init() {
+            window.addEventListener('scroll', () => {
+                this.checkScroll();
+            });
+
+            this.checkScroll();
+        },
+
+        checkScroll() {
+            const scrollBottom =
+                window.innerHeight + window.scrollY;
+
+            const pageHeight =
+                document.documentElement.scrollHeight;
+
+            this.showCart = scrollBottom < (pageHeight - 100);
+        }
+    }));
+});
