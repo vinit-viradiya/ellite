@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    <header class="sticky top-0 z-99999 font-light py-20 sm:py-24 shadow bg-white">
+    <header class="sticky top-0 z-99999 py-20 sm:py-24 shadow bg-white">
         <nav class="container">
             <div class="flex justify-between 3xl:grid items-center grid-cols-12">
                 <div class="col-span-3">
@@ -44,7 +44,7 @@
                         <img src="assets/images/logo.svg" alt="" class="w-90 sm:w-auto">
                     </a>
                 </div>
-                <ul class="col-span-6 hidden xl:flex gap-40 justify-center">
+                <ul class="col-span-6 hidden xl:flex gap-40 justify-center tracking-[1px] font-light">
                     <li><a href="javascript:;">Shop Products</a></li>
                     <li><a href="javascript:;">New Launches</a></li>
                     <li><a href="javascript:;">AI Skin Insight</a></li>
@@ -58,7 +58,7 @@
                     <div x-data="dropdown()" class="flex relative" @click.outside="close">
                         <form class="not-3xl:hidden">
                             <div
-                                class="input-group bg-slate-50 py-8 px-16 rounded-full flex gap-12 items-center max-w-225 focus-within:ring-1 focus-within:ring-gray-300">
+                                class="input-group bg-slate-50 py-8 px-16 rounded-full flex gap-8 items-center max-w-225 focus-within:ring-1 focus-within:ring-gray-300">
                                 <label for="header_search" aria-label="Search anything" class="shrink-0">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -71,8 +71,8 @@
                                     </svg>
                                 </label>
                                 <input type="search" name="header_search" id="header_search"
-                                    placeholder="Search products..." class="w-full text-14 outline-none"
-                                    @click="open = true">
+                                    placeholder="Search products..."
+                                    class="w-full placeholder:text-gray-500 outline-none" @click="open = true">
                             </div>
                         </form>
                         <div x-cloak x-show="open" x-transition
@@ -274,76 +274,463 @@
         <section class="py-50">
             <div class="container">
                 <div class="flex gap-32">
-                    <div class="w-full">
-                        <div class="grid grid-cols-2">
-                            <div class="space-y-32">
-                                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                                    class="swiper product_imgs_swiper2 cursor-grab">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/product-img-2.webp" />
+                    <div class="w-full grow grid grid-cols-1 gap-80">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-32">
+                            <div>
+                                <div class="sticky top-130 space-y-32 md:pr-32">
+                                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                        class="swiper product_imgs_swiper2 cursor-grab">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                    <img fetchpriority="high" src="assets/images/product-img-2.webp"
+                                                        class="absolute inset-0 size-full object-contain" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                    <img fetchpriority="high" src="assets/images/product-img-1.webp"
+                                                        class="absolute inset-0 size-full object-contain" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                    <img fetchpriority="high" src="assets/images/product-img-2.webp"
+                                                        class="absolute inset-0 size-full object-contain" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                    <img fetchpriority="high" src="assets/images/product-img-1.webp"
+                                                        class="absolute inset-0 size-full object-contain" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="aspect-video md:aspect-[.95/1] relative">
+                                                    <img fetchpriority="high" src="assets/images/product-img-2.webp"
+                                                        class="absolute inset-0 size-full object-contain" />
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/product-img-2.webp" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/product-img-2.webp" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/product-img-2.webp" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="assets/images/product-img-2.webp" />
-                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
                                     </div>
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-                                <div thumbsSlider="" class="swiper product_imgs_swiper cursor-pointer">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="bg-slate-50 rounded-lg p-6">
-                                                <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                                    <img src="assets/images/product-img-2.webp" class="absolute size-full inset-0 object-contain" />
+                                    <div thumbsSlider="" class="swiper product_imgs_swiper cursor-pointer">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="bg-slate-50 rounded-lg p-6">
+                                                    <div
+                                                        class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                        <img fetchpriority="high" src="assets/images/product-img-2.webp"
+                                                            class="absolute size-full inset-0 object-contain" />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="bg-slate-50 rounded-lg p-6">
-                                                <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                                    <img src="assets/images/product-img-2.webp" class="absolute size-full inset-0 object-contain" />
+                                            <div class="swiper-slide">
+                                                <div class="bg-slate-50 rounded-lg p-6">
+                                                    <div
+                                                        class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                        <img fetchpriority="high" src="assets/images/product-img-1.webp"
+                                                            class="absolute size-full inset-0 object-contain" />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="bg-slate-50 rounded-lg p-6">
-                                                <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                                    <img src="assets/images/product-img-2.webp" class="absolute size-full inset-0 object-contain" />
+                                            <div class="swiper-slide">
+                                                <div class="bg-slate-50 rounded-lg p-6">
+                                                    <div
+                                                        class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                        <img fetchpriority="high" src="assets/images/product-img-2.webp"
+                                                            class="absolute size-full inset-0 object-contain" />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="bg-slate-50 rounded-lg p-6">
-                                                <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                                    <img src="assets/images/product-img-2.webp" class="absolute size-full inset-0 object-contain" />
+                                            <div class="swiper-slide">
+                                                <div class="bg-slate-50 rounded-lg p-6">
+                                                    <div
+                                                        class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                        <img fetchpriority="high" src="assets/images/product-img-1.webp"
+                                                            class="absolute size-full inset-0 object-contain" />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="bg-slate-50 rounded-lg p-6">
-                                                <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                                    <img src="assets/images/product-img-2.webp" class="absolute size-full inset-0 object-contain" />
+                                            <div class="swiper-slide">
+                                                <div class="bg-slate-50 rounded-lg p-6">
+                                                    <div
+                                                        class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                        <img fetchpriority="high" src="assets/images/product-img-2.webp"
+                                                            class="absolute size-full inset-0 object-contain" />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="flex flex-col gap-32">
+                                <div class="flex flex-col gap-16">
+                                    <div class="badge green">
+                                        Bestseller
+                                    </div>
+                                    <h1 class="text-40">
+                                        CalmGel Anti-Acne Gel Moisturizer
+                                    </h1>
+                                    <div class="flex gap-12 items-center flex-wrap">
+                                        <div class="flex gap-2">
+                                            <img src="assets/icons/star-filled.svg" alt="">
+                                            <img src="assets/icons/star-filled.svg" alt="">
+                                            <img src="assets/icons/star-filled.svg" alt="">
+                                            <img src="assets/icons/star-filled.svg" alt="">
+                                            <img src="assets/icons/star-unfilled.svg" alt="">
+                                        </div>
+                                        <div class="flex flex-wrap gap-x-12">
+                                            <span>4.0 (220 Reviews)</span>
+                                            <span>|</span>
+                                            <span>20+ Purchased This Month</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 font-light">
+                                        Designed for oily and acne-prone skin, CalmGel delivers balanced daily hydration
+                                        while helping support the skin barrier without heaviness or greasy residue.
+                                    </p>
+                                </div>
+                                <div class="flex gap-16 items-center flex-wrap">
+                                    <span class="text-20">Best For</span>
+                                    <div class="flex gap-6 lg:gap-12 flex-wrap font-light">
+                                        <span class="p-8 bg-light-gray rounded-lg">Acne-Prone</span>
+                                        <span class="p-8 bg-light-gray rounded-lg">Oily Skin</span>
+                                        <span class="p-8 bg-light-gray rounded-lg">Combination Skin</span>
+                                        <span class="p-8 bg-light-gray rounded-lg">Sensitive Skin</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-full grid grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-16 flex-wrap font-light text-14 text-center">
+                                    <div class="p-12 bg-light-gray rounded-2xl space-y-12">
+                                        <img src="assets/icons/drop.svg" alt="" class="mx-auto">
+                                        <span>Balance <br> oil & shine</span>
+                                    </div>
+                                    <div class="p-12 bg-light-gray rounded-2xl space-y-12">
+                                        <img src="assets/icons/support.svg" alt="" class="mx-auto">
+                                        <span>Support <br> skin barrier</span>
+                                    </div>
+                                    <div class="p-12 bg-light-gray rounded-2xl space-y-12">
+                                        <img src="assets/icons/hydration.svg" alt="" class="mx-auto">
+                                        <span>Comfortable <br> daily hydration</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-16">
+                                    <span class="text-2xl">₹ 499.00</span>
+                                    <span class="font-light text-gray-700">MRP inclusive of all taxes</span>
+                                </div>
+                                <div class="flex flex-col gap-16 items-start">
+                                    <span class="text-20">Select Size</span>
+                                    <button class="py-8 px-16 bg-brand-100 rounded-full text-14 font-light">50g</button>
+                                </div>
+                                <div class="grid grid-cols-1 2xl:hidden gap-12">
+                                    <div class="bg-brand-100 p-6 rounded-xl">
+                                        <div class="bg-white rounded-lg p-12">
+                                            <div class="swiper coupons_swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="flex flex-col gap-4">
+                                                            <div class="flex font-semibold text-20 items-center gap-8">
+                                                                <img src="assets/icons/offer.svg" alt=""
+                                                                    class="shrink-0">
+                                                                <span>Flat 41% OFF</span>
+                                                            </div>
+                                                            <p class="font-light text-gray-700">
+                                                                Anti-Acne Daily Skin Care Routine Combo
+                                                            </p>
+                                                            <div class="border-b-2 border-dashed border-black/10 my-4">
+                                                            </div>
+                                                            <span class="text-gray-700">Code: CALMGEL15</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="flex flex-col gap-4">
+                                                            <div class="flex font-semibold text-20 items-center gap-8">
+                                                                <img src="assets/icons/offer.svg" alt=""
+                                                                    class="shrink-0">
+                                                                <span>Flat 41% OFF</span>
+                                                            </div>
+                                                            <p class="font-light text-gray-700">
+                                                                Anti-Acne Daily Skin Care Routine Combo
+                                                            </p>
+                                                            <div class="border-b-2 border-dashed border-black/10 my-4">
+                                                            </div>
+                                                            <span class="text-gray-700">Code: CALMGEL15</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="flex flex-col gap-4">
+                                                            <div class="flex font-semibold text-20 items-center gap-8">
+                                                                <img src="assets/icons/offer.svg" alt=""
+                                                                    class="shrink-0">
+                                                                <span>Flat 41% OFF</span>
+                                                            </div>
+                                                            <p class="font-light text-gray-700">
+                                                                Anti-Acne Daily Skin Care Routine Combo
+                                                            </p>
+                                                            <div class="border-b-2 border-dashed border-black/10 my-4">
+                                                            </div>
+                                                            <span class="text-gray-700">Code: CALMGEL15</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="flex flex-col gap-4">
+                                                            <div class="flex font-semibold text-20 items-center gap-8">
+                                                                <img src="assets/icons/offer.svg" alt=""
+                                                                    class="shrink-0">
+                                                                <span>Flat 41% OFF</span>
+                                                            </div>
+                                                            <p class="font-light text-gray-700">
+                                                                Anti-Acne Daily Skin Care Routine Combo
+                                                            </p>
+                                                            <div class="border-b-2 border-dashed border-black/10 my-4">
+                                                            </div>
+                                                            <span class="text-gray-700">Code: CALMGEL15</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div x-data="accordion(false)"
+                                        class="pb-16 mb-16 border-b border-heading/20 last:pb-0 last:mb-0 last:border-0">
+                                        <button @click="toggle()"
+                                            class="flex items-center justify-between text-left text-20 w-full">
+                                            <span>Best Results When</span>
+                                            <svg :class="open ? 'rotate-180' : ''"
+                                                class="origin-center transition-(--transition)" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 10L12 14L16 10" stroke="#323232" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
+                                            :style="`height: ${height}px`">
+                                            <div x-ref="content" class="pt-16 text-gray-700">
+                                                No. Ellitee Skin Insights is designed to guide skincare routines based
+                                                on visible skin patterns. It does not diagnose medical conditions or
+                                                replace professional advice.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div x-data="accordion(false)"
+                                        class="pb-16 mb-16 border-b border-heading/20 last:pb-0 last:mb-0 last:border-0">
+                                        <button @click="toggle()"
+                                            class="flex items-center justify-between text-left text-20 w-full">
+                                            <span>Safety & Care</span>
+                                            <svg :class="open ? 'rotate-180' : ''"
+                                                class="origin-center transition-(--transition)" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 10L12 14L16 10" stroke="#323232" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
+                                            :style="`height: ${height}px`">
+                                            <div x-ref="content" class="pt-16 text-gray-700">
+                                                No. Ellitee Skin Insights is designed to guide skincare routines based
+                                                on visible skin patterns. It does not diagnose medical conditions or
+                                                replace professional advice.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid gap-48">
+                            <div class="flex justify-between items-center">
+                                <h2 class="text-36">
+                                    What CalmGel Feels Like On Real Skin
+                                </h2>
+                                <div class="flex gap-24 items-center">
+                                    <button class="reels_swiper_prev p-12 rounded-full bg-zinc-50">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 12H19" stroke="#323232" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button class="reels_swiper_next p-12 rounded-full bg-zinc-50">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19 12H5" stroke="#323232" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="w-full swiper reels_swiper text-white">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="relative aspect-[.53/1]">
+                                            <video autoplay muted src="assets/videos/reel_1.mp4"
+                                                class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="relative aspect-[.53/1]">
+                                            <video autoplay muted src="assets/videos/reel_2.mp4"
+                                                class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="relative aspect-[.53/1]">
+                                            <video autoplay muted src="assets/videos/reel_3.mp4"
+                                                class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="relative aspect-[.53/1]">
+                                            <video autoplay muted src="assets/videos/reel_4.mp4"
+                                                class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="relative aspect-[.53/1]">
+                                            <video autoplay muted src="assets/videos/reel_1.mp4"
+                                                class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="relative aspect-[.53/1]">
+                                            <video autoplay muted src="assets/videos/reel_2.mp4"
+                                                class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="relative aspect-[.53/1]">
+                                            <video autoplay muted src="assets/videos/reel_3.mp4"
+                                                class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="relative aspect-[.53/1]">
+                                            <video autoplay muted src="assets/videos/reel_4.mp4"
+                                                class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid gap-48">
+                            <h2 class="text-36">
+                                What CalmGel Does
+                            </h2>
+                            <div class="grid grid-cols-4 text-center gap-32">
+                                <div class="grid gap-20">
+                                    <div class="p-10 rounded-2xl bg-slate-50 relative aspect-[1.55/1]">
+                                        <img src="assets/images/benifit_2.webp" alt="Hydrates Without Heaviness"
+                                            class="absolute inset-0 size-full object-cover rounded-md">
+                                    </div>
+                                    <h3 class="text-20">
+                                        Hydrates <br> Without Heaviness
+                                    </h3>
+                                </div>
+                                <div class="grid gap-20">
+                                    <div class="p-10 rounded-2xl bg-slate-50 relative aspect-[1.55/1]">
+                                        <img src="assets/images/benifit_3.webp" alt="Maintains clear-looking skin"
+                                            class="absolute inset-0 size-full object-cover rounded-md">
+                                    </div>
+                                    <h3 class="text-20">
+                                        Maintains <br> clear-looking skin
+                                    </h3>
+                                </div>
+                                <div class="grid gap-20">
+                                    <div class="p-10 rounded-2xl bg-slate-50 relative aspect-[1.55/1]">
+                                        <img src="assets/images/benifit_4.webp" alt="Balances Excess Oil & Shine"
+                                            class="absolute inset-0 size-full object-cover rounded-md">
+                                    </div>
+                                    <h3 class="text-20">
+                                        Balances Excess <br> Oil & Shine
+                                    </h3>
+                                </div>
+                                <div class="grid gap-20">
+                                    <div class="p-10 rounded-2xl bg-slate-50 relative aspect-[1.55/1]">
+                                        <img src="assets/images/benifit_1.webp" alt="Supports A Healthy Skin Barrier"
+                                            class="absolute inset-0 size-full object-cover rounded-md">
+                                    </div>
+                                    <h3 class="text-20">
+                                        Supports A Healthy <br> Skin Barrier
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid gap-48">
+                            <h2 class="text-36">
+                                Why CalmGel Works For Acne-Prone Skin
+                            </h2>
+                            <div class="grid grid-cols-4 text-center gap-32">
+                                <div class="grid gap-16">
+                                    <div class="relative aspect-[1.55/1] xl:mb-26">
+                                        <img src="assets/images/gel2.webp" alt="Hydrates Without Heaviness"
+                                            class="absolute inset-0 size-full object-contain rounded-md">
+                                    </div>
+                                    <h3 class="text-20">
+                                        Acne Buster™ Complex
+                                    </h3>
+                                    <p class="text-gray-700 font-light">
+                                        A clinically studied complex designed to help support acne-prone skin without
+                                        harshness.
+                                    </p>
+                                </div>
+                                <div class="grid gap-16">
+                                    <div class="relative aspect-[1.55/1] xl:mb-26">
+                                        <img src="assets/images/gel4.webp" alt="Maintains clear-looking skin"
+                                            class="absolute inset-0 size-full object-contain rounded-md">
+                                    </div>
+                                    <h3 class="text-20">
+                                        Aquaxyl™
+                                    </h3>
+                                    <p class="text-gray-700 font-light">
+                                        Helps improve moisture retention while supporting the skin barrier without
+                                        feeling heavy.
+                                    </p>
+                                </div>
+                                <div class="grid gap-16">
+                                    <div class="relative aspect-[1.55/1] xl:mb-26">
+                                        <img src="assets/images/gel3.webp" alt="Balances Excess Oil & Shine"
+                                            class="absolute inset-0 size-full object-contain rounded-md">
+                                    </div>
+                                    <h3 class="text-20">
+                                        Niacinamide
+                                    </h3>
+                                    <p class="text-gray-700 font-light">
+                                        Helps support balanced-looking skin while improving overall skin comfort over
+                                        time.
+                                    </p>
+                                </div>
+                                <div class="grid gap-16">
+                                    <div class="relative aspect-[1.55/1] xl:mb-26">
+                                        <img src="assets/images/gel1.webp" alt="Supports A Healthy Skin Barrier"
+                                            class="absolute inset-0 size-full object-contain rounded-md">
+                                    </div>
+                                    <h3 class="text-20">
+                                        Panthenol
+                                    </h3>
+                                    <p class="text-gray-700 font-light">
+                                        Help soothe dryness and maintain long-lasting hydration for comfortable daily
+                                        wear.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="min-w-300 max-w-300">
+                    <div class="not-2xl:hidden min-w-300 max-w-300">
                         <div class="sticky top-130 flex flex-col gap-28">
-                            <div class="bg-slate-50 p-6 rounded-xl">
+                            <div class="bg-brand-100 p-6 rounded-xl">
                                 <div class="bg-white rounded-lg p-12">
                                     <div class="swiper coupons_swiper">
                                         <div class="swiper-wrapper">
@@ -404,7 +791,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-slate-50 p-6 rounded-xl">
+                            <div class="bg-brand-100 p-6 rounded-xl">
                                 <div class="bg-white rounded-lg p-12 flex flex-col gap-16">
                                     <div class="flex flex-col gap-4">
                                         <span class="text-2xl">₹ 499.00</span>
@@ -455,6 +842,29 @@
                 </div>
             </div>
         </section>
+        <!-- Fixed add to cart for mobile -->
+        <div class="fixed inset-0 top-auto bg-white p-6 rounded-xl z-9999 md:hidden">
+            <div class="border-6 border-brand-100 bg-white rounded-lg p-12 flex flex-col gap-4">
+                <p class="text-2xl">
+                    CalmGel Anti-Acne Gel Moisturizer
+                </p>
+                <div class="flex flex-col gap-4">
+                    <div class="flex gap-2 text-gray-700">
+                        <img src="assets/icons/star-filled.svg" alt="">
+                        <img src="assets/icons/star-filled.svg" alt="">
+                        <img src="assets/icons/star-filled.svg" alt="">
+                        <img src="assets/icons/star-filled.svg" alt="">
+                        <img src="assets/icons/star-unfilled.svg" alt="">
+                        <span class="ml-10">4.0 (220 Reviews)</span>
+                    </div>
+                    <span>50g</span>
+                </div>
+                <button class="btn style_1">
+                    <img src="assets/icons/cart.svg" alt="">
+                    <span>Add To Cart | ₹499</span>
+                </button>
+            </div>
+        </div>
     </main>
 
     <footer class="text-heading border-t border-black/10">
@@ -562,7 +972,7 @@
     </footer>
 
     <button x-cloak x-data="backToTop" x-show="visible" x-transition @click="scrollTop" aria-label="Back to top"
-        class="btn style_1 aspect-square fixed not-xl:p-12 bottom-15 right-15 xl:bottom-30 xl:right-30 z-9999">
+        class="btn style_1 aspect-square fixed not-xl:p-12 bottom-15 right-15 xl:bottom-30 xl:right-30 z-999">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
             class="lucide lucide-arrow-up-icon lucide-arrow-up">

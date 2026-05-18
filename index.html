@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    <header class="sticky top-0 z-99999 font-light py-20 sm:py-24 shadow bg-white">
+    <header class="sticky top-0 z-99999 py-20 sm:py-24 shadow bg-white">
         <nav class="container">
             <div class="flex justify-between 3xl:grid items-center grid-cols-12">
                 <div class="col-span-3">
@@ -44,7 +44,7 @@
                         <img src="assets/images/logo.svg" alt="" class="w-90 sm:w-auto">
                     </a>
                 </div>
-                <ul class="col-span-6 hidden xl:flex gap-40 justify-center">
+                <ul class="col-span-6 hidden xl:flex gap-40 justify-center tracking-[1px] font-light">
                     <li><a href="javascript:;">Shop Products</a></li>
                     <li><a href="javascript:;">New Launches</a></li>
                     <li><a href="javascript:;">AI Skin Insight</a></li>
@@ -54,11 +54,10 @@
                 <div class="col-span-3 btns text-gray-500 flex items-center gap-16 justify-end">
 
                     <!-- Search for desktop -->
-
                     <div x-data="dropdown()" class="flex relative" @click.outside="close">
                         <form class="not-3xl:hidden">
                             <div
-                                class="input-group bg-slate-50 py-8 px-16 rounded-full flex gap-12 items-center max-w-225 focus-within:ring-1 focus-within:ring-gray-300">
+                                class="input-group bg-slate-50 py-8 px-16 rounded-full flex gap-8 items-center max-w-225 focus-within:ring-1 focus-within:ring-gray-300">
                                 <label for="header_search" aria-label="Search anything" class="shrink-0">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +70,7 @@
                                     </svg>
                                 </label>
                                 <input type="search" name="header_search" id="header_search"
-                                    placeholder="Search products..." class="w-full text-14 outline-none"
+                                    placeholder="Search products..." class="w-full placeholder:text-gray-500 outline-none"
                                     @click="open = true">
                             </div>
                         </form>
@@ -1191,7 +1190,7 @@
                                     <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
                                         aria-label="Product details"></a>
                                 </div>
-                                <div class="flex gap-2 items-center">
+                                <div class="flex gap-2 items-center text-xs">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
@@ -1245,7 +1244,7 @@
                                     <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
                                         aria-label="Product details"></a>
                                 </div>
-                                <div class="flex gap-2 items-center">
+                                <div class="flex gap-2 items-center text-xs">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
@@ -1299,7 +1298,7 @@
                                     <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
                                         aria-label="Product details"></a>
                                 </div>
-                                <div class="flex gap-2 items-center">
+                                <div class="flex gap-2 items-center text-xs">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
@@ -1353,7 +1352,7 @@
                                     <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
                                         aria-label="Product details"></a>
                                 </div>
-                                <div class="flex gap-2 items-center">
+                                <div class="flex gap-2 items-center text-xs">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
@@ -1407,7 +1406,7 @@
                                     <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
                                         aria-label="Product details"></a>
                                 </div>
-                                <div class="flex gap-2 items-center">
+                                <div class="flex gap-2 items-center text-xs">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
                                     <img src="assets/icons/star-filled.svg" alt="">
