@@ -808,8 +808,17 @@
   .gap-x-12 {
     column-gap: calc(var(--spacing) * 12);
   }
+  .gap-x-48 {
+    column-gap: calc(var(--spacing) * 48);
+  }
   .gap-y-5 {
     row-gap: calc(var(--spacing) * 5);
+  }
+  .gap-y-6 {
+    row-gap: calc(var(--spacing) * 6);
+  }
+  .gap-y-12 {
+    row-gap: calc(var(--spacing) * 12);
   }
   .gap-y-32 {
     row-gap: calc(var(--spacing) * 32);
@@ -1027,6 +1036,9 @@
   }
   .p-35 {
     padding: calc(var(--spacing) * 35);
+  }
+  .p-40 {
+    padding: calc(var(--spacing) * 40);
   }
   .p-48 {
     padding: calc(var(--spacing) * 48);
@@ -1611,6 +1623,15 @@
       gap: calc(var(--spacing) * 64);
     }
   }
+  .xl\:space-y-24 {
+    @media (width >= 1200px) {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(calc(var(--spacing) * 24) * var(--tw-space-y-reverse));
+        margin-block-end: calc(calc(var(--spacing) * 24) * calc(1 - var(--tw-space-y-reverse)));
+      }
+    }
+  }
   .xl\:py-24 {
     @media (width >= 1200px) {
       padding-block: calc(var(--spacing) * 24);
@@ -1676,6 +1697,11 @@
       display: none;
     }
   }
+  .\33 xl\:grid-cols-3 {
+    @media (width >= 1600px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
   .\33 xl\:grid-cols-4 {
     @media (width >= 1600px) {
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1714,6 +1740,11 @@
   .\34 xl\:gap-40 {
     @media (width >= 1740px) {
       gap: calc(var(--spacing) * 40);
+    }
+  }
+  .\34 xl\:p-40 {
+    @media (width >= 1740px) {
+      padding: calc(var(--spacing) * 40);
     }
   }
 }
