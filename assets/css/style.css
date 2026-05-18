@@ -52,6 +52,7 @@
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-light: 300;
+    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --tracking-wide: 0.025em;
@@ -509,6 +510,10 @@
     width: calc(var(--spacing) * 20);
     height: calc(var(--spacing) * 20);
   }
+  .size-48 {
+    width: calc(var(--spacing) * 48);
+    height: calc(var(--spacing) * 48);
+  }
   .size-full {
     width: 100%;
     height: 100%;
@@ -757,6 +762,9 @@
   .gap-48 {
     gap: calc(var(--spacing) * 48);
   }
+  .gap-64 {
+    gap: calc(var(--spacing) * 64);
+  }
   .gap-80 {
     gap: calc(var(--spacing) * 80);
   }
@@ -805,11 +813,21 @@
       margin-block-end: calc(calc(var(--spacing) * 32) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .space-y-48 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 48) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 48) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
   .gap-x-12 {
     column-gap: calc(var(--spacing) * 12);
   }
   .gap-x-48 {
     column-gap: calc(var(--spacing) * 48);
+  }
+  .gap-x-64 {
+    column-gap: calc(var(--spacing) * 64);
   }
   .gap-y-5 {
     row-gap: calc(var(--spacing) * 5);
@@ -819,6 +837,9 @@
   }
   .gap-y-12 {
     row-gap: calc(var(--spacing) * 12);
+  }
+  .gap-y-20 {
+    row-gap: calc(var(--spacing) * 20);
   }
   .gap-y-32 {
     row-gap: calc(var(--spacing) * 32);
@@ -845,6 +866,9 @@
   }
   .overflow-y-auto {
     overflow-y: auto;
+  }
+  .rounded {
+    border-radius: 0.25rem;
   }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
@@ -991,6 +1015,10 @@
     }
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
+  .from-gray-700 {
+    --tw-gradient-from: var(--color-gray-700);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
   .to-transparent {
     --tw-gradient-to: transparent;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1088,6 +1116,9 @@
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
   }
+  .pt-50 {
+    padding-top: calc(var(--spacing) * 50);
+  }
   .pt-55 {
     padding-top: calc(var(--spacing) * 55);
   }
@@ -1172,6 +1203,10 @@
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
@@ -1456,6 +1491,11 @@
   .sm\:gap-16 {
     @media (width >= 576px) {
       gap: calc(var(--spacing) * 16);
+    }
+  }
+  .sm\:gap-40 {
+    @media (width >= 576px) {
+      gap: calc(var(--spacing) * 40);
     }
   }
   .sm\:py-24 {

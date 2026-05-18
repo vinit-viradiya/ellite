@@ -271,7 +271,9 @@
     </header>
 
     <main>
-        <section class="py-50">
+
+        <!-- Product details -->
+        <section class="pt-50">
             <div class="container">
                 <div class="flex gap-32">
                     <div class="w-full grow grid grid-cols-1 gap-80">
@@ -1026,6 +1028,556 @@
                 </div>
             </div>
         </section>
+
+        <!-- Related products -->
+        <section class="py-100">
+            <div class="container">
+                <div class="swiper top_seller_swiper">
+                    <div class="grid lg:grid-cols-2">
+                        <h2 class="text-heading text-36">
+                            You May Also Like
+                        </h2>
+                        <div class="flex gap-24 items-center mb-40 xl:mb-80 justify-end">
+                            <button class="top_seller_swiper_prev p-12 rounded-full bg-zinc-50">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button class="top_seller_swiper_next p-12 rounded-full bg-zinc-50">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-16 md:gap-24">
+                                <div class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden">
+                                    <div class="flex justify-between items-center">
+                                        <span></span>
+                                        <button class="bg-slate-50 p-8 rounded-full" aria-label="Add to wishlist">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                    stroke="#6A7282" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="absolute inset-0 size-full -z-1">
+                                        <img src="assets/images/product-img-1.webp" alt=""
+                                            class="size-full object-contain">
+                                    </div>
+                                    <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                        aria-label="Product details"></a>
+                                </div>
+                                <div class="flex gap-2 items-center text-sm">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                </div>
+                                <div class="space-y-8">
+                                    <h3 class="text-20 line-clamp-1 text-gray-950">
+                                        Pigmentation & Skin Balance Routine Combo
+                                    </h3>
+                                    <h4 class="line-clamp-1 text-gray-500">
+                                        Oil Control, Brightens, Smooths
+                                    </h4>
+                                </div>
+                                <div class="flex gap-12 items-center justify-between text-gray-700">
+                                    <div class="flex gap-12">
+                                        <span>₹ 799</span>
+                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                    </div>
+                                    <button>60ml</button>
+                                </div>
+                                <a href="javascript:;" class="btn style_1 w-full">
+                                    <img src="assets/icons/cart.svg" alt="">
+                                    <span>Add to Cart</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-16 md:gap-24">
+                                <div class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden">
+                                    <div class="flex justify-between items-center">
+                                        <span></span>
+                                        <button class="bg-slate-50 p-8 rounded-full" aria-label="Add to wishlist">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                    stroke="#6A7282" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="absolute inset-0 size-full -z-1">
+                                        <img src="assets/images/product-img-1.webp" alt=""
+                                            class="size-full object-contain">
+                                    </div>
+                                    <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                        aria-label="Product details"></a>
+                                </div>
+                                <div class="flex gap-2 items-center text-sm">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                </div>
+                                <div class="space-y-8">
+                                    <h3 class="text-20 line-clamp-1 text-gray-950">
+                                        Pigmentation & Skin Balance Routine Combo
+                                    </h3>
+                                    <h4 class="line-clamp-1 text-gray-500">
+                                        Oil Control, Brightens, Smooths
+                                    </h4>
+                                </div>
+                                <div class="flex gap-12 items-center justify-between text-gray-700">
+                                    <div class="flex gap-12">
+                                        <span>₹ 799</span>
+                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                    </div>
+                                    <button>60ml</button>
+                                </div>
+                                <a href="javascript:;" class="btn style_1 w-full">
+                                    <img src="assets/icons/cart.svg" alt="">
+                                    <span>Add to Cart</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-16 md:gap-24">
+                                <div class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden">
+                                    <div class="flex justify-between items-center">
+                                        <span></span>
+                                        <button class="bg-slate-50 p-8 rounded-full" aria-label="Add to wishlist">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                    stroke="#6A7282" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="absolute inset-0 size-full -z-1">
+                                        <img src="assets/images/product-img-1.webp" alt=""
+                                            class="size-full object-contain">
+                                    </div>
+                                    <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                        aria-label="Product details"></a>
+                                </div>
+                                <div class="flex gap-2 items-center text-sm">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                </div>
+                                <div class="space-y-8">
+                                    <h3 class="text-20 line-clamp-1 text-gray-950">
+                                        Pigmentation & Skin Balance Routine Combo
+                                    </h3>
+                                    <h4 class="line-clamp-1 text-gray-500">
+                                        Oil Control, Brightens, Smooths
+                                    </h4>
+                                </div>
+                                <div class="flex gap-12 items-center justify-between text-gray-700">
+                                    <div class="flex gap-12">
+                                        <span>₹ 799</span>
+                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                    </div>
+                                    <button>60ml</button>
+                                </div>
+                                <a href="javascript:;" class="btn style_1 w-full">
+                                    <img src="assets/icons/cart.svg" alt="">
+                                    <span>Add to Cart</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-16 md:gap-24">
+                                <div class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden">
+                                    <div class="flex justify-between items-center">
+                                        <span></span>
+                                        <button class="bg-slate-50 p-8 rounded-full" aria-label="Add to wishlist">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                    stroke="#6A7282" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="absolute inset-0 size-full -z-1">
+                                        <img src="assets/images/product-img-1.webp" alt=""
+                                            class="size-full object-contain">
+                                    </div>
+                                    <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                        aria-label="Product details"></a>
+                                </div>
+                                <div class="flex gap-2 items-center text-sm">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                </div>
+                                <div class="space-y-8">
+                                    <h3 class="text-20 line-clamp-1 text-gray-950">
+                                        Pigmentation & Skin Balance Routine Combo
+                                    </h3>
+                                    <h4 class="line-clamp-1 text-gray-500">
+                                        Oil Control, Brightens, Smooths
+                                    </h4>
+                                </div>
+                                <div class="flex gap-12 items-center justify-between text-gray-700">
+                                    <div class="flex gap-12">
+                                        <span>₹ 799</span>
+                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                    </div>
+                                    <button>60ml</button>
+                                </div>
+                                <a href="javascript:;" class="btn style_1 w-full">
+                                    <img src="assets/icons/cart.svg" alt="">
+                                    <span>Add to Cart</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-16 md:gap-24">
+                                <div class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden">
+                                    <div class="flex justify-between items-center">
+                                        <span></span>
+                                        <button class="bg-slate-50 p-8 rounded-full" aria-label="Add to wishlist">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                    stroke="#6A7282" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="absolute inset-0 size-full -z-1">
+                                        <img src="assets/images/product-img-1.webp" alt=""
+                                            class="size-full object-contain">
+                                    </div>
+                                    <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                        aria-label="Product details"></a>
+                                </div>
+                                <div class="flex gap-2 items-center text-sm">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-filled.svg" alt="">
+                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                </div>
+                                <div class="space-y-8">
+                                    <h3 class="text-20 line-clamp-1 text-gray-950">
+                                        Pigmentation & Skin Balance Routine Combo
+                                    </h3>
+                                    <h4 class="line-clamp-1 text-gray-500">
+                                        Oil Control, Brightens, Smooths
+                                    </h4>
+                                </div>
+                                <div class="flex gap-12 items-center justify-between text-gray-700">
+                                    <div class="flex gap-12">
+                                        <span>₹ 799</span>
+                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                    </div>
+                                    <button>60ml</button>
+                                </div>
+                                <a href="javascript:;" class="btn style_1 w-full">
+                                    <img src="assets/icons/cart.svg" alt="">
+                                    <span>Add to Cart</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consumer Reviews -->
+        <section class="py-100">
+            <div class="container space-y-48">
+                <div class="flex items-center justify-between flex-wrap gap-x-64 gap-y-20">
+                    <div>
+                        <h2 class="text-36 mb-16">
+                            Review & Rating
+                        </h2>
+                        <div class="flex flex-col gap-4 items-center">
+                            <div class="flex gap-2 text-gray-700 items-center">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-unfilled.svg" alt="">
+                                <span class="ml-10 font-light">4.0 | Based on 220 Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="flex items-center gap-8 text-gray-700 font-light bg-slate-50 p-12 rounded-xl">
+                        <img src="assets/icons/edit.svg" alt="">
+                        <span>Write a Review</span>
+                    </button>
+                </div>
+                <div class="flex flex-col text-gray-700 font-light gap-16 sm:gap-40">
+                    <div class="flex gap-16 border-b border-gray-200 pb-16 last:pb-0 last:border-0">
+                        <span class="size-48 shrink-0 grid place-items-center bg-slate-50 rounded-full">NS</span>
+                        <div class="flex flex-col gap-16 grow">
+                            <div class="flex justify-between items-center">
+                                <span class="text-20 text-gray-950 font-normal line-clamp-1">
+                                    Nisha Singh
+                                </span>
+                                <span class="shrink-0">
+                                    4 May 2026
+                                </span>
+                            </div>
+                            <div class="flex gap-2 text-gray-700 items-center">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-unfilled.svg" alt="">
+                            </div>
+                            <p>
+                                Perfect for acne-prone skin! Individuals with oliy, normal,or combination,acne-prone
+                                skin seeking a daily moisturizer that won't trigger breakouts.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-16 border-b border-gray-200 pb-16 last:pb-0 last:border-0">
+                        <span class="size-48 shrink-0 grid place-items-center bg-slate-50 rounded-full">MK</span>
+                        <div class="flex flex-col gap-16 grow">
+                            <div class="flex justify-between items-center">
+                                <span class="text-20 text-gray-950 font-normal line-clamp-1">
+                                    Monika Kumari
+                                </span>
+                                <span class="shrink-0">
+                                    28 April 2026
+                                </span>
+                            </div>
+                            <div class="flex gap-2 text-gray-700 items-center">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-unfilled.svg" alt="">
+                            </div>
+                            <p>
+                                Lightweight & Oil-Free – Perfect for Daily UseGreat for Acne-Prone Skin
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-16 border-b border-gray-200 pb-16 last:pb-0 last:border-0">
+                        <span class="size-48 shrink-0 grid place-items-center bg-slate-50 rounded-full">RG</span>
+                        <div class="flex flex-col gap-16 grow">
+                            <div class="flex justify-between items-center">
+                                <span class="text-20 text-gray-950 font-normal line-clamp-1">
+                                    Rajan Gupta
+                                </span>
+                                <span class="shrink-0">
+                                    13 April 2026
+                                </span>
+                            </div>
+                            <div class="flex gap-2 text-gray-700 items-center">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-unfilled.svg" alt="">
+                            </div>
+                            <p>
+                                I have order this moisturizer.it has very non-greasy and lightweight cream perfect for
+                                dry, normal and oily skin. A gel-based moisturizer. Leaves skin smooth and soft.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-16 border-b border-gray-200 pb-16 last:pb-0 last:border-0">
+                        <span class="size-48 shrink-0 grid place-items-center bg-slate-50 rounded-full">SS</span>
+                        <div class="flex flex-col gap-16 grow">
+                            <div class="flex justify-between items-center">
+                                <span class="text-20 text-gray-950 font-normal line-clamp-1">
+                                    Sashesh Singh
+                                </span>
+                                <span class="shrink-0">
+                                    27 March 2026
+                                </span>
+                            </div>
+                            <div class="flex gap-2 text-gray-700 items-center">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-filled.svg" alt="">
+                                <img src="assets/icons/star-unfilled.svg" alt="">
+                            </div>
+                            <p>
+                                I have tried their moisturizer and it has very non oily and works very comfortably with
+                                my skin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-64 items-center justify-center">
+                    <button class="p-12 rounded-full bg-zinc-50">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <span>Page 1 of 6</span>
+                    <button class="p-12 rounded-full bg-zinc-50">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequently Asked Questions -->
+        <section class="py-100">
+            <div class="container">
+                <h2 class="text-center text-36 mb-40 xl:mb-80 text-heading">
+                    Frequently Asked Questions
+                </h2>
+                <div class="max-w-1000 mx-auto">
+                    <div x-data="accordion(true)"
+                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                            <span>
+                                Is Ellitee Skin Insights a medical diagnosis?
+                            </span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
+                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
+                            :style="`height: ${height}px`">
+                            <div x-ref="content" class="pt-16 text-gray-700">
+                                No. Ellitee Skin Insights is designed to guide skincare routines based on visible skin
+                                patterns. It does not diagnose medical conditions or replace professional advice.
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="accordion(true)"
+                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                            <span>
+                                Do I need Skin Insights to use Ellitee products?
+                            </span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
+                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
+                            :style="`height: ${height}px`">
+                            <div x-ref="content" class="pt-16 text-gray-700">
+                                Not at all. Ellitee products can be used independently. Skin Insights simply helps align
+                                products more accurately with your skin’s needs.
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="accordion(true)"
+                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                            <span>
+                                How is my data handled?
+                            </span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
+                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
+                            :style="`height: ${height}px`">
+                            <div x-ref="content" class="pt-16 text-gray-700">
+                                Your information is used only to generate insights and improve your experience. Data
+                                privacy and responsible handling are core to Ellitee’s approach.
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="accordion(true)"
+                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                            <span>
+                                How often should I reassess my skin?
+                            </span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
+                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
+                            :style="`height: ${height}px`">
+                            <div x-ref="content" class="pt-16 text-gray-700">
+                                Skin changes with seasons, lifestyle, and routines. Reassessing every few weeks can help
+                                keep your routine
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subtitle Section -->
+        <section class="bg-slate-50 py-40 text-40 text-center px-gutter">
+            <h2>CalmGel Balanced hydration without compromise.</h2>
+        </section>
+
         <!-- Fixed add to cart for mobile -->
         <div class="fixed inset-0 top-auto bg-white p-6 rounded-xl z-9999 md:hidden">
             <div class="border-6 border-brand-100 bg-white rounded-lg p-12 flex flex-col gap-4">
