@@ -1061,11 +1061,17 @@
   .mask-\(--mask-1\) {
     mask-image: var(--mask-1);
   }
+  .mask-repeat {
+    mask-repeat: repeat;
+  }
   .object-contain {
     object-fit: contain;
   }
   .object-cover {
     object-fit: cover;
+  }
+  .object-bottom {
+    object-position: bottom;
   }
   .object-left {
     object-position: left;
@@ -2160,6 +2166,21 @@ html {
 .coupons_swiper .swiper-pagination-bullet-active {
   background-color: var(--color-gray-950);
   width: 48px;
+}
+.iphone-mock-up {
+  mask-image: url(../images/iphone-mask.png);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+.iphone-mock-up::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url(../images/iphone-frame.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 @property --tw-translate-x {
   syntax: "*";
