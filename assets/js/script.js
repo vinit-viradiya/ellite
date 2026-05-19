@@ -486,3 +486,27 @@ document.addEventListener('alpine:init', () => {
         }
     }));
 });
+
+
+
+// -------------------------------------------------------------
+// Alpine for tabs
+// -------------------------------------------------------------
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('tabs', tabs)
+})
+
+function tabs() {
+    return {
+        active: 'tab1',
+
+        set(tab) {
+            this.active = tab
+        },
+
+        is(tab) {
+            return this.active === tab
+        }
+    }
+}

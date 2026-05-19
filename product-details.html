@@ -1248,10 +1248,12 @@
                                         </div>
                                         <span>50g</span>
                                     </div>
-                                    <div class="flex items-center justify-between">
+                                    <div x-data="{quantity:1,increment(){this.quantity++},decrement(){if(this.quantity>1){this.quantity--}}}"
+                                        class="flex items-center justify-between">
                                         <span class="text-gray-700">Quantity</span>
                                         <div class="flex items-center gap-12 bg-slate-50 p-8 rounded-full">
-                                            <button class="bg-white rounded-full p-2" aria-label="Decrement quantity">
+                                            <button @click="decrement()" class="bg-white rounded-full p-2"
+                                                aria-label="Decrement quantity" type="button">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24"
                                                     fill="none" stroke="currentColor" stroke-width="2"
                                                     stroke-linecap="round" stroke-linejoin="round"
@@ -1259,8 +1261,9 @@
                                                     <path d="M5 12h14" />
                                                 </svg>
                                             </button>
-                                            <span>1</span>
-                                            <button class="bg-white rounded-full p-2" aria-label="Increment quantity">
+                                            <span class="w-25 text-center" x-text="quantity"></span>
+                                            <button @click="increment()" class="bg-white rounded-full p-2"
+                                                aria-label="Increment quantity" type="button">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24"
                                                     fill="none" stroke="currentColor" stroke-width="2"
                                                     stroke-linecap="round" stroke-linejoin="round"
