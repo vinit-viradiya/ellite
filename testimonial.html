@@ -29,9 +29,9 @@
         <div class="max-w-500 border-x border-brand-500 mx-auto">
             <div class="swiper offers_swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">Get 5% OFF + Additional 10% Cashback on Bundle</div>
-                    <div class="swiper-slide">Get 10% OFF on First Purchase</div>
-                    <div class="swiper-slide">Free Shipping on Orders Above ₹999</div>
+                    <div class="swiper-slide h-auto!">Get 5% OFF + Additional 10% Cashback on Bundle</div>
+                    <div class="swiper-slide h-auto!">Get 10% OFF on First Purchase</div>
+                    <div class="swiper-slide h-auto!">Free Shipping on Orders Above ₹999</div>
                 </div>
             </div>
         </div>
@@ -484,13 +484,261 @@
         <!-- How we help -->
         <section>
             <div class="container">
-                <div class="grid grid-cols-2">
-                    <div>
-                        <h2 class="">
+                <div class="grid md:grid-cols-12 items-center gap-32 relative z-1">
+                    <div class="col-span-7 py-100 space-y-16 lg:space-y-32">
+                        <h2 class="text-36">
                             Why Skin Results Take Consistency
                         </h2>
+                        <ul class="lg:space-y-12 text-gray-700">
+                            <li class="flex gap-8 items-start">
+                                <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
+                                <span>Skin responds differently for everyone</span>
+                            </li>
+                            <li class="flex gap-8 items-start">
+                                <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
+                                <span>Barrier health affects visible progress</span>
+                            </li>
+                            <li class="flex gap-8 items-start">
+                                <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
+                                <span>Routine consistency matters more than intensity</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-5 not-md:absolute -z-1 not-md:opacity-40 inset-0">
+                        <img src="assets/images/product-demo.webp" alt=""
+                            class="size-full object-contain not-md:w-1/2 mx-auto">
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="py-100">
+            <div class="container">
+                <div class="swiper testimonials_swiper">
+                    <div class="grid lg:grid-cols-2 mb-40 xl:mb-80">
+                        <h2 class="text-heading text-36">
+                            Real Results. Real Skin Journeys.
+                        </h2>
+                        <div class="flex gap-24 items-center justify-end">
+                            <button class="testimonials_swiper_prev p-12 rounded-full bg-zinc-50">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button class="testimonials_swiper_next p-12 rounded-full bg-zinc-50">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide h-auto!">
+                            <div class="flex flex-col sm:flex-row bg-slate-50 rounded-3xl p-16 gap-16 h-full">
+                                <div
+                                    class="w-full grow rounded-2xl overflow-hidden relative aspect-video sm:aspect-[.88/1]">
+                                    <img src="assets/images/story1.webp" alt="Story 1"
+                                        class="size-full object-cover absolute inset-0">
+                                </div>
+                                <div class="w-full grow bg-white p-16 rounded-2xl flex flex-col gap-24 justify-between">
+                                    <span class="text-20 text-gray-950">Ananya, 26</span>
+                                    <p class="font-light text-gray-700 line-clamp-5">
+                                        I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
+                                        CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
+                                        less aggressive now.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-auto!">
+                            <div class="flex flex-col sm:flex-row bg-slate-50 rounded-3xl p-16 gap-16 h-full">
+                                <div class="w-full grow bg-white p-16 rounded-2xl flex flex-col gap-24 justify-between">
+                                    <span class="text-20 text-gray-950">Ananya, 26</span>
+                                    <p class="font-light text-gray-700 line-clamp-5">
+                                        I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
+                                        CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
+                                        less aggressive now.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-auto!">
+                            <div class="flex flex-col sm:flex-row bg-slate-50 rounded-3xl p-16 gap-16 h-full">
+                                <div
+                                    class="w-full grow rounded-2xl overflow-hidden relative aspect-video sm:aspect-[.88/1]">
+                                    <img src="assets/images/testimonial1.webp" alt="Testimonial 1"
+                                        class="size-full object-cover absolute inset-0">
+                                </div>
+                                <div class="w-full grow bg-white p-16 rounded-2xl flex flex-col gap-24 justify-between">
+                                    <span class="text-20 text-gray-950">Ananya, 26</span>
+                                    <p class="font-light text-gray-700 line-clamp-5">
+                                        I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
+                                        CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
+                                        less aggressive now.
+                                        I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
+                                        CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
+                                        less aggressive now.
+                                        I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
+                                        CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
+                                        less aggressive now.
+                                        I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
+                                        CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
+                                        less aggressive now.
+                                        I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
+                                        CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
+                                        less aggressive now.
+                                        I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
+                                        CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
+                                        less aggressive now.
+                                        I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
+                                        CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
+                                        less aggressive now.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reels -->
+        <section class="py-100">
+            <div class="container space-y-48">
+                <div class="flex flex-wrap gap-12 justify-between items-center">
+                    <h2 class="text-36">
+                        What CalmGel Feels Like On Real Skin
+                    </h2>
+                    <div class="flex gap-24 items-center">
+                        <button class="reels_swiper_prev p-12 rounded-full bg-zinc-50">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button class="reels_swiper_next p-12 rounded-full bg-zinc-50">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="w-full swiper reels_swiper text-white">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="relative aspect-[.53/1]">
+                                <video autoplay muted src="assets/videos/reel_1.mp4"
+                                    class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative aspect-[.53/1]">
+                                <video autoplay muted src="assets/videos/reel_2.mp4"
+                                    class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative aspect-[.53/1]">
+                                <video autoplay muted src="assets/videos/reel_3.mp4"
+                                    class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative aspect-[.53/1]">
+                                <video autoplay muted src="assets/videos/reel_4.mp4"
+                                    class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative aspect-[.53/1]">
+                                <video autoplay muted src="assets/videos/reel_1.mp4"
+                                    class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative aspect-[.53/1]">
+                                <video autoplay muted src="assets/videos/reel_2.mp4"
+                                    class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative aspect-[.53/1]">
+                                <video autoplay muted src="assets/videos/reel_3.mp4"
+                                    class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative aspect-[.53/1]">
+                                <video autoplay muted src="assets/videos/reel_4.mp4"
+                                    class="absolute size-full inset-0 object-cover rounded-2xl"></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner -->
+        <section>
+            <h1 class="sr-only">Skincare Designed to Work Together</h1>
+            <div class="w-full">
+                <img src="assets/images/banner11.webp" alt="Hero Banner"
+                    class="w-full h-400 xl:h-600 object-cover object-left">
+            </div>
+        </section>
+
+        <!-- Submit review -->
+        <section class="py-100 text-center">
+            <div class="container max-w-1100">
+                <form class="space-y-24 xl:space-y-48">
+                    <div class="space-y-16">
+                        <h2 class="text-36">
+                            Share Your Routine Experience
+                        </h2>
+                        <p class="text-gray-700 font-light">
+                            Your experience can help someone else make better skincare decisions. <br> If you’ve been
+                            using
+                            Ellitee™, we’d love to hear how your skin feels over time.
+                        </p>
+                    </div>
+                    <textarea name="add_review" id="add_review" placeholder="Write your review here..."
+                        class="bg-slate-50 p-24 rounded-3xl shadow-1 min-h-180 w-full"></textarea>
+                    <button class="btn style_1 mx-auto">
+                        <span>Submit Your Review</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12H5" stroke="white" stroke-width="1.1" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M14 17L19 12" stroke="white" stroke-width="1.1" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M14 7L19 12" stroke="white" stroke-width="1.1" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </form>
             </div>
         </section>
 

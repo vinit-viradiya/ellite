@@ -71,7 +71,7 @@ html {
 
     --transition: all 0.3s ease-in-out;
 
-    --shadow-1: 0 2px 2px 0 rgba(0, 0, 0, .15);
+    --shadow-1: 0 1px 2px 0 rgba(10, 13, 18, .05);
 
     --mask-1: linear-gradient(90deg,rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
 
@@ -210,7 +210,7 @@ html {
 }
 
 .iphone-mock-up{
-    mask-image: url(../images/iphone-mask.png);
+    mask-image: url(../images/iphone-mask.webp);
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
