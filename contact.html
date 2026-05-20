@@ -386,494 +386,133 @@
         <section>
             <h1 class="sr-only">Skincare Designed to Work Together</h1>
             <a href="#" class="block w-full">
-                <img src="assets/images/banner12.webp" alt="Hero Banner" class="w-full" fetchpriority="high">
+                <img src="assets/images/banner14.webp" alt="Hero Banner" class="w-full" fetchpriority="high">
             </a>
         </section>
 
-        <!-- How we help -->
-        <section class="py-50">
-            <div class="container text-center">
-                <div class="grid grid-cols-12 items-center gap-32">
-                    <div class="col-span-12 lg:col-span-5 xl:col-span-6">
-                        <img src="assets/images/model-2.webp" alt="" class="w-1/2 lg:size-full object-contain mx-auto">
-                    </div>
-                    <div class="col-span-12 lg:col-span-7 xl:col-span-6 space-y-24">
-                        <div class="space-y-16">
-                            <h2 class="text-36">
-                                Skincare Became Too Complicated.
-                            </h2>
-                            <p class="not-xl:text-sm font-light text-gray-700">
-                                Too many people are stuck in cycles of over-exfoliation, irritation, and trend-driven
-                                routines. Ellitee™ was created to simplify skincare through barrier-respecting routines
-                                designed for everyday consistency.
-                            </p>
-                        </div>
-                        <div class="grid sm:grid-cols-3 gap-8 xl:gap-20 text-gray-700 not-xl:text-sm">
-                            <div class="bg-slate-50 rounded-2xl p-12 space-y-6 xl:space-y-12">
-                                <img src="assets/icons/check.svg" alt="" class="w-26 xl:w-32 mx-auto">
-                                <p class="max-w-150 mx-auto">
-                                    No unnecessary complexity
-                                </p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-12 space-y-6 xl:space-y-12">
-                                <img src="assets/icons/check.svg" alt="" class="w-26 xl:w-32 mx-auto">
-                                <p class="max-w-150 mx-auto">
-                                    Balanced formulations
-                                </p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-12 space-y-6 xl:space-y-12">
-                                <img src="assets/icons/check.svg" alt="" class="w-26 xl:w-32 mx-auto">
-                                <p class="max-w-150 mx-auto">
-                                    Built for long-term skin health
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How to apply -->
-        <section>
-            <div class="container">
-                <section class="grid grid-cols-12 gap-24 xl:gap-48 items-center">
-                    <div class="col-span-12 lg:col-span-7 flex flex-col gap-48">
-                        <h2 class="text-36">
-                            How Ellitee™ Approaches Skin Health
-                        </h2>
-                        <div x-data="accordionSlider()" x-init="start()" class="space-y-4">
-                            <div class="pb-16">
-                                <button @mouseenter="setActive(0)"
-                                    class="text-left text-28 transition-colors duration-300"
-                                    :class="active !== 0 && 'text-gray-500'">
-                                    01 Cleanse
-                                </button>
-                                <div class="overflow-hidden transition-all duration-500 ease-in-out"
-                                    :style="active === 0 ? `height:${$refs.content0.scrollHeight}px` : 'height:0px'">
-                                    <div x-ref="content0" class="pt-16 text-gray-700">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
-                                        veritatis.
-                                    </div>
-                                </div>
-                                <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full">
-                                    <div class="progress border-b border-black transition-all duration-100"
-                                        :style="`width:${active === 0 ? progress + '%' : '0%'}`"></div>
-                                </div>
-                            </div>
-                            <div class="pb-16">
-                                <button @mouseenter="setActive(1)"
-                                    class="text-left text-28 transition-colors duration-300"
-                                    :class="active !== 1 && 'text-gray-500'">
-                                    02 Treat
-                                </button>
-                                <div class="overflow-hidden transition-all duration-500 ease-in-out"
-                                    :style="active === 1 ? `height:${$refs.content1.scrollHeight}px` : 'height:0px'">
-                                    <div x-ref="content1" class="pt-16 text-gray-700">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid
-                                        doloremque voluptate esse culpa ipsam optio minus cupiditate, eveniet
-                                        quidem vel!
-                                    </div>
-                                </div>
-                                <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full">
-                                    <div class="progress border-b border-black transition-all duration-100"
-                                        :style="`width:${active === 1 ? progress + '%' : '0%'}`"></div>
-                                </div>
-                            </div>
-                            <div class="pb-16">
-                                <button @mouseenter="setActive(2)"
-                                    class="text-left text-28 transition-colors duration-300"
-                                    :class="active !== 2 && 'text-gray-500'">
-                                    03 Apply CalmGel
-                                </button>
-                                <div class="overflow-hidden transition-all duration-500 ease-in-out"
-                                    :style="active === 2 ? `height:${$refs.content2.scrollHeight}px` : 'height:0px'">
-                                    <div x-ref="content2" class="pt-16 text-gray-700">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
-                                        voluptatem vitae, fuga laborum iure velit suscipit, eius ab, odio nam
-                                        tempore dolorem dolores repellat repudiandae? In nesciunt eius nobis
-                                        veniam.
-                                    </div>
-                                </div>
-                                <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full">
-                                    <div class="progress border-b border-black transition-all duration-100"
-                                        :style="`width:${active === 2 ? progress + '%' : '0%'}`"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-5 not-lg:hidden">
-                        <div class="image">
-                            <img src="assets/images/model3.webp" alt="How to Apply">
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </section>
-
-        <!-- How we help -->
-        <section class="py-50 pr-[calc((100vw-1740px)/2)]">
-            <div class="text-center not-lg:pl-gutter pr-gutter">
-                <div class="grid grid-cols-12 items-center gap-32">
-                    <div class="col-span-12 lg:col-span-5 xl:col-span-6">
-                        <img src="assets/images/combo.webp" alt="" class="w-1/2 lg:size-full object-contain mx-auto">
-                    </div>
-                    <div class="col-span-12 lg:col-span-7 xl:col-span-6 space-y-20 xl:space-y-40">
-                        <div class="space-y-16">
-                            <h2 class="text-36">
-                                Healthy skin isn’t rushed. It’s built.
-                            </h2>
-                            <p class="not-xl:text-sm font-light text-gray-700 max-w-565 mx-auto">
-                                We believe skin improves when it’s treated with patience, consistency, and respect for
-                                its natural barrier
-                            </p>
-                        </div>
-                        <div class="grid sm:grid-cols-3 gap-8 xl:gap-20 text-gray-700 not-xl:text-sm">
-                            <div class="bg-slate-50 rounded-2xl p-12 space-y-6 xl:space-y-12">
-                                <img src="assets/icons/check.svg" alt="" class="w-26 xl:w-32 mx-auto">
-                                <p class="max-w-150 mx-auto">
-                                    No unnecessary complexity
-                                </p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-12 space-y-6 xl:space-y-12">
-                                <img src="assets/icons/check.svg" alt="" class="w-26 xl:w-32 mx-auto">
-                                <p class="max-w-150 mx-auto">
-                                    Balanced formulations
-                                </p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-12 space-y-6 xl:space-y-12">
-                                <img src="assets/icons/check.svg" alt="" class="w-26 xl:w-32 mx-auto">
-                                <p class="max-w-150 mx-auto">
-                                    Built for long-term skin health
-                                </p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 font-light not-xl:text-sm">
-                            Our approach is inspired by dermatology-led research and the refined, skin-first principles
-                            of Korean skincare adapted for Indian skin and climate.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- What Makes Ellitee Different -->
+        <!-- Contact form -->
         <section class="py-100">
             <div class="container">
-                <h2 class="text-36 mb-8 xl:mb-16">
-                    What Makes Ellitee Different
-                </h2>
-                <p class="text-gray-700 font-light mb-24 xl:mb-48">
-                    Thoughtful skincare designed around clarity, balance, and routines that support real skin over time.
-                </p>
-                <div class="grid grid-cols-2 2xl:grid-cols-4 2xl:text-center gap-20 4xl:gap-40">
-                    <div
-                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
-                        <div class="bg-slate-50 p-35 lg:p-48 flex justify-center rounded-2xl shrink-0">
-                            <img src="assets/icons/biotech.svg" alt="" class="w-100">
-                        </div>
-                        <div class="flex flex-col gap-8 4xl:gap-16">
-                            <h3 class="text-20 text-gray-950">
-                                Biotech
-                            </h3>
-                            <p class="not-sm:text-14 font-light text-gray-700">
-                                Science-driven, sustainable formulation
+                <div class="grid lg:grid-cols-2 gap-80">
+                    <form class="space-y-40">
+                        <div class="space-y-16">
+                            <h2 class="text-36">
+                                Tell Us What You Need Help With
+                            </h2>
+                            <p class="font-light text-gray-700">
+                                Our team reviews every inquiry carefully to help guide your skincare journey.
                             </p>
                         </div>
-                    </div>
-                    <div
-                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
-                        <div class="bg-slate-50 p-35 lg:p-48 flex justify-center rounded-2xl shrink-0">
-                            <img src="assets/icons/transparent.svg" alt="" class="w-100">
-                        </div>
-                        <div class="flex flex-col gap-8 4xl:gap-16">
-                            <h3 class="text-20 text-gray-950">
-                                Transparent
-                            </h3>
-                            <p class="not-sm:text-14 font-light text-gray-700">
-                                Ethical, traceable, and trustworthy
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
-                        <div class="bg-slate-50 p-35 lg:p-48 flex justify-center rounded-2xl shrink-0">
-                            <img src="assets/icons/personalize.svg" alt="" class="w-100">
-                        </div>
-                        <div class="flex flex-col gap-8 4xl:gap-16">
-                            <h3 class="text-20 text-gray-950">
-                                Personalized
-                            </h3>
-                            <p class="not-sm:text-14 font-light text-gray-700">
-                                AI-powered routines for individual skin
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="p-0 3xl:p-48 flex not-md:flex-col 2xl:flex-col gap-24 3xl:gap-48 md:items-center 2xl:items-stretch">
-                        <div class="bg-slate-50 p-35 lg:p-48 flex justify-center rounded-2xl shrink-0">
-                            <img src="assets/icons/regenerative.svg" alt="" class="w-100">
-                        </div>
-                        <div class="flex flex-col gap-8 4xl:gap-16">
-                            <h3 class="text-20 text-gray-950">
-                                Regenerative
-                            </h3>
-                            <p class="not-sm:text-14 font-light text-gray-700">
-                                Signals deep, cellular renewal
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Marquee -->
-        <section class="py-12 xl:py-24 bg-slate-50">
-            <div class="marquee_wrapper">
-                <div class="marquee">
-                    <div class="marquee_item">
-                        <img src="assets/icons/chemical-free.svg" alt="">
-                        <span>Paraben & Sulphate Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/plant-based.svg" alt="">
-                        <span>Plant Based Ingredients</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/tested.svg" alt="">
-                        <span>Clinically Tested</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/vegan.svg" alt="">
-                        <span>100% Vegan</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/cruelty-free.svg" alt="">
-                        <span>Cruelty-Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/chemical-free.svg" alt="">
-                        <span>Paraben & Sulphate Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/plant-based.svg" alt="">
-                        <span>Plant Based Ingredients</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/tested.svg" alt="">
-                        <span>Clinically Tested</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/vegan.svg" alt="">
-                        <span>100% Vegan</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/cruelty-free.svg" alt="">
-                        <span>Cruelty-Free</span>
-                    </div>
-                </div>
-                <div class="marquee">
-                    <div class="marquee_item">
-                        <img src="assets/icons/chemical-free.svg" alt="">
-                        <span>Paraben & Sulphate Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/plant-based.svg" alt="">
-                        <span>Plant Based Ingredients</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/tested.svg" alt="">
-                        <span>Clinically Tested</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/vegan.svg" alt="">
-                        <span>100% Vegan</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/cruelty-free.svg" alt="">
-                        <span>Cruelty-Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/chemical-free.svg" alt="">
-                        <span>Paraben & Sulphate Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/plant-based.svg" alt="">
-                        <span>Plant Based Ingredients</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/tested.svg" alt="">
-                        <span>Clinically Tested</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/vegan.svg" alt="">
-                        <span>100% Vegan</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/cruelty-free.svg" alt="">
-                        <span>Cruelty-Free</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Find routine -->
-        <section class="pt-55 pb-100 3xl:pl-[calc((100vw-1640px)/2)] pl-gutter">
-            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-40">
-                <div class="space-y-24">
-                    <h2 class="text-36 max-w-360">
-                        Who This Routine Is Designed For
-                    </h2>
-                    <p class="text-gray-700 font-light max-w-580">
-                        Built for acne-prone and imbalance-prone skin looking for a lightweight, consistent daily
-                        routine.
-                    </p>
-                    <div class="btn style_1">
-                        <span>Find Your Routine</span>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 12H5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M14 17L19 12" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M14 7L19 12" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </div>
-                <div>
-                    <div class="swiper solution_swiper text-white">
-                        <div class="swiper-wrapper pb-40 xl:pb-80">
-                            <div class="swiper-slide">
-                                <div
-                                    class="flex items-end aspect-[.78/1] z-1 relative rounded-2xl overflow-hidden bg-brand-700">
-                                    <div class="absolute inset-0 -z-1">
-                                        <img src="assets/images/solution-1.webp" alt="" class="size-full object-cover">
-                                    </div>
-                                    <div class="flex p-16 gap-24 justify-between items-center w-full">
-                                        <h2>Pegmentation 1</h2>
-                                        <a href="javascript:;" aria-label="Pegmentation 1 details">
-                                            <svg class="shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M19 12H5" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14 17L19 12" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14 7L19 12" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <div class="absolute inset-0 -z-1 bg-linear-0 from-black/30 to-transparent to-25%">
-                                    </div>
-                                </div>
+                        <div class="space-y-32">
+                            <div class="input_group">
+                                <label for="name" class="sr-only">Full Name</label>
+                                <input type="text" name="name" id="name" placeholder="Full Name"
+                                    class="placeholder:text-gray-950 border-b border-heading/20 w-full pb-20 outline-none focus:border-gray-950">
+                                <div class="text-red-500 text-xs mt-4">This feild is required !</div>
                             </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="flex items-end aspect-[.78/1] z-1 relative rounded-2xl overflow-hidden bg-brand-700">
-                                    <div class="absolute inset-0 -z-1">
-                                        <img src="assets/images/solution-1.webp" alt="" class="size-full object-cover">
-                                    </div>
-                                    <div class="flex p-16 gap-24 justify-between items-center w-full">
-                                        <h2>Pegmentation 1</h2>
-                                        <a href="javascript:;" aria-label="Pegmentation 1 details">
-                                            <svg class="shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M19 12H5" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14 17L19 12" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14 7L19 12" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <div class="absolute inset-0 -z-1 bg-linear-0 from-black/30 to-transparent to-25%">
-                                    </div>
-                                </div>
+                            <div class="input_group">
+                                <label for="email" class="sr-only">Email Address*</label>
+                                <input type="text" name="email" id="email" placeholder="Email Address*"
+                                    class="placeholder:text-gray-950 border-b border-heading/20 w-full pb-20 outline-none focus:border-gray-950"
+                                    required>
                             </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="flex items-end aspect-[.78/1] z-1 relative rounded-2xl overflow-hidden bg-brand-700">
-                                    <div class="absolute inset-0 -z-1">
-                                        <img src="assets/images/solution-1.webp" alt="" class="size-full object-cover">
-                                    </div>
-                                    <div class="flex p-16 gap-24 justify-between items-center w-full">
-                                        <h2>Pegmentation 1</h2>
-                                        <a href="javascript:;" aria-label="Pegmentation 1 details">
-                                            <svg class="shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M19 12H5" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14 17L19 12" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14 7L19 12" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <div class="absolute inset-0 -z-1 bg-linear-0 from-black/30 to-transparent to-25%">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="flex items-end aspect-[.78/1] z-1 relative rounded-2xl overflow-hidden bg-brand-700">
-                                    <div class="absolute inset-0 -z-1">
-                                        <img src="assets/images/solution-1.webp" alt="" class="size-full object-cover">
-                                    </div>
-                                    <div class="flex p-16 gap-24 justify-between items-center w-full">
-                                        <h2>Pegmentation 4</h2>
-                                        <a href="javascript:;" aria-label="Pegmentation 4 details">
-                                            <svg class="shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M19 12H5" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14 17L19 12" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14 7L19 12" stroke="white" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <div class="absolute inset-0 -z-1 bg-linear-0 from-black/30 to-transparent to-25%">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex gap-48 items-center justify-between 3xl:pr-[calc((100vw-1640px)/2)] pr-gutter">
-                            <button class="solution_swiper_prev p-12 rounded-full bg-zinc-50">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            <div class="input_group relative">
+                                <label for="help" class="sr-only">What do you need help with?</label>
+                                <select name="help" id="help"
+                                    class="border-b border-heading/20 w-full pb-20 outline-none focus:border-gray-950">
+                                    <option value="-1">What do you need help with?</option>
+                                    <option value="1">Problem 1</option>
+                                    <option value="2">Problem 2</option>
+                                    <option value="3">Problem 3</option>
+                                </select>
+                                <svg class="absolute top-1/2 -translate-y-1/2 right-0 -mt-10" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    <path d="M8 10L12 14L16 10" stroke="#323232" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="input_group">
+                                <label for="message" class="sr-only">Tell us more...</label>
+                                <textarea type="text" name="message" id="message" placeholder="Tell us more..."
+                                    class="placeholder:text-gray-950 border-b border-heading/20 w-full pb-20 outline-none focus:border-gray-950"></textarea>
+                            </div>
+                        </div>
+                        <button class="btn style_1">
+                            <span>Send Message</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 17L19 12" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 7L19 12" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="space-y-40 text-center">
+                        <div class="space-y-8 xl:space-y-16">
+                            <h2 class="text-36">
+                                Contact Details
+                            </h2>
+                            <p class="font-light text-gray-700">
+                                For product questions, skincare guidance, and general support.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-20">
+                            <a href="tel:+91 9510514689"
+                                class="bg-slate-50 rounded-2xl p-16 flex flex-col items-center gap-16">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.053 27.613C23.3972 27.7711 23.785 27.8072 24.1525 27.7154C24.52 27.6236 24.8452 27.4094 25.0747 27.108L25.6663 26.333C25.9768 25.919 26.3794 25.583 26.8423 25.3516C27.3051 25.1202 27.8155 24.9997 28.333 24.9997H33.333C34.2171 24.9997 35.0649 25.3509 35.69 25.976C36.3152 26.6011 36.6663 27.449 36.6663 28.333V33.333C36.6663 34.2171 36.3152 35.0649 35.69 35.69C35.0649 36.3152 34.2171 36.6663 33.333 36.6663C25.3765 36.6663 17.7459 33.5056 12.1198 27.8795C6.49371 22.2535 3.33301 14.6228 3.33301 6.66634C3.33301 5.78229 3.6842 4.93444 4.30932 4.30932C4.93444 3.6842 5.78229 3.33301 6.66634 3.33301H11.6663C12.5504 3.33301 13.3982 3.6842 14.0234 4.30932C14.6485 4.93444 14.9997 5.78229 14.9997 6.66634V11.6663C14.9997 12.1838 14.8792 12.6942 14.6478 13.1571C14.4163 13.6199 14.0803 14.0225 13.6663 14.333L12.8863 14.918C12.5804 15.1516 12.3647 15.484 12.276 15.8586C12.1873 16.2332 12.231 16.627 12.3997 16.973C14.6775 21.5995 18.4237 25.341 23.053 27.613Z"
+                                        stroke="#0E0E0E" stroke-width="1.5" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-                            </button>
-                            <button class="solution_swiper_next p-12 rounded-full bg-zinc-50">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                <span>+91 9510514689</span>
+                            </a>
+                            <a href="mailto:contact@ellitee.com"
+                                class="bg-slate-50 rounded-2xl p-16 flex flex-col items-center gap-16">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    <path
+                                        d="M36.6663 11.667L21.6813 21.212C21.1728 21.5073 20.5952 21.6629 20.0072 21.6629C19.4191 21.6629 18.8415 21.5073 18.333 21.212L3.33301 11.667M6.66634 6.66699H33.333C35.174 6.66699 36.6663 8.15938 36.6663 10.0003V30.0003C36.6663 31.8413 35.174 33.3337 33.333 33.3337H6.66634C4.82539 33.3337 3.33301 31.8413 3.33301 30.0003V10.0003C3.33301 8.15938 4.82539 6.66699 6.66634 6.66699Z"
+                                        stroke="#0E0E0E" stroke-width="1.5" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-                            </button>
+                                <span>contact@ellitee.com</span>
+                            </a>
+                            <a href="https://www.google.com/maps" target="_blank"
+                                class="col-span-2 bg-slate-50 rounded-2xl p-16 flex flex-col items-center gap-16">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M33.3337 16.6663C33.3337 24.988 24.102 33.6547 21.002 36.3313C20.7132 36.5485 20.3617 36.6659 20.0003 36.6659C19.639 36.6659 19.2875 36.5485 18.9987 36.3313C15.8987 33.6547 6.66699 24.988 6.66699 16.6663C6.66699 13.1301 8.07175 9.73874 10.5722 7.23825C13.0727 4.73777 16.4641 3.33301 20.0003 3.33301C23.5365 3.33301 26.9279 4.73777 29.4284 7.23825C31.9289 9.73874 33.3337 13.1301 33.3337 16.6663Z"
+                                        stroke="#0E0E0E" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M20.0003 21.6663C22.7617 21.6663 25.0003 19.4278 25.0003 16.6663C25.0003 13.9049 22.7617 11.6663 20.0003 11.6663C17.2389 11.6663 15.0003 13.9049 15.0003 16.6663C15.0003 19.4278 17.2389 21.6663 20.0003 21.6663Z"
+                                        stroke="#0E0E0E" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span>
+                                    Ellitee LLP <br>
+                                    SH-403 Shiven Shoppers, Adajan DN, Surat - 395009, Gujarat, India
+                                </span>
+                            </a>
+                        </div>
+                        <div class="flex items-center justify-between flex-wrap text-28">
+                            <span>Follow On</span>
+                            <div class="flex gap-20 items-center">
+                                <a href="https://www.facebook.com/" target="_blank"><img src="assets/icons/facebook.svg"
+                                        alt=""></a>
+                                <a href="https://www.instagram.com/" target="_blank"><img
+                                        src="assets/icons/instagram.svg" alt=""></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Hero sec -->
-        <section>
-            <h1 class="sr-only">Skincare Designed to Work Together</h1>
-            <a href="#" class="block w-full">
-                <img src="assets/images/banner13.webp" alt="Hero Banner" class="w-full" fetchpriority="high">
-            </a>
         </section>
 
         <!-- FAQ -->
@@ -977,11 +616,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Last sec -->
-        <section class="bg-slate-50 py-40 text-40 text-center px-gutter">
-            <h2>CalmGel Balanced hydration without compromise.</h2>
         </section>
 
     </main>

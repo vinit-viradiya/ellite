@@ -73,7 +73,7 @@ html {
 
     --shadow-1: 0 1px 2px 0 rgba(10, 13, 18, .05);
 
-    --mask-1: linear-gradient(90deg,rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    --mask-1: linear-gradient(90deg, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
 
 }
 
@@ -157,20 +157,48 @@ html {
         @apply cursor-pointer
     }
 
-    .tab_btns button{
+    .tab_btns button {
         @apply pb-12 relative z-1 text-gray-500 text-20
     }
 
-    .tab_btns button[data-active="true"]{
+    .tab_btns button[data-active="true"] {
         @apply text-gray-950
     }
 
-    .tab_btns button::after{
+    .tab_btns button::after {
         @apply content-[''] absolute inset-0 -z-1 border-b-2 right-full transition-all duration-500
     }
 
-    .tab_btns button[data-active="true"]::after{
+    .tab_btns button[data-active="true"]::after {
         @apply right-0
+    }
+
+    select,
+    ::picker(select) {
+        appearance: base-select;
+    }
+
+    select::picker-icon {
+        display: none;
+    }
+
+    option {
+        padding: 6px 10px;
+    }
+
+    option:hover {
+        background-color: var(--color-slate-100);
+    }
+
+    option::checkmark {
+        display: none;
+    }
+
+    ::picker(select) {
+        margin-top: 4px;
+        padding: 6px;
+        background-color: var(--color-slate-50);
+        border-color: var(--color-slate-300);
     }
 }
 
@@ -209,14 +237,14 @@ html {
     width: 48px;
 }
 
-.iphone-mock-up{
+.iphone-mock-up {
     mask-image: url(../images/iphone-mask.webp);
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
 }
 
-.iphone-mock-up::after{
+.iphone-mock-up::after {
     content: '';
     position: absolute;
     inset: 0;
