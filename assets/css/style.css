@@ -434,6 +434,9 @@
   .mt-32 {
     margin-top: calc(var(--spacing) * 32);
   }
+  .mt-auto {
+    margin-top: auto;
+  }
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
   }
@@ -613,6 +616,9 @@
   }
   .max-w-430 {
     max-width: calc(var(--spacing) * 430);
+  }
+  .max-w-450 {
+    max-width: calc(var(--spacing) * 450);
   }
   .max-w-500 {
     max-width: calc(var(--spacing) * 500);
@@ -1617,6 +1623,11 @@
   .md\:col-span-5 {
     @media (width >= 768px) {
       grid-column: span 5 / span 5;
+    }
+  }
+  .md\:col-span-6 {
+    @media (width >= 768px) {
+      grid-column: span 6 / span 6;
     }
   }
   .md\:hidden {
