@@ -391,9 +391,19 @@
         </section>
         <section class="py-100" x-data="{tab: 'tab1'}">
             <div class="container">
-                <div class="grid lg:grid-cols-2 gap-40">
-                    <div>
-                        <div x-data="{ open: [1,2] }" class="faq_tab_btns flex flex-col gap-20 xl:gap-40 text-28 xl:text-36 sticky top-130">
+                <div class="grid lg:grid-cols-2 gap-x-40" x-data="{ open: [0] }">
+                    <div @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
+                        class="lg:hidden text-28 mb-40 flex items-center justify-between">
+                        <span>Select Category</span>
+                        <svg class="transition-(--transition)" :class="open.includes(1) && 'rotate-180'" width="36"
+                            height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 10L12 14L16 10" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div x-show="open.includes(1)" x-collapse.duration.400ms>
+                        <div x-ref="content"
+                            class="faq_tab_btns flex flex-col gap-20 xl:gap-40 text-28 xl:text-36 sticky top-130 pb-40">
                             <button @click="tab = 'tab1'" :class="{ 'text-gray-950': tab === 'tab1' }">
                                 About Ellitee™
                             </button>
@@ -423,29 +433,55 @@
                             </button>
                         </div>
                     </div>
+                    <div class="not-lg:hidden faq_tab_btns flex flex-col gap-20 xl:gap-40 text-28 xl:text-36 sticky top-130 pb-40">
+                        <button @click="tab = 'tab1'" :class="{ 'text-gray-950': tab === 'tab1' }">
+                            About Ellitee™
+                        </button>
+                        <button @click="tab = 'tab2'" :class="{ 'text-gray-950': tab === 'tab2' }">
+                            Products & Formulations
+                        </button>
+                        <button @click="tab = 'tab3'" :class="{ 'text-gray-950': tab === 'tab3' }">
+                            Ingredients & Actives
+                        </button>
+                        <button @click="tab = 'tab4'" :class="{ 'text-gray-950': tab === 'tab4' }">
+                            Routines & How to Use
+                        </button>
+                        <button @click="tab = 'tab5'" :class="{ 'text-gray-950': tab === 'tab5' }">
+                            Skin Insight & Assessment
+                        </button>
+                        <button @click="tab = 'tab6'" :class="{ 'text-gray-950': tab === 'tab6' }">
+                            Results, Expectations & Safety
+                        </button>
+                        <button @click="tab = 'tab7'" :class="{ 'text-gray-950': tab === 'tab7' }">
+                            Orders, Shipping & Returns
+                        </button>
+                        <button @click="tab = 'tab8'" :class="{ 'text-gray-950': tab === 'tab8' }">
+                            Account & Website
+                        </button>
+                        <button @click="tab = 'tab9'" :class="{ 'text-gray-950': tab === 'tab9' }">
+                            Support
+                        </button>
+                    </div>
                     <div>
                         <div x-data="{ open: [1,2] }" x-show="tab === 'tab1'">
-                            <div class="flex flex-col gap-40">
+                            <div class="flex flex-col xl:gap-16">
                                 <div class="pb-24 mb-24 border-b border-gray-200 last:border-none last:pb-0 last:mb-0">
-                                    <button
-                                        @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
+                                    <button @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
                                         class="flex items-center justify-between w-full text-left text-20">
                                         <span>
                                             Is Ellitee Skin Insights a medical diagnosis?
                                         </span>
-
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5 11.5449H19" stroke="black" stroke-width="2"
                                                 stroke-linecap="round" />
-
                                             <path d="M12 4.54492V18.5449" stroke="black" stroke-width="2"
                                                 stroke-linecap="round"
                                                 class="origin-center transition-transform duration-300"
-                                                :class="open ? 'rotate-90' : ''" />
+                                                :class="{ 'rotate-90': open.includes(1) }" />
                                         </svg>
                                     </button>
-                                    <div x-show="open.includes(1)" x-collapse.duration.400ms >
+                                    <div x-show="open.includes(1)" x-collapse.duration.400ms>
                                         <div x-ref="content" class="pt-16 text-gray-700">
                                             No. Ellitee Skin Insights is designed to guide skincare
                                             routines based on visible skin patterns. It does not
@@ -454,25 +490,22 @@
                                     </div>
                                 </div>
                                 <div class="pb-24 mb-24 border-b border-gray-200 last:border-none last:pb-0 last:mb-0">
-                                    <button
-                                        @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
+                                    <button @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
                                         class="flex items-center justify-between w-full text-left text-20">
                                         <span>
                                             Is Ellitee Skin Insights a medical diagnosis?
                                         </span>
-
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5 11.5449H19" stroke="black" stroke-width="2"
                                                 stroke-linecap="round" />
-
                                             <path d="M12 4.54492V18.5449" stroke="black" stroke-width="2"
                                                 stroke-linecap="round"
                                                 class="origin-center transition-transform duration-300"
-                                                :class="open ? 'rotate-90' : ''" />
+                                                :class="{ 'rotate-90': open.includes(2) }" />
                                         </svg>
                                     </button>
-                                    <div x-show="open.includes(2)" x-collapse.duration.400ms >
+                                    <div x-show="open.includes(2)" x-collapse.duration.400ms>
                                         <div x-ref="content" class="pt-16 text-gray-700">
                                             No. Ellitee Skin Insights is designed to guide skincare
                                             routines based on visible skin patterns. It does not
@@ -485,8 +518,7 @@
                         <div x-data="{ open: [1,2] }" x-show="tab === 'tab2'">
                             <div class="flex flex-col gap-40">
                                 <div class="pb-24 mb-24 border-b border-gray-200 last:border-none last:pb-0 last:mb-0">
-                                    <button
-                                        @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
+                                    <button @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
                                         class="flex items-center justify-between w-full text-left text-20">
                                         <span>
                                             Is Ellitee Skin Insights a medical diagnosis?
@@ -500,10 +532,10 @@
                                             <path d="M12 4.54492V18.5449" stroke="black" stroke-width="2"
                                                 stroke-linecap="round"
                                                 class="origin-center transition-transform duration-300"
-                                                :class="open ? 'rotate-90' : ''" />
+                                                :class="{ 'rotate-90': open.includes(1) }" />
                                         </svg>
                                     </button>
-                                    <div x-show="open.includes(1)" x-collapse.duration.400ms >
+                                    <div x-show="open.includes(1)" x-collapse.duration.400ms>
                                         <div x-ref="content" class="pt-16 text-gray-700">
                                             No. Ellitee Skin Insights is designed to guide skincare
                                             routines based on visible skin patterns. It does not
@@ -512,8 +544,7 @@
                                     </div>
                                 </div>
                                 <div class="pb-24 mb-24 border-b border-gray-200 last:border-none last:pb-0 last:mb-0">
-                                    <button
-                                        @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
+                                    <button @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
                                         class="flex items-center justify-between w-full text-left text-20">
                                         <span>
                                             Is Ellitee Skin Insights a medical diagnosis?
@@ -527,10 +558,10 @@
                                             <path d="M12 4.54492V18.5449" stroke="black" stroke-width="2"
                                                 stroke-linecap="round"
                                                 class="origin-center transition-transform duration-300"
-                                                :class="open ? 'rotate-90' : ''" />
+                                                :class="{ 'rotate-90': open.includes(1) }" />
                                         </svg>
                                     </button>
-                                    <div x-show="open.includes(2)" x-collapse.duration.400ms >
+                                    <div x-show="open.includes(2)" x-collapse.duration.400ms>
                                         <div x-ref="content" class="pt-16 text-gray-700">
                                             No.
                                         </div>
