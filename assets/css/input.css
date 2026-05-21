@@ -212,6 +212,35 @@ html {
         background-color: var(--color-slate-50);
         border-color: var(--color-slate-300);
     }
+
+    .free_text .update_date{
+        @apply text-28 mb-20
+    }
+
+    .free_text p,
+    .free_text .ul_wrapper{
+        @apply font-light text-gray-700
+    }
+
+    .free_text .ul_wrapper{
+        @apply flex flex-col gap-12
+    }
+
+    .free_text ul{
+        @apply list-disc pl-26 space-y-6 marker:text-xs
+    }
+
+    .free_text h2{
+        @apply text-36 mb-20 mt-56
+    }
+
+    .free_text :is(b,strong){
+        @apply font-bold text-heading
+    }
+
+    .free_text a{
+        @apply text-heading underline font-medium
+    }
 }
 
 .hero_swiper .swiper-pagination-bullet {
