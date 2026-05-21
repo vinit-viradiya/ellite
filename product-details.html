@@ -389,13 +389,13 @@
             <div class="container">
                 <div class="flex gap-32">
                     <div class="w-full grow grid grid-cols-1 gap-80">
-
                         <!-- Section 1 -->
                         <section class="grid grid-cols-1 md:grid-cols-2 gap-y-32 items-start">
-                            <div>
-                                <div class="sticky top-130 space-y-32 md:pr-32">
-                                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                                        class="swiper product_imgs_swiper2 cursor-grab">
+                            <div x-data="popup">
+                                <div class="sticky top-130 space-y-32 md:pr-32 cursor-pointer">
+                                    <div @click="show"
+                                        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                        class="swiper product_imgs_swiper2">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="aspect-square md:aspect-[1.08/1] relative">
@@ -436,7 +436,7 @@
                                         <div class="swiper-button-next"></div>
                                         <div class="swiper-button-prev"></div>
                                     </div>
-                                    <div thumbsSlider="" class="swiper product_imgs_swiper cursor-pointer">
+                                    <div class="swiper product_imgs_swiper">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="bg-slate-50 rounded-lg p-6">
@@ -499,6 +499,142 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 scale-95"
+                                    x-transition:enter-end="opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-200"
+                                    x-transition:leave-start="opacity-100 scale-100"
+                                    x-transition:leave-end="opacity-0 scale-95"
+                                    class="fixed z-99999 py-20 px-gutter grid place-items-center inset-0">
+                                    <div
+                                        class="relative max-w-576 space-y-32 cursor-pointer bg-white p-gutter rounded-xl shadow-lg grid grid-cols-1 max-h-full overflow-y-auto">
+                                        <div @click="show"
+                                            style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                            class="w-full swiper product_imgs_swiper2_zoomed cursor-zoom-in">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="aspect-square md:aspect-[1.08/1] relative swiper-zoom-container">
+                                                        <img fetchpriority="high" src="assets/images/product-img-2.webp"
+                                                            class="absolute inset-0 size-full object-contain"
+                                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="aspect-square md:aspect-[1.08/1] relative swiper-zoom-container">
+                                                        <img fetchpriority="high" src="assets/images/product-img-1.webp"
+                                                            class="absolute inset-0 size-full object-contain"
+                                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="aspect-square md:aspect-[1.08/1] relative swiper-zoom-container">
+                                                        <img fetchpriority="high" src="assets/images/product-img-2.webp"
+                                                            class="absolute inset-0 size-full object-contain"
+                                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="aspect-square md:aspect-[1.08/1] relative swiper-zoom-container">
+                                                        <img fetchpriority="high" src="assets/images/product-img-1.webp"
+                                                            class="absolute inset-0 size-full object-contain"
+                                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="aspect-square md:aspect-[1.08/1] relative swiper-zoom-container">
+                                                        <img fetchpriority="high" src="assets/images/product-img-2.webp"
+                                                            class="absolute inset-0 size-full object-contain"
+                                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                        <div class="w-full swiper product_imgs_swiper_zoomed m-0">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="bg-slate-50 rounded-lg p-6">
+                                                        <div
+                                                            class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                            <img fetchpriority="high"
+                                                                src="assets/images/product-img-2.webp"
+                                                                class="absolute size-full inset-0 object-contain"
+                                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="bg-slate-50 rounded-lg p-6">
+                                                        <div
+                                                            class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                            <img fetchpriority="high"
+                                                                src="assets/images/product-img-1.webp"
+                                                                class="absolute size-full inset-0 object-contain"
+                                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="bg-slate-50 rounded-lg p-6">
+                                                        <div
+                                                            class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                            <img fetchpriority="high"
+                                                                src="assets/images/product-img-2.webp"
+                                                                class="absolute size-full inset-0 object-contain"
+                                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="bg-slate-50 rounded-lg p-6">
+                                                        <div
+                                                            class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                            <img fetchpriority="high"
+                                                                src="assets/images/product-img-1.webp"
+                                                                class="absolute size-full inset-0 object-contain"
+                                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="bg-slate-50 rounded-lg p-6">
+                                                        <div
+                                                            class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                            <img fetchpriority="high"
+                                                                src="assets/images/product-img-2.webp"
+                                                                class="absolute size-full inset-0 object-contain"
+                                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="bg-slate-50 rounded-lg p-6">
+                                                        <div
+                                                            class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                            <img fetchpriority="high"
+                                                                src="assets/images/product-img-2.webp"
+                                                                class="absolute size-full inset-0 object-contain"
+                                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button @click="hide" aria-label="Close popup" class="absolute top-20 right-20">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-x-icon lucide-x">
+                                                <path d="M18 6 6 18" />
+                                                <path d="m6 6 12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div x-cloak x-show="open" x-transition.opacity @click="hide"
+                                        class="fixed inset-0 -z-1 bg-black/30 backdrop-blur-sm">
                                     </div>
                                 </div>
                             </div>

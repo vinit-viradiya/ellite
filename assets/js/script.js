@@ -306,6 +306,39 @@ if (document.querySelector('.product_imgs_swiper')) {
     });
 }
 
+// -------------------------------------------------------------
+// product_imgs_swiper_zoomed
+// -------------------------------------------------------------
+
+if (document.querySelector('.product_imgs_swiper_zoomed')) {
+    var swiper = new Swiper(".product_imgs_swiper_zoomed", {
+        loop: true,
+        spaceBetween: 12,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            576: {
+                slidesPerView: 5,
+            },
+            768: {
+                slidesPerView: 4,
+            },
+            992: {
+                slidesPerView: 5,
+            },
+        },
+    });
+    var swiper2 = new Swiper(".product_imgs_swiper2_zoomed", {
+        loop: true,
+        zoom: true,
+        spaceBetween: 12,
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+}
+
 
 // -------------------------------------------------------------
 // product_imgs_swiper
