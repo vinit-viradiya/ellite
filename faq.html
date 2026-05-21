@@ -382,570 +382,166 @@
     </header>
 
     <main>
-        <!-- Hero sec -->
-        <section>
-            <h1 class="sr-only">Skincare Designed to Work Together</h1>
-            <a href="#" class="block w-full">
-                <img src="assets/images/banner9.webp" alt="Hero Banner"
-                    class="w-full h-400 xl:h-600 object-cover object-right">
-            </a>
-        </section>
-
-        <!-- Marquee -->
-        <section class="py-12 xl:py-24 bg-slate-50">
-            <div class="marquee_wrapper">
-                <div class="marquee">
-                    <div class="marquee_item">
-                        <img src="assets/icons/chemical-free.svg" alt="">
-                        <span>Paraben & Sulphate Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/plant-based.svg" alt="">
-                        <span>Plant Based Ingredients</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/tested.svg" alt="">
-                        <span>Clinically Tested</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/vegan.svg" alt="">
-                        <span>100% Vegan</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/cruelty-free.svg" alt="">
-                        <span>Cruelty-Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/chemical-free.svg" alt="">
-                        <span>Paraben & Sulphate Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/plant-based.svg" alt="">
-                        <span>Plant Based Ingredients</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/tested.svg" alt="">
-                        <span>Clinically Tested</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/vegan.svg" alt="">
-                        <span>100% Vegan</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/cruelty-free.svg" alt="">
-                        <span>Cruelty-Free</span>
-                    </div>
-                </div>
-                <div class="marquee">
-                    <div class="marquee_item">
-                        <img src="assets/icons/chemical-free.svg" alt="">
-                        <span>Paraben & Sulphate Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/plant-based.svg" alt="">
-                        <span>Plant Based Ingredients</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/tested.svg" alt="">
-                        <span>Clinically Tested</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/vegan.svg" alt="">
-                        <span>100% Vegan</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/cruelty-free.svg" alt="">
-                        <span>Cruelty-Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/chemical-free.svg" alt="">
-                        <span>Paraben & Sulphate Free</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/plant-based.svg" alt="">
-                        <span>Plant Based Ingredients</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/tested.svg" alt="">
-                        <span>Clinically Tested</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/vegan.svg" alt="">
-                        <span>100% Vegan</span>
-                    </div>
-                    <div class="marquee_item">
-                        <img src="assets/icons/cruelty-free.svg" alt="">
-                        <span>Cruelty-Free</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How we help -->
-        <section class="py-100 space-y-48" x-data="tabs">
-            <div class="container text-center space-y-16">
-                <h2 class="text-36">
-                    Concerns We Help Identify
-                </h2>
-                <p class="text-gray-700 font-light">
-                    Visible patterns commonly linked to acne-prone and imbalanced skin.
-                </p>
-            </div>
-            <div class="container overflow-x-auto scrollbar-none mask-(--mask-1)">
-                <!-- Tabs -->
-                <div class="tab_btns flex flex-wrap gap-32 xl:gap-68 justify-center items-center min-w-max">
-                    <button @click="set('tab1')" :data-active="is('tab1')">
-                        Acne
-                    </button>
-                    <button @click="set('tab2')" :data-active="is('tab2')">
-                        Post-Acne Marks
-                    </button>
-                    <button @click="set('tab3')" :data-active="is('tab3')">
-                        Oil Balance
-                    </button>
-                    <button @click="set('tab4')" :data-active="is('tab4')">
-                        Redness
-                    </button>
-                    <button @click="set('tab5')" :data-active="is('tab5')">
-                        Uneven texture
-                    </button>
-                </div>
-            </div>
+        <section class="py-100 xl:py-165 bg-slate-50">
             <div class="container">
-                <!-- Panels -->
-                <div>
-                    <div x-show="is('tab1')" x-transition:enter="transition-all duration-500"
-                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
-                        <div class="grid lg:grid-cols-2 gap-40 3xl:gap-80">
-                            <div class="relative aspect-[1.7/1]">
-                                <img src="assets/images/ance-concern.webp" alt="Acne Concerns"
-                                    class="rounded-3xl size-full inset-0 object-cover">
-                            </div>
-                            <div class="space-y-12 xl:space-y-24">
-                                <h3 class="text-28">
-                                    Acne Concerns
-                                </h3>
-                                <p class="text-gray-700 font-light">
-                                    Breakouts can be linked to excess oil, congestion, irritation, and barrier
-                                    imbalance. Ellitee routines support clearer-looking skin without over drying.
-                                </p>
-                                <ul class="text-gray-700 font-light xl:space-y-12">
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Oil Balance</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Gentle Exfoliation</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Barrier Support</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Daily Use Friendly</span>
-                                    </li>
-                                </ul>
-                                <div class="flex gap-8 xl:gap-x-12 items-center flex-wrap">
-                                    <h4 class="mr-4 text-20">Recommended Products</h4>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        ClearGel
-                                    </span>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        CalmGel
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-show="is('tab2')" x-transition:enter="transition-all duration-500"
-                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
-                        <div class="grid lg:grid-cols-2 gap-40 3xl:gap-80">
-                            <div class="relative aspect-[1.7/1]">
-                                <img src="assets/images/ance-concern.webp" alt="Acne Concerns"
-                                    class="rounded-3xl size-full inset-0 object-cover">
-                            </div>
-                            <div class="space-y-12 xl:space-y-24">
-                                <h3 class="text-28">
-                                    Acne Concerns
-                                </h3>
-                                <p class="text-gray-700 font-light">
-                                    Breakouts can be linked to excess oil, congestion, irritation, and barrier
-                                    imbalance. Ellitee routines support clearer-looking skin without over drying.
-                                </p>
-                                <ul class="text-gray-700 font-light xl:space-y-12">
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Oil Balance</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Gentle Exfoliation</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Barrier Support</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Daily Use Friendly</span>
-                                    </li>
-                                </ul>
-                                <div class="flex gap-8 xl:gap-x-12 items-center flex-wrap">
-                                    <h4 class="mr-4 text-20">Recommended Products</h4>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        ClearGel
-                                    </span>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        CalmGel
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-show="is('tab3')" x-transition:enter="transition-all duration-500"
-                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
-                        <div class="grid lg:grid-cols-2 gap-40 3xl:gap-80">
-                            <div class="relative aspect-[1.7/1]">
-                                <img src="assets/images/ance-concern.webp" alt="Acne Concerns"
-                                    class="rounded-3xl size-full inset-0 object-cover">
-                            </div>
-                            <div class="space-y-12 xl:space-y-24">
-                                <h3 class="text-28">
-                                    Acne Concerns
-                                </h3>
-                                <p class="text-gray-700 font-light">
-                                    Breakouts can be linked to excess oil, congestion, irritation, and barrier
-                                    imbalance. Ellitee routines support clearer-looking skin without over drying.
-                                </p>
-                                <ul class="text-gray-700 font-light xl:space-y-12">
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Oil Balance</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Gentle Exfoliation</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Barrier Support</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Daily Use Friendly</span>
-                                    </li>
-                                </ul>
-                                <div class="flex gap-8 xl:gap-x-12 items-center flex-wrap">
-                                    <h4 class="mr-4 text-20">Recommended Products</h4>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        ClearGel
-                                    </span>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        CalmGel
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-show="is('tab4')" x-transition:enter="transition-all duration-500"
-                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
-                        <div class="grid lg:grid-cols-2 gap-40 3xl:gap-80">
-                            <div class="relative aspect-[1.7/1]">
-                                <img src="assets/images/ance-concern.webp" alt="Acne Concerns"
-                                    class="rounded-3xl size-full inset-0 object-cover">
-                            </div>
-                            <div class="space-y-12 xl:space-y-24">
-                                <h3 class="text-28">
-                                    Acne Concerns
-                                </h3>
-                                <p class="text-gray-700 font-light">
-                                    Breakouts can be linked to excess oil, congestion, irritation, and barrier
-                                    imbalance. Ellitee routines support clearer-looking skin without over drying.
-                                </p>
-                                <ul class="text-gray-700 font-light xl:space-y-12">
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Oil Balance</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Gentle Exfoliation</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Barrier Support</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Daily Use Friendly</span>
-                                    </li>
-                                </ul>
-                                <div class="flex gap-8 xl:gap-x-12 items-center flex-wrap">
-                                    <h4 class="mr-4 text-20">Recommended Products</h4>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        ClearGel
-                                    </span>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        CalmGel
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-show="is('tab5')" x-transition:enter="transition-all duration-500"
-                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
-                        <div class="grid lg:grid-cols-2 gap-40 3xl:gap-80">
-                            <div class="relative aspect-[1.7/1]">
-                                <img src="assets/images/ance-concern.webp" alt="Acne Concerns"
-                                    class="rounded-3xl size-full inset-0 object-cover">
-                            </div>
-                            <div class="space-y-12 xl:space-y-24">
-                                <h3 class="text-28">
-                                    Acne Concerns
-                                </h3>
-                                <p class="text-gray-700 font-light">
-                                    Breakouts can be linked to excess oil, congestion, irritation, and barrier
-                                    imbalance. Ellitee routines support clearer-looking skin without over drying.
-                                </p>
-                                <ul class="text-gray-700 font-light xl:space-y-12">
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Oil Balance</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Gentle Exfoliation</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Barrier Support</span>
-                                    </li>
-                                    <li class="flex items-start gap-8">
-                                        <img src="assets/icons/check.svg" class="shrink-0 mt-2" alt="">
-                                        <span>Daily Use Friendly</span>
-                                    </li>
-                                </ul>
-                                <div class="flex gap-8 xl:gap-x-12 items-center flex-wrap">
-                                    <h4 class="mr-4 text-20">Recommended Products</h4>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        ClearGel
-                                    </span>
-                                    <span class="bg-light-gray rounded-lg p-8">
-                                        CalmGel
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="text-56">
+                    Frequently asked questions
+                </h1>
             </div>
         </section>
-
-        <!-- Steps -->
-        <section class="py-100">
-            <div class="container space-y-40">
-                <h2 class="text-36">
-                    A Simple 3-Step Analysis
-                </h2>
-                <div class="grid sm:grid-cols-2 3xl:grid-cols-3 gap-40">
-                    <div class="flex flex-col gap-16 4xl:p-40">
-                        <div class="relative aspect-[1.55/1] xl:mb-26">
-                            <img src="assets/images/step1.webp" alt="01 Clean Skin First"
-                                class="absolute inset-0 size-full object-contain rounded-md">
-                        </div>
-                        <h3 class="text-20">
-                            Upload Your Skin Photo
-                        </h3>
-                        <p class="text-gray-700 font-light">
-                            Capture clear photos in natural lighting.
-                        </p>
-                    </div>
-                    <div class="flex flex-col gap-16 4xl:p-40">
-                        <div class="relative aspect-[1.55/1] xl:mb-26">
-                            <img src="assets/images/step2.webp" alt="02 Treat Spots"
-                                class="absolute inset-0 size-full object-contain rounded-md">
-                        </div>
-                        <h3 class="text-20">
-                            Identify Visible Concerns
-                        </h3>
-                        <p class="text-gray-700 font-light">
-                            Our system analyzes visible skin patterns and concerns.
-                        </p>
-                    </div>
-                    <div class="flex flex-col gap-16 4xl:p-40">
-                        <div class="relative aspect-[1.55/1] xl:mb-26">
-                            <img src="assets/images/step3.webp" alt="03 Moisturize & Calm"
-                                class="absolute inset-0 size-full object-contain rounded-md">
-                        </div>
-                        <h3 class="text-20">
-                            Receive Your Routine
-                        </h3>
-                        <p class="text-gray-700 font-light">
-                            Get personalized skincare recommendations designed around your skin needs.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Build routine -->
-        <section class="py-100 text-center">
-            <div class="container max-w-1200">
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-20 lg:gap-80 items-center">
-                    <div class="not-md:hidden">
-                        <div class="iphone-mock-up relative aspect-0.5/1">
-                            <img src="assets/images/model-1.webp" alt=""
-                                class="absolute size-full inset-0 object-cover">
-                        </div>
-                    </div>
-                    <div class="col-span-2 space-y-20 lg:space-y-40">
-                        <div class="space-y-16">
-                            <h2 class="text-36 max-w-345 mx-auto">
-                                A Calmer Way to Approach Skincare
-                            </h2>
-                            <p class="font-light text-gray-700">
-                                Skin insight should simplify routines, not overwhelm them. <br> Ellitee helps identify
-                                visible concerns and guide supportive skincare recommendations.
-                            </p>
-                        </div>
-                        <div class="grid grid-cols-3 gap-8 sm:gap-20 text-gray-700">
-                            <div class="bg-slate-50 rounded-2xl p-12 space-y-12">
-                                <img src="assets/icons/check.svg" alt="" class="w-32 mx-auto">
-                                <p>
-                                    Most Loved <br> By Oily Skin
-                                </p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-12 space-y-12">
-                                <img src="assets/icons/check.svg" alt="" class="w-32 mx-auto">
-                                <p>
-                                    Daily Use <br> Friendly
-                                </p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-12 space-y-12">
-                                <img src="assets/icons/check.svg" alt="" class="w-32 mx-auto">
-                                <p>
-                                    Top Rated <br> Products
-                                </p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn style_1 mx-auto">
-                            <span>Build Your Routine</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 12H5" stroke="white" stroke-width="1.1" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M14 17L19 12" stroke="white" stroke-width="1.1" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M14 7L19 12" stroke="white" stroke-width="1.1" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Frequently Asked Questions -->
-        <section class="py-100">
+        <section class="py-100" x-data="{tab: 'tab1'}">
             <div class="container">
-                <h2 class="text-center text-36 mb-40 xl:mb-80 text-heading">
-                    Frequently Asked Questions
-                </h2>
-                <div class="max-w-1000 mx-auto" x-data="{ open: [1,2,3,4] }">
-                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
-                            class="flex items-center justify-between text-left text-20 w-full">
-                            <span>
-                                Is Ellitee Skin Insights a medical diagnosis?
-                            </span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path :class="{ 'rotate-90': open.includes(1) }"
-                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
-                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div x-show="open.includes(1)" x-collapse.duration.400ms>
-                            <div x-ref="content" class="pt-16 text-gray-700">
-                                No. Ellitee Skin Insights is designed to guide skincare routines based on visible skin
-                                patterns. It does not diagnose medical conditions or replace professional advice.
-                            </div>
+                <div class="grid lg:grid-cols-2 gap-40">
+                    <div>
+                        <div x-data="{ open: [1,2] }" class="faq_tab_btns flex flex-col gap-20 xl:gap-40 text-28 xl:text-36 sticky top-130">
+                            <button @click="tab = 'tab1'" :class="{ 'text-gray-950': tab === 'tab1' }">
+                                About Ellitee™
+                            </button>
+                            <button @click="tab = 'tab2'" :class="{ 'text-gray-950': tab === 'tab2' }">
+                                Products & Formulations
+                            </button>
+                            <button @click="tab = 'tab3'" :class="{ 'text-gray-950': tab === 'tab3' }">
+                                Ingredients & Actives
+                            </button>
+                            <button @click="tab = 'tab4'" :class="{ 'text-gray-950': tab === 'tab4' }">
+                                Routines & How to Use
+                            </button>
+                            <button @click="tab = 'tab5'" :class="{ 'text-gray-950': tab === 'tab5' }">
+                                Skin Insight & Assessment
+                            </button>
+                            <button @click="tab = 'tab6'" :class="{ 'text-gray-950': tab === 'tab6' }">
+                                Results, Expectations & Safety
+                            </button>
+                            <button @click="tab = 'tab7'" :class="{ 'text-gray-950': tab === 'tab7' }">
+                                Orders, Shipping & Returns
+                            </button>
+                            <button @click="tab = 'tab8'" :class="{ 'text-gray-950': tab === 'tab8' }">
+                                Account & Website
+                            </button>
+                            <button @click="tab = 'tab9'" :class="{ 'text-gray-950': tab === 'tab9' }">
+                                Support
+                            </button>
                         </div>
                     </div>
-                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
-                            class="flex items-center justify-between text-left text-20 w-full">
-                            <span>
-                                Do I need Skin Insights to use Ellitee products?
-                            </span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path :class="{ 'rotate-90': open.includes(2) }"
-                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
-                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div x-show="open.includes(2)" x-collapse.duration.400ms>
-                            <div x-ref="content" class="pt-16 text-gray-700">
-                                Not at all. Ellitee products can be used independently. Skin Insights simply helps align
-                                products more accurately with your skin’s needs.
+                    <div>
+                        <div x-data="{ open: [1,2] }" x-show="tab === 'tab1'">
+                            <div class="flex flex-col gap-40">
+                                <div class="pb-24 mb-24 border-b border-gray-200 last:border-none last:pb-0 last:mb-0">
+                                    <button
+                                        @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
+                                        class="flex items-center justify-between w-full text-left text-20">
+                                        <span>
+                                            Is Ellitee Skin Insights a medical diagnosis?
+                                        </span>
+
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 11.5449H19" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" />
+
+                                            <path d="M12 4.54492V18.5449" stroke="black" stroke-width="2"
+                                                stroke-linecap="round"
+                                                class="origin-center transition-transform duration-300"
+                                                :class="open ? 'rotate-90' : ''" />
+                                        </svg>
+                                    </button>
+                                    <div x-show="open.includes(1)" x-collapse.duration.400ms >
+                                        <div x-ref="content" class="pt-16 text-gray-700">
+                                            No. Ellitee Skin Insights is designed to guide skincare
+                                            routines based on visible skin patterns. It does not
+                                            diagnose medical conditions or replace professional advice.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pb-24 mb-24 border-b border-gray-200 last:border-none last:pb-0 last:mb-0">
+                                    <button
+                                        @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
+                                        class="flex items-center justify-between w-full text-left text-20">
+                                        <span>
+                                            Is Ellitee Skin Insights a medical diagnosis?
+                                        </span>
+
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 11.5449H19" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" />
+
+                                            <path d="M12 4.54492V18.5449" stroke="black" stroke-width="2"
+                                                stroke-linecap="round"
+                                                class="origin-center transition-transform duration-300"
+                                                :class="open ? 'rotate-90' : ''" />
+                                        </svg>
+                                    </button>
+                                    <div x-show="open.includes(2)" x-collapse.duration.400ms >
+                                        <div x-ref="content" class="pt-16 text-gray-700">
+                                            No. Ellitee Skin Insights is designed to guide skincare
+                                            routines based on visible skin patterns. It does not
+                                            diagnose medical conditions or replace professional advice.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="open.includes(3) ? open = open.filter(i => i !== 3) : open.push(3)"
-                            class="flex items-center justify-between text-left text-20 w-full">
-                            <span>
-                                How is my data handled?
-                            </span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path :class="{ 'rotate-90': open.includes(3) }"
-                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
-                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div x-show="open.includes(3)" x-collapse.duration.400ms>
-                            <div x-ref="content" class="pt-16 text-gray-700">
-                                Your information is used only to generate insights and improve your experience. Data
-                                privacy and responsible handling are core to Ellitee’s approach.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="open.includes(4) ? open = open.filter(i => i !== 4) : open.push(4)"
-                            class="flex items-center justify-between text-left text-20 w-full">
-                            <span>
-                                How often should I reassess my skin?
-                            </span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path :class="{ 'rotate-90': open.includes(4) }"
-                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
-                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div x-show="open.includes(4)" x-collapse.duration.400ms>
-                            <div x-ref="content" class="pt-16 text-gray-700">
-                                Skin changes with seasons, lifestyle, and routines. Reassessing every few weeks can help
-                                keep your routine
+                        <div x-data="{ open: [1,2] }" x-show="tab === 'tab2'">
+                            <div class="flex flex-col gap-40">
+                                <div class="pb-24 mb-24 border-b border-gray-200 last:border-none last:pb-0 last:mb-0">
+                                    <button
+                                        @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
+                                        class="flex items-center justify-between w-full text-left text-20">
+                                        <span>
+                                            Is Ellitee Skin Insights a medical diagnosis?
+                                        </span>
+
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 11.5449H19" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" />
+
+                                            <path d="M12 4.54492V18.5449" stroke="black" stroke-width="2"
+                                                stroke-linecap="round"
+                                                class="origin-center transition-transform duration-300"
+                                                :class="open ? 'rotate-90' : ''" />
+                                        </svg>
+                                    </button>
+                                    <div x-show="open.includes(1)" x-collapse.duration.400ms >
+                                        <div x-ref="content" class="pt-16 text-gray-700">
+                                            No. Ellitee Skin Insights is designed to guide skincare
+                                            routines based on visible skin patterns. It does not
+                                            diagnose medical conditions or replace professional advice.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pb-24 mb-24 border-b border-gray-200 last:border-none last:pb-0 last:mb-0">
+                                    <button
+                                        @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
+                                        class="flex items-center justify-between w-full text-left text-20">
+                                        <span>
+                                            Is Ellitee Skin Insights a medical diagnosis?
+                                        </span>
+
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 11.5449H19" stroke="black" stroke-width="2"
+                                                stroke-linecap="round" />
+
+                                            <path d="M12 4.54492V18.5449" stroke="black" stroke-width="2"
+                                                stroke-linecap="round"
+                                                class="origin-center transition-transform duration-300"
+                                                :class="open ? 'rotate-90' : ''" />
+                                        </svg>
+                                    </button>
+                                    <div x-show="open.includes(2)" x-collapse.duration.400ms >
+                                        <div x-ref="content" class="pt-16 text-gray-700">
+                                            No.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="text-heading border-t border-black/10">

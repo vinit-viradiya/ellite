@@ -515,16 +515,16 @@
             </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- Frequently Asked Questions -->
         <section class="py-100">
             <div class="container">
                 <h2 class="text-center text-36 mb-40 xl:mb-80 text-heading">
-                    Shopping With Clarity
+                    Frequently Asked Questions
                 </h2>
-                <div class="max-w-1000 mx-auto">
-                    <div x-data="accordion(true)"
-                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                <div class="max-w-1000 mx-auto" x-data="{ open: [1,2,3,4] }">
+                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
+                            class="flex items-center justify-between text-left text-20 w-full">
                             <span>
                                 Is Ellitee Skin Insights a medical diagnosis?
                             </span>
@@ -532,22 +532,21 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
-                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
-                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                <path :class="{ 'rotate-90': open.includes(1) }"
+                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                            :style="`height: ${height}px`">
+                        <div x-show="open.includes(1)" x-collapse.duration.400ms>
                             <div x-ref="content" class="pt-16 text-gray-700">
                                 No. Ellitee Skin Insights is designed to guide skincare routines based on visible skin
                                 patterns. It does not diagnose medical conditions or replace professional advice.
                             </div>
                         </div>
                     </div>
-                    <div x-data="accordion(true)"
-                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
+                            class="flex items-center justify-between text-left text-20 w-full">
                             <span>
                                 Do I need Skin Insights to use Ellitee products?
                             </span>
@@ -555,22 +554,21 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
-                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
-                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                <path :class="{ 'rotate-90': open.includes(2) }"
+                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                            :style="`height: ${height}px`">
+                        <div x-show="open.includes(2)" x-collapse.duration.400ms>
                             <div x-ref="content" class="pt-16 text-gray-700">
                                 Not at all. Ellitee products can be used independently. Skin Insights simply helps align
                                 products more accurately with your skin’s needs.
                             </div>
                         </div>
                     </div>
-                    <div x-data="accordion(true)"
-                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="open.includes(3) ? open = open.filter(i => i !== 3) : open.push(3)"
+                            class="flex items-center justify-between text-left text-20 w-full">
                             <span>
                                 How is my data handled?
                             </span>
@@ -578,22 +576,21 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
-                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
-                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                <path :class="{ 'rotate-90': open.includes(3) }"
+                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                            :style="`height: ${height}px`">
+                        <div x-show="open.includes(3)" x-collapse.duration.400ms>
                             <div x-ref="content" class="pt-16 text-gray-700">
                                 Your information is used only to generate insights and improve your experience. Data
                                 privacy and responsible handling are core to Ellitee’s approach.
                             </div>
                         </div>
                     </div>
-                    <div x-data="accordion(true)"
-                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="open.includes(4) ? open = open.filter(i => i !== 4) : open.push(4)"
+                            class="flex items-center justify-between text-left text-20 w-full">
                             <span>
                                 How often should I reassess my skin?
                             </span>
@@ -601,13 +598,12 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
-                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
-                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                <path :class="{ 'rotate-90': open.includes(4) }"
+                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                            :style="`height: ${height}px`">
+                        <div x-show="open.includes(4)" x-collapse.duration.400ms>
                             <div x-ref="content" class="pt-16 text-gray-700">
                                 Skin changes with seasons, lifestyle, and routines. Reassessing every few weeks can help
                                 keep your routine

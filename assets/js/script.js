@@ -256,39 +256,6 @@ document.addEventListener('alpine:init', () => {
     }))
 })
 
-
-// -------------------------------------------------------------
-// Accordion
-// -------------------------------------------------------------
-
-function accordion(defaultOpen = false) {
-    return {
-
-        open: defaultOpen,
-        height: 0,
-
-        init() {
-            this.$nextTick(() => {
-                this.setHeight()
-            })
-        },
-
-        toggle() {
-            this.open = !this.open
-
-            this.$nextTick(() => {
-                this.setHeight()
-            })
-        },
-
-        setHeight() {
-            this.height = this.open
-                ? this.$refs.content.scrollHeight
-                : 0
-        }
-    }
-}
-
 // -------------------------------------------------------------
 // coupons_swiper
 // -------------------------------------------------------------
@@ -382,36 +349,9 @@ if (document.querySelector('.reels_swiper')) {
 function accordionSlider() {
     return {
         active: 0,
-        progress: 0,
-        timer: null,
-        duration: 5000,
-
-        start() {
-            this.runProgress();
-        },
-
-        runProgress() {
-            clearInterval(this.timer);
-
-            this.progress = 0;
-
-            this.timer = setInterval(() => {
-                this.progress += 1;
-
-                if (this.progress >= 100) {
-                    this.next();
-                }
-            }, this.duration / 100);
-        },
-
-        next() {
-            this.active = (this.active + 1) % 3;
-            this.runProgress();
-        },
 
         setActive(index) {
             this.active = index;
-            this.runProgress();
         }
     }
 }

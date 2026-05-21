@@ -391,42 +391,42 @@
                     <div class="w-full grow grid grid-cols-1 gap-80">
 
                         <!-- Section 1 -->
-                        <section class="grid grid-cols-1 md:grid-cols-2 gap-y-32">
+                        <section class="grid grid-cols-1 md:grid-cols-2 gap-y-32 items-start">
                             <div>
                                 <div class="sticky top-130 space-y-32 md:pr-32">
                                     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
                                         class="swiper product_imgs_swiper2 cursor-grab">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <div class="aspect-square md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[1.08/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-2.webp"
                                                         class="absolute inset-0 size-full object-contain"
                                                         alt="CalmGel Anti-Acne Gel Moisturizer" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="aspect-square md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[1.08/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-1.webp"
                                                         class="absolute inset-0 size-full object-contain"
                                                         alt="CalmGel Anti-Acne Gel Moisturizer" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="aspect-square md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[1.08/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-2.webp"
                                                         class="absolute inset-0 size-full object-contain"
                                                         alt="CalmGel Anti-Acne Gel Moisturizer" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="aspect-square md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[1.08/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-1.webp"
                                                         class="absolute inset-0 size-full object-contain"
                                                         alt="CalmGel Anti-Acne Gel Moisturizer" />
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
-                                                <div class="aspect-square md:aspect-[.95/1] relative">
+                                                <div class="aspect-square md:aspect-[1.08/1] relative">
                                                     <img fetchpriority="high" src="assets/images/product-img-2.webp"
                                                         class="absolute inset-0 size-full object-contain"
                                                         alt="CalmGel Anti-Acne Gel Moisturizer" />
@@ -695,10 +695,60 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col">
-                                    <div x-data="accordion(false)"
+                                <div x-data="{open: [0]}" class="flex flex-col">
+                                    <div
+                                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                                        <button
+                                            @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
+                                            class="flex items-center justify-between text-left text-20 w-full">
+                                            <span>
+                                                Is Ellitee Skin Insights a medical diagnosis?
+                                            </span>
+                                            <svg class="transition-(--transition) shrink-0"
+                                                :class="{ 'rotate-180': open.includes(1) }" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 10L12 14L16 10" stroke="#323232" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                        <div x-show="open.includes(1)" x-collapse.duration.400ms>
+                                            <div x-ref="content" class="pt-16 text-gray-700">
+                                                No. Ellitee Skin Insights is designed to guide skincare routines based
+                                                on visible skin
+                                                patterns. It does not diagnose medical conditions or replace
+                                                professional advice.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                                        <button
+                                            @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
+                                            class="flex items-center justify-between text-left text-20 w-full">
+                                            <span>
+                                                Do I need Skin Insights to use Ellitee products?
+                                            </span>
+                                            <svg class="transition-(--transition) shrink-0"
+                                                :class="{ 'rotate-180': open.includes(2) }" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 10L12 14L16 10" stroke="#323232" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                        <div x-show="open.includes(2)" x-collapse.duration.400ms>
+                                            <div x-ref="content" class="pt-16 text-gray-700">
+                                                Not at all. Ellitee products can be used independently. Skin Insights
+                                                simply helps align
+                                                products more accurately with your skin’s needs.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div x-data="{ open: [1,2] }" class="flex flex-col">
+                                    <div @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
                                         class="pb-16 mb-16 border-b border-heading/20 last:pb-0 last:mb-0 last:border-0">
-                                        <button @click="toggle()"
+                                        <button
+                                            @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
                                             class="flex items-center justify-between text-left text-20 w-full">
                                             <span>Best Results When</span>
                                             <svg :class="open ? 'rotate-180' : ''"
@@ -708,8 +758,7 @@
                                                     stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </button>
-                                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                                            :style="`height: ${height}px`">
+                                        <div x-show="open.includes(1)" x-collapse.duration.400ms>
                                             <div x-ref="content" class="pt-16 text-gray-700">
                                                 <ul class="flex flex-col gap-12">
                                                     <li class="flex gap-8 items-start">
@@ -728,11 +777,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div x-data="accordion(false)"
+                                    <div @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
                                         class="pb-16 mb-16 border-b border-heading/20 last:pb-0 last:mb-0 last:border-0">
-                                        <button @click="toggle()"
+                                        <button
+                                            @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
                                             class="flex items-center justify-between text-left text-20 w-full">
-                                            <span>Safety & Care</span>
+                                            <span>Best Results When</span>
                                             <svg :class="open ? 'rotate-180' : ''"
                                                 class="origin-center transition-(--transition)" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -740,8 +790,7 @@
                                                     stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </button>
-                                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                                            :style="`height: ${height}px`">
+                                        <div x-show="open.includes(2)" x-collapse.duration.400ms>
                                             <div x-ref="content" class="pt-16 text-gray-700">
                                                 <ul class="flex flex-col gap-12">
                                                     <li class="flex gap-8 items-start">
@@ -760,7 +809,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </section>
 
@@ -956,74 +1005,68 @@
                         </section>
 
                         <!-- Section 5 -->
-                        <section class="grid grid-cols-12 gap-24 xl:gap-48 items-center">
+                        <section class="grid grid-cols-12 gap-24 xl:gap-48 items-start">
                             <div class="col-span-12 lg:col-span-7 flex flex-col gap-48">
                                 <h2 class="text-36">
                                     How to Apply
                                 </h2>
-                                <div x-data="accordionSlider()" x-init="start()" class="space-y-4">
+                                <div x-data="accordionSlider()" class="space-y-4">
                                     <div class="pb-16">
                                         <button @mouseenter="setActive(0)"
-                                            class="text-left text-28 transition-colors duration-300"
+                                            class="w-full text-left text-28 transition-colors duration-300"
                                             :class="active !== 0 && 'text-gray-500'">
                                             01 Cleanse
                                         </button>
-                                        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+                                        <div class="overflow-hidden transition-all duration-300"
                                             :style="active === 0 ? `height:${$refs.content0.scrollHeight}px` : 'height:0px'">
                                             <div x-ref="content0" class="pt-16 text-gray-700">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
-                                                veritatis.
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde minima
+                                                itaque esse voluptatibus numquam perspiciatis? Quis minima quo iusto
+                                                delectus odio natus vero aspernatur dolorem eum velit harum ullam eius
+                                                reprehenderit maxime omnis nulla
                                             </div>
                                         </div>
-                                        <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full">
-                                            <div class="progress border-b border-black transition-all duration-100"
-                                                :style="`width:${active === 0 ? progress + '%' : '0%'}`"></div>
-                                        </div>
+                                        <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full"></div>
                                     </div>
                                     <div class="pb-16">
                                         <button @mouseenter="setActive(1)"
-                                            class="text-left text-28 transition-colors duration-300"
+                                            class="w-full text-left text-28 transition-colors duration-300"
                                             :class="active !== 1 && 'text-gray-500'">
                                             02 Treat
                                         </button>
-                                        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+                                        <div class="overflow-hidden transition-all duration-300"
                                             :style="active === 1 ? `height:${$refs.content1.scrollHeight}px` : 'height:0px'">
                                             <div x-ref="content1" class="pt-16 text-gray-700">
-                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid
-                                                doloremque voluptate esse culpa ipsam optio minus cupiditate, eveniet
-                                                quidem vel!
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde minima
+                                                itaque esse voluptatibus numquam perspiciatis? Quis minima quo iusto
+                                                delectus odio natus vero aspernatur dolorem eum velit harum ullam eius
+                                                reprehenderit maxime omnis nulla
                                             </div>
                                         </div>
-                                        <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full">
-                                            <div class="progress border-b border-black transition-all duration-100"
-                                                :style="`width:${active === 1 ? progress + '%' : '0%'}`"></div>
-                                        </div>
+                                        <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full"></div>
                                     </div>
                                     <div class="pb-16">
                                         <button @mouseenter="setActive(2)"
-                                            class="text-left text-28 transition-colors duration-300"
+                                            class="w-full text-left text-28 transition-colors duration-300"
                                             :class="active !== 2 && 'text-gray-500'">
                                             03 Apply CalmGel
                                         </button>
-                                        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+                                        <div class="overflow-hidden transition-all duration-300"
                                             :style="active === 2 ? `height:${$refs.content2.scrollHeight}px` : 'height:0px'">
                                             <div x-ref="content2" class="pt-16 text-gray-700">
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
-                                                voluptatem vitae, fuga laborum iure velit suscipit, eius ab, odio nam
-                                                tempore dolorem dolores repellat repudiandae? In nesciunt eius nobis
-                                                veniam.
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde minima
+                                                itaque esse voluptatibus numquam perspiciatis? Quis minima quo iusto
+                                                delectus odio natus vero aspernatur dolorem eum velit harum ullam eius
+                                                reprehenderit maxime omnis nulla
                                             </div>
                                         </div>
-                                        <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full">
-                                            <div class="progress border-b border-black transition-all duration-100"
-                                                :style="`width:${active === 2 ? progress + '%' : '0%'}`"></div>
-                                        </div>
+                                        <div class="progress_wrapper bg-black/10 mt-16 h-1 w-full"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-span-5 not-lg:hidden">
                                 <div class="image">
-                                    <img src="assets/images/apply_cream.webp" alt="How to Apply">
+                                    <img src="assets/images/model-1.webp" alt="How to Apply">
                                 </div>
                             </div>
                         </section>
@@ -1733,10 +1776,10 @@
                 <h2 class="text-center text-36 mb-40 xl:mb-80 text-heading">
                     Frequently Asked Questions
                 </h2>
-                <div class="max-w-1000 mx-auto">
-                    <div x-data="accordion(true)"
-                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                <div class="max-w-1000 mx-auto" x-data="{ open: [1,2,3,4] }">
+                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
+                            class="flex items-center justify-between text-left text-20 w-full">
                             <span>
                                 Is Ellitee Skin Insights a medical diagnosis?
                             </span>
@@ -1744,22 +1787,21 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
-                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
-                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                <path :class="{ 'rotate-90': open.includes(1) }"
+                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                            :style="`height: ${height}px`">
+                        <div x-show="open.includes(1)" x-collapse.duration.400ms>
                             <div x-ref="content" class="pt-16 text-gray-700">
                                 No. Ellitee Skin Insights is designed to guide skincare routines based on visible skin
                                 patterns. It does not diagnose medical conditions or replace professional advice.
                             </div>
                         </div>
                     </div>
-                    <div x-data="accordion(true)"
-                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="open.includes(2) ? open = open.filter(i => i !== 2) : open.push(2)"
+                            class="flex items-center justify-between text-left text-20 w-full">
                             <span>
                                 Do I need Skin Insights to use Ellitee products?
                             </span>
@@ -1767,22 +1809,21 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
-                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
-                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                <path :class="{ 'rotate-90': open.includes(2) }"
+                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                            :style="`height: ${height}px`">
+                        <div x-show="open.includes(2)" x-collapse.duration.400ms>
                             <div x-ref="content" class="pt-16 text-gray-700">
                                 Not at all. Ellitee products can be used independently. Skin Insights simply helps align
                                 products more accurately with your skin’s needs.
                             </div>
                         </div>
                     </div>
-                    <div x-data="accordion(true)"
-                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="open.includes(3) ? open = open.filter(i => i !== 3) : open.push(3)"
+                            class="flex items-center justify-between text-left text-20 w-full">
                             <span>
                                 How is my data handled?
                             </span>
@@ -1790,22 +1831,21 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
-                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
-                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                <path :class="{ 'rotate-90': open.includes(3) }"
+                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                            :style="`height: ${height}px`">
+                        <div x-show="open.includes(3)" x-collapse.duration.400ms>
                             <div x-ref="content" class="pt-16 text-gray-700">
                                 Your information is used only to generate insights and improve your experience. Data
                                 privacy and responsible handling are core to Ellitee’s approach.
                             </div>
                         </div>
                     </div>
-                    <div x-data="accordion(true)"
-                        class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
-                        <button @click="toggle()" class="flex items-center justify-between text-left text-20 w-full">
+                    <div class="pb-24 border-b mb-24 border-gray-200 last:border-none last:pb-0 last:mb-0">
+                        <button @click="open.includes(4) ? open = open.filter(i => i !== 4) : open.push(4)"
+                            class="flex items-center justify-between text-left text-20 w-full">
                             <span>
                                 How often should I reassess my skin?
                             </span>
@@ -1813,13 +1853,12 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 11.5449H19" stroke="black" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
-                                <path :class="open ? 'rotate-90' : ''" class="origin-center transition-(--transition)"
-                                    d="M12 4.54492V18.5449" stroke="black" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                <path :class="{ 'rotate-90': open.includes(4) }"
+                                    class="origin-center transition-(--transition)" d="M12 4.54492V18.5449"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="overflow-hidden transition-all duration-300 ease-in-out"
-                            :style="`height: ${height}px`">
+                        <div x-show="open.includes(4)" x-collapse.duration.400ms>
                             <div x-ref="content" class="pt-16 text-gray-700">
                                 Skin changes with seasons, lifestyle, and routines. Reassessing every few weeks can help
                                 keep your routine
