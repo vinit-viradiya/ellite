@@ -108,6 +108,10 @@ html {
         @apply flex overflow-hidden;
     }
 
+    .marquee_wrapper:hover .marquee{
+        animation-play-state: paused;
+    }
+
     .marquee {
         @apply flex min-w-max;
         animation-name: marquee;
