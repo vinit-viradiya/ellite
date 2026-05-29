@@ -291,6 +291,7 @@ if (document.querySelector('.product_imgs_swiper')) {
             },
             768: {
                 slidesPerView: 4,
+                spaceBetween: 4,
             },
             992: {
                 slidesPerView: 5,
