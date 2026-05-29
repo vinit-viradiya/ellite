@@ -840,7 +840,8 @@
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="fixed z-99999 size-full inset-0 m-auto xsm:p-30 grid place-items-center xsm:max-w-435 max-h-800">
-                                <button class="absolute top-20 xsm:top-50 right-20 xsm:right-50 p-8 rounded-full bg-white shadow z-10"
+                                <button
+                                    class="absolute top-20 xsm:top-50 right-20 xsm:right-50 p-8 rounded-full bg-white shadow z-10"
                                     @click="hide" aria-label="Close popup">
                                     <img src="assets/icons/close.svg" alt="">
                                 </button>
@@ -852,14 +853,17 @@
                                                     class="absolute size-full inset-0 object-cover -z-1"></video>
                                                 <div
                                                     class="absolute inset-0 top-auto p-20 space-y-20 z-1 bg-linear-0 from-white/70 to-transparent">
-                                                    <div class="bg-white p-12 rounded-xl max-w-190 text-sm space-y-8">
-                                                        <p class="font-medium">
-                                                            CalmGel Anti-Acne Gel Moisturizer
+                                                    <div class="bg-white p-12 rounded-xl text-sm space-y-8 max-w-190">
+                                                        <p class="font-medium line-clamp-2">
+                                                            CalmGel Anti-Acne Gel Moisturizer CalmGel Anti-Acne Gel
+                                                            Moisturizer
                                                         </p>
-                                                        <div class="flex items-center justify-between">
-                                                            <span>₹ 800.00</span>
-                                                            <span
-                                                                class="text-xs bg-brand-100 py-6 px-14 rounded-full">50g</span>
+                                                        <div class="flex flex-wrap items-center justify-between gap-y-4 gap-x-16">
+                                                            <span>₹ 999.99</span>
+                                                            <div class="flex flex-wrap gap-4">
+                                                                <span
+                                                                    class="text-xs bg-brand-100 py-6 px-14 rounded-full">50g</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="flex gap-12">
@@ -890,7 +894,7 @@
                                                 <div
                                                     class="absolute inset-0 top-auto p-20 space-y-20 z-1 bg-linear-0 from-white/70 to-transparent">
                                                     <div class="bg-white p-12 rounded-xl max-w-190 text-sm space-y-8">
-                                                        <p class="font-medium">
+                                                        <p class="font-medium line-clamp-2">
                                                             CalmGel Anti-Acne Gel Moisturizer
                                                         </p>
                                                         <div class="flex items-center justify-between">
