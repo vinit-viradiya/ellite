@@ -308,7 +308,7 @@ if (document.querySelector('.product_imgs_swiper')) {
 
 
 // -------------------------------------------------------------
-// product_imgs_swiper
+// reels_swiper
 // -------------------------------------------------------------
 
 if (document.querySelector('.reels_swiper')) {
@@ -338,6 +338,23 @@ if (document.querySelector('.reels_swiper')) {
                 spaceBetween: 32,
             },
         },
+    });
+}
+
+
+// -------------------------------------------------------------
+// reels_popup_swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.reels_popup_swiper')) {
+    var swiper = new Swiper(".reels_popup_swiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+            prevEl: ".reels_popup_swiper_prev",
+            nextEl: ".reels_popup_swiper_next",
+        }
     });
 }
 
