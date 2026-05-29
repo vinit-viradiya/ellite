@@ -2127,6 +2127,11 @@
       padding-block: calc(var(--spacing) * 24);
     }
   }
+  .md\:sticky {
+    @media (width >= 768px) {
+      position: sticky;
+    }
+  }
   .md\:col-span-5 {
     @media (width >= 768px) {
       grid-column: span 5 / span 5;
