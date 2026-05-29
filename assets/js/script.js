@@ -299,13 +299,13 @@ if (document.querySelector('.product_imgs_swiper')) {
     });
     var swiper2 = new Swiper(".product_imgs_swiper2", {
         loop: true,
+        zoom: true,
         spaceBetween: 12,
         thumbs: {
             swiper: swiper,
         },
     });
 }
-
 
 // -------------------------------------------------------------
 // reels_swiper
