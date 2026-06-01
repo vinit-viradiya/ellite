@@ -319,3 +319,28 @@ html {
         transform: rotate(1turn)
     }
 }
+
+.reels_popup_swiper .swiper-slide {
+    height: 80%;
+    transition: all .3s ease-in-out;
+    opacity: .3;
+    margin: auto;
+}
+
+.reels_popup_swiper :is(.swiper-slide-prev, .swiper-slide-next) {
+    height: 90%;
+}
+
+.reels_popup_swiper .swiper-slide.swiper-slide-active {
+    height: 100%;
+    opacity: 1;
+}
+
+.reels_popup_swiper .swiper-slide video {
+    transition: all .3s ease-in-out;
+}
+
+.reels_popup_swiper .swiper-slide:not(.swiper-slide-active) video {
+    opacity: 0;
+    visibility: hidden;
+}

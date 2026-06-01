@@ -347,11 +347,30 @@ if (document.querySelector('.reels_popup_swiper')) {
     var swiper = new Swiper(".reels_popup_swiper", {
         loop: true,
         slidesPerView: 1,
-        spaceBetween: 10,
+        spaceBetween: 20,
+        centeredSlides: true,
         navigation: {
             prevEl: ".reels_popup_swiper_prev",
             nextEl: ".reels_popup_swiper_next",
-        }
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1.8,
+                spaceBetween: 40,
+            },
+            992: {
+                slidesPerView: 2.3,
+                spaceBetween: 40,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            1600: {
+                slidesPerView: 3,
+                spaceBetween: 80,
+            },
+        },
     });
 }
 
