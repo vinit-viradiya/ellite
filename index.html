@@ -2332,15 +2332,15 @@
         let tl = gsap.timeline();
 
         tl.from("#star", {
-            duration: 2,
-            rotate: 1000,
-            ease: "power4.out"
+            duration: 1.5,
+            rotate: 1500,
+            top: -300,
+            opacity: 0
         })
 
         tl.to("#loader", {
             duration: .5,
             opacity: 0,
-            ease: "power4.out"
         })
 
     </script>
