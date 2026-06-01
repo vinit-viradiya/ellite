@@ -80,29 +80,182 @@
                                     class="w-full placeholder:text-gray-500 outline-none" @click="open = true">
                             </div>
                         </form>
-                        <div x-cloak x-show="open" x-transition
-                            class="absolute top-full mt-12 right-0 w-320 bg-white rounded-xl shadow-lg border border-gray-300 overflow-hidden p-20 divide-gray-100 divide-y">
-                            <div class="flex items-center justify-between mb-12 pb-12">
-                                <h3 class="text-14 font-medium text-neutral-600">
-                                    Recent Searches
-                                </h3>
-                                <button class="text-xs text-neutral-400 hover:text-black transition">
-                                    Clear
-                                </button>
-                            </div>
-                            <div class="flex flex-wrap gap-10">
-                                <button
-                                    class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
-                                    Hydralock
-                                </button>
-                                <button
-                                    class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
-                                    Ceramide Cream
-                                </button>
-                                <button
-                                    class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
-                                    Acne Repair
-                                </button>
+                        <div x-cloak x-show="open" x-transition @click.outside="close"
+                            class="absolute top-full mt-10 right-0 w-1060 bg-white rounded-xl shadow-lg border border-gray-300 overflow-hidden p-40 max-h-[calc(100dvh-120px)] overflow-y-auto not-3xl:hidden">
+                            <div class="grid grid-cols-[175px_1fr] text-black gap-40">
+                                <div class="flex flex-col gap-24">
+                                    <span class="text-20">Popular Searches</span>
+                                    <div class="flex flex-col gap-16 font-light items-start">
+                                        <span class="rounded-lg p-8 bg-slate-50">Acne-Prone Skin</span>
+                                        <span class="rounded-lg p-8 bg-slate-50">Post-Acne Marks</span>
+                                        <span class="rounded-lg p-8 bg-slate-50">Excess Oil</span>
+                                        <span class="rounded-lg p-8 bg-slate-50">Uneven Texture</span>
+                                        <span class="rounded-lg p-8 bg-slate-50">Dehydrated Skin</span>
+                                    </div>
+                                </div>
+                                <div class="overflow-x-auto pb-16">
+                                    <div class="flex min-w-max gap-16">
+                                        <div class="w-360">
+                                            <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-16 md:gap-24">
+                                                <div
+                                                    class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden">
+                                                    <div class="flex justify-between items-center">
+                                                        <span class="badge green">Bestseller</span>
+                                                        <button class="bg-slate-50 p-8 rounded-full"
+                                                            aria-label="Add to wishlist">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                                    stroke="#6A7282" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div class="absolute inset-0 size-full -z-1">
+                                                        <img src="assets/images/product-img-1.webp" alt=""
+                                                            class="size-full object-contain">
+                                                    </div>
+                                                    <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                                        aria-label="Product details"></a>
+                                                </div>
+                                                <div class="flex gap-2 items-center text-sm">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                                </div>
+                                                <div class="space-y-8">
+                                                    <h3 class="text-20 line-clamp-1 text-gray-950">
+                                                        Pigmentation & Skin Balance Routine Combo
+                                                    </h3>
+                                                    <h4 class="line-clamp-1 text-gray-500">
+                                                        Oil Control, Brightens, Smooths
+                                                    </h4>
+                                                </div>
+                                                <div class="flex gap-12 items-center justify-between text-gray-700">
+                                                    <div class="flex gap-12">
+                                                        <span>₹ 799</span>
+                                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                                    </div>
+                                                    <button>60ml</button>
+                                                </div>
+                                                <a href="javascript:;" class="btn style_1 w-full">
+                                                    <img src="assets/icons/cart.svg" alt="">
+                                                    <span>Add to Cart</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="w-360">
+                                            <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-16 md:gap-24">
+                                                <div
+                                                    class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden">
+                                                    <div class="flex justify-between items-center">
+                                                        <span class="badge green">Bestseller</span>
+                                                        <button class="bg-slate-50 p-8 rounded-full"
+                                                            aria-label="Add to wishlist">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                                    stroke="#6A7282" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div class="absolute inset-0 size-full -z-1">
+                                                        <img src="assets/images/product-img-1.webp" alt=""
+                                                            class="size-full object-contain">
+                                                    </div>
+                                                    <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                                        aria-label="Product details"></a>
+                                                </div>
+                                                <div class="flex gap-2 items-center text-sm">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                                </div>
+                                                <div class="space-y-8">
+                                                    <h3 class="text-20 line-clamp-1 text-gray-950">
+                                                        Pigmentation & Skin Balance Routine Combo
+                                                    </h3>
+                                                    <h4 class="line-clamp-1 text-gray-500">
+                                                        Oil Control, Brightens, Smooths
+                                                    </h4>
+                                                </div>
+                                                <div class="flex gap-12 items-center justify-between text-gray-700">
+                                                    <div class="flex gap-12">
+                                                        <span>₹ 799</span>
+                                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                                    </div>
+                                                    <button>60ml</button>
+                                                </div>
+                                                <a href="javascript:;" class="btn style_1 w-full">
+                                                    <img src="assets/icons/cart.svg" alt="">
+                                                    <span>Add to Cart</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="w-360">
+                                            <div class="bg-slate-50 p-16 rounded-2xl flex flex-col gap-16 md:gap-24">
+                                                <div
+                                                    class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden">
+                                                    <div class="flex justify-between items-center">
+                                                        <span class="badge green">Bestseller</span>
+                                                        <button class="bg-slate-50 p-8 rounded-full"
+                                                            aria-label="Add to wishlist">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    d="M12.5091 5.9742L12 6.49112L11.4908 5.97412C10.5625 5.03106 9.29461 4.5 7.97132 4.5C6.64804 4.5 5.38012 5.03106 4.45182 5.97412V5.97412C2.51606 7.96337 2.51606 11.1322 4.45182 13.1215L9.84447 18.5971C10.413 19.1747 11.1896 19.5 12 19.5C12.8105 19.5 13.587 19.1747 14.1556 18.5971L19.5482 13.1216C21.4839 11.1323 21.4839 7.96347 19.5482 5.97421V5.97421C18.6199 5.03112 17.3519 4.50003 16.0286 4.50003C14.7053 4.50003 13.4374 5.03111 12.5091 5.9742Z"
+                                                                    stroke="#6A7282" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div class="absolute inset-0 size-full -z-1">
+                                                        <img src="assets/images/product-img-1.webp" alt=""
+                                                            class="size-full object-contain">
+                                                    </div>
+                                                    <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                                        aria-label="Product details"></a>
+                                                </div>
+                                                <div class="flex gap-2 items-center text-sm">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                                </div>
+                                                <div class="space-y-8">
+                                                    <h3 class="text-20 line-clamp-1 text-gray-950">
+                                                        Pigmentation & Skin Balance Routine Combo
+                                                    </h3>
+                                                    <h4 class="line-clamp-1 text-gray-500">
+                                                        Oil Control, Brightens, Smooths
+                                                    </h4>
+                                                </div>
+                                                <div class="flex gap-12 items-center justify-between text-gray-700">
+                                                    <div class="flex gap-12">
+                                                        <span>₹ 799</span>
+                                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                                    </div>
+                                                    <button>60ml</button>
+                                                </div>
+                                                <a href="javascript:;" class="btn style_1 w-full">
+                                                    <img src="assets/icons/cart.svg" alt="">
+                                                    <span>Add to Cart</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,11 +280,19 @@
                             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-200"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                            class="fixed left-1/2 top-1/2 z-50 w-full max-w-320 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white shadow-lg overflow-hidden">
-                            <div class="border-b border-neutral-100 px-24 py-20">
-                                <form>
+                            class="fixed inset-0 md:left-1/2 md:top-1/2 z-50 md:w-[calc(100dvw-40px)] md:h-[calc(100dvh-40px)] max-w-992 md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-xl bg-white shadow-lg overflow-hidden">
+                            <div class="p-16 md:p-24 flex flex-col gap-24 h-full">
+                                <form class="flex gap-12 items-center">
+                                    <button class="bg-light p-8 rounded-full" aria-label="Close search">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="m12 19-7-7 7-7" />
+                                            <path d="M19 12H5" />
+                                        </svg>
+                                    </button>
                                     <div
-                                        class="input-group bg-light py-8 px-16 rounded-full flex gap-12 items-center w-full focus-within:ring-1 focus-within:ring-gray-300">
+                                        class="input-group bg-light py-8 px-16 rounded-full flex gap-12 items-center max-w-400 w-full focus-within:ring-1 focus-within:ring-gray-300">
                                         <label for="header_search2" aria-label="Search anything" class="shrink-0">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -148,28 +309,142 @@
                                             class="w-full text-14 outline-none placeholder:text-neutral-700">
                                     </div>
                                 </form>
-                                <div class="mt-20">
-                                    <div class="flex items-center justify-between mb-12">
-                                        <h3 class="text-14 font-medium text-neutral-600">
-                                            Recent Searches
-                                        </h3>
-                                        <button class="text-xs text-neutral-400 hover:text-black transition">
-                                            Clear
-                                        </button>
+                                <div
+                                    class="grid lg:grid-cols-[175px_1fr] text-black gap-20 lg:gap-40 h-[calc(100%-64px)]">
+                                    <div class="flex lg:flex-col gap-12 lg:gap-24 flex-wrap">
+                                        <span class="text-20">Popular Searches</span>
+                                        <div class="flex lg:flex-col gap-8 lg:gap-16 font-light items-start flex-wrap">
+                                            <span class="rounded-lg p-8 bg-slate-50">Acne-Prone Skin</span>
+                                            <span class="rounded-lg p-8 bg-slate-50">Post-Acne Marks</span>
+                                            <span class="rounded-lg p-8 bg-slate-50">Excess Oil</span>
+                                            <span class="rounded-lg p-8 bg-slate-50">Uneven Texture</span>
+                                            <span class="rounded-lg p-8 bg-slate-50">Dehydrated Skin</span>
+                                        </div>
                                     </div>
-                                    <div class="flex flex-wrap gap-10">
-                                        <button
-                                            class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
-                                            Hydralock
-                                        </button>
-                                        <button
-                                            class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
-                                            Ceramide Cream
-                                        </button>
-                                        <button
-                                            class="rounded-full bg-light px-14 py-8 text-14 text-neutral-700 hover:bg-neutral-200 transition">
-                                            Acne Repair
-                                        </button>
+                                    <div class="flex flex-col gap-16 max-h-full overflow-y-auto">
+                                        <div class="bg-slate-50 p-16 rounded-2xl flex gap-16 md:gap-24">
+                                            <div
+                                                class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden w-120 md:w-175 lg:w-250 shrink-0">
+                                                <div class="absolute inset-0 size-full -z-1">
+                                                    <img src="assets/images/product-img-1.webp" alt=""
+                                                        class="size-full object-contain">
+                                                </div>
+                                                <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                                    aria-label="Product details"></a>
+                                            </div>
+                                            <div class="flex flex-col gap-16">
+                                                <div class="flex gap-2 items-center text-sm not-md:hidden">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                                </div>
+                                                <div class="space-y-8">
+                                                    <h3 class="md:text-20 line-clamp-2 text-gray-950">
+                                                        Pigmentation & Skin Balance Routine Combo
+                                                    </h3>
+                                                    <h4 class="not-md:text-sm line-clamp-1 text-gray-500">
+                                                        Oil Control, Brightens, Smooths
+                                                    </h4>
+                                                </div>
+                                                <div
+                                                    class="flex gap-12 items-center justify-between text-gray-700 not-md:mt-auto">
+                                                    <div class="flex gap-12">
+                                                        <span>₹ 799</span>
+                                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                                    </div>
+                                                    <button>60ml</button>
+                                                </div>
+                                                <a href="javascript:;" class="btn style_1 w-full mt-auto not-md:hidden">
+                                                    <img src="assets/icons/cart.svg" alt="">
+                                                    <span>Add to Cart</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="bg-slate-50 p-16 rounded-2xl flex gap-16 md:gap-24">
+                                            <div
+                                                class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden w-120 md:w-175 lg:w-250 shrink-0">
+                                                <div class="absolute inset-0 size-full -z-1">
+                                                    <img src="assets/images/product-img-1.webp" alt=""
+                                                        class="size-full object-contain">
+                                                </div>
+                                                <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                                    aria-label="Product details"></a>
+                                            </div>
+                                            <div class="flex flex-col gap-16">
+                                                <div class="flex gap-2 items-center text-sm not-md:hidden">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                                </div>
+                                                <div class="space-y-8">
+                                                    <h3 class="md:text-20 line-clamp-2 text-gray-950">
+                                                        Pigmentation & Skin Balance Routine Combo
+                                                    </h3>
+                                                    <h4 class="not-md:text-sm line-clamp-1 text-gray-500">
+                                                        Oil Control, Brightens, Smooths
+                                                    </h4>
+                                                </div>
+                                                <div
+                                                    class="flex gap-12 items-center justify-between text-gray-700 not-md:mt-auto">
+                                                    <div class="flex gap-12">
+                                                        <span>₹ 799</span>
+                                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                                    </div>
+                                                    <button>60ml</button>
+                                                </div>
+                                                <a href="javascript:;" class="btn style_1 w-full mt-auto not-md:hidden">
+                                                    <img src="assets/icons/cart.svg" alt="">
+                                                    <span>Add to Cart</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="bg-slate-50 p-16 rounded-2xl flex gap-16 md:gap-24">
+                                            <div
+                                                class="bg-white p-16 aspect-[.82/1] relative z-1 rounded-2xl overflow-hidden w-120 md:w-175 lg:w-250 shrink-0">
+                                                <div class="absolute inset-0 size-full -z-1">
+                                                    <img src="assets/images/product-img-1.webp" alt=""
+                                                        class="size-full object-contain">
+                                                </div>
+                                                <a href="javascript:;" class="opacity-0 absolute inset-0 -z-1"
+                                                    aria-label="Product details"></a>
+                                            </div>
+                                            <div class="flex flex-col gap-16">
+                                                <div class="flex gap-2 items-center text-sm not-md:hidden">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-filled.svg" alt="">
+                                                    <img src="assets/icons/star-unfilled.svg" alt="">
+                                                    <div class="ml-6 text-gray-500">4.2 (150)</div>
+                                                </div>
+                                                <div class="space-y-8">
+                                                    <h3 class="md:text-20 line-clamp-2 text-gray-950">
+                                                        Pigmentation & Skin Balance Routine Combo
+                                                    </h3>
+                                                    <h4 class="not-md:text-sm line-clamp-1 text-gray-500">
+                                                        Oil Control, Brightens, Smooths
+                                                    </h4>
+                                                </div>
+                                                <div
+                                                    class="flex gap-12 items-center justify-between text-gray-700 not-md:mt-auto">
+                                                    <div class="flex gap-12">
+                                                        <span>₹ 799</span>
+                                                        <span class="line-through text-gray-500">₹ 1,599</span>
+                                                    </div>
+                                                    <button>60ml</button>
+                                                </div>
+                                                <a href="javascript:;" class="btn style_1 w-full mt-auto not-md:hidden">
+                                                    <img src="assets/icons/cart.svg" alt="">
+                                                    <span>Add to Cart</span>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
