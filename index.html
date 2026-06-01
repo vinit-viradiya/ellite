@@ -1933,27 +1933,20 @@
         </svg>
     </button>
 
-    <script defer src="assets/js/swiper-bundle.min.js"></script>
-    <script defer src="assets/js/lenis.min.js"></script>
-    <script defer src="assets/js/gsap.min.js"></script>
-    <script defer src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/lenis.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/script.js"></script>
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
-
-            const lenis = new Lenis();
-
-            lenis.on('scroll', ScrollTrigger.update);
-
-            gsap.ticker.add((time) => {
-                lenis.raf(time * 1000);
-            });
-
-            gsap.ticker.lagSmoothing(0);
+        const lenis = new Lenis({
+            autoRaf: true,
+        });
+        lenis.on('scroll', (e) => {
+            console.log(e);
         });
     </script>
+
 </body>
 
 </html>
