@@ -2334,13 +2334,17 @@
         tl.from("#star", {
             duration: 1.5,
             rotate: 1500,
-            top: -300,
-            opacity: 0
+            top: -200,
+            opacity: 0,
         })
-
+        
         tl.to("#loader", {
             duration: .5,
             opacity: 0,
+        })
+        
+        tl.to("#loader", {
+            display: "none"
         })
 
     </script>
