@@ -323,7 +323,7 @@ html {
 .reels_popup_swiper .swiper-slide {
     height: 80%;
     transition: all .3s ease-in-out;
-    opacity: .3;
+    opacity: .5;
     margin: auto;
 }
 
