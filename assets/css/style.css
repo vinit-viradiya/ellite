@@ -948,6 +948,9 @@
   .grid-cols-\[175px_1fr\] {
     grid-template-columns: 175px 1fr;
   }
+  .grid-cols-\[200px_1fr\] {
+    grid-template-columns: 200px 1fr;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -2011,6 +2014,11 @@
       gap: calc(var(--spacing) * 40);
     }
   }
+  .sm\:p-20 {
+    @media (width >= 576px) {
+      padding: calc(var(--spacing) * 20);
+    }
+  }
   .sm\:py-24 {
     @media (width >= 576px) {
       padding-block: calc(var(--spacing) * 24);
@@ -2228,6 +2236,11 @@
   .lg\:grid-cols-\[175px_1fr\] {
     @media (width >= 992px) {
       grid-template-columns: 175px 1fr;
+    }
+  }
+  .lg\:grid-cols-\[200px_1fr\] {
+    @media (width >= 992px) {
+      grid-template-columns: 200px 1fr;
     }
   }
   .lg\:flex-col {
