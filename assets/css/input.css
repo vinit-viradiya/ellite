@@ -335,12 +335,3 @@ html {
     height: 100%;
     opacity: 1;
 }
-
-.reels_popup_swiper .swiper-slide video {
-    transition: all .3s ease-in-out;
-}
-
-.reels_popup_swiper .swiper-slide:not(.swiper-slide-active) video {
-    opacity: 0;
-    visibility: hidden;
-}
