@@ -381,16 +381,10 @@ if (document.querySelector('.reels_popup_swiper')) {
         },
     });
     function playActiveVideo(swiper) {
-
-        // Pause all videos
         document.querySelectorAll('.swiper video').forEach(video => {
             video.pause();
-            video.currentTime = 0; // optional
         });
-
-        // Play active slide video
         const activeVideo = swiper.slides[swiper.activeIndex].querySelector('video');
-
         if (activeVideo) {
             activeVideo.play().catch(() => { });
         }
