@@ -61,9 +61,9 @@ if (document.querySelector('.offers_swiper')) {
     var swiper = new Swiper(".offers_swiper", {
         spaceBetween: 30,
         loop: true,
-        autoplay: {
-            delay: 5000,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        // },
     });
 }
 
@@ -265,9 +265,9 @@ if (document.querySelector('.coupons_swiper')) {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 20,
-        autoplay: {
-            delay: 5000,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        // },
         pagination: {
             el: ".swiper-pagination",
         },
