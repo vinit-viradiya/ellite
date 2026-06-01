@@ -44,7 +44,7 @@
                     d="M70.0947 39.8201L70.0448 39.2504C69.3951 39.3603 68.7654 39.4103 68.1757 39.4103C66.2667 39.4103 64.9673 38.8106 64.2677 37.6012C63.568 36.4018 63.3281 34.4128 63.3681 31.6242V14.073H69.4651V12.8236H63.3681V2.80859L58.2007 5.80709V31.8341C58.2007 34.5527 59.0203 36.5917 60.6595 37.951C62.2886 39.3203 64.5575 39.99 67.4361 39.99C68.2557 39.99 69.1552 39.95 70.0847 39.8401H70.0947V39.8201Z"
                     fill="#231F20" />
             </svg>
-            <svg class="absolute top-[9%] left-[36%] origin-center" id="star" width="10" height="10" viewBox="0 0 10 10"
+            <svg class="hidden absolute top-[9%] left-[36%] origin-center" id="star" width="10" height="10" viewBox="0 0 10 10"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_3024_5370)">
                     <mask id="mask0_3024_5370" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -2332,6 +2332,7 @@
         let tl = gsap.timeline();
 
         tl.from("#star", {
+            display: "block",
             duration: 1.5,
             rotate: 1500,
             top: -200,

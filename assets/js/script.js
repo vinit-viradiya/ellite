@@ -396,13 +396,15 @@ if (document.querySelector('.reels_popup_swiper')) {
 // Reels swiper sync (Above both)
 // -------------------------------------------------------------
 
-reels_swiper.on('click', function (swiper) {
-    const realIndex = swiper.clickedSlide.dataset.swiperSlideIndex;
-    requestAnimationFrame(() => {
-        reels_popup_swiper.slideToLoop(Number(realIndex), 0);
-        reels_popup_swiper.update();
+if (reels_swiper) {
+    reels_swiper.on('click', function (swiper) {
+        const realIndex = swiper.clickedSlide.dataset.swiperSlideIndex;
+        requestAnimationFrame(() => {
+            reels_popup_swiper.slideToLoop(Number(realIndex), 0);
+            reels_popup_swiper.update();
+        });
     });
-});
+}
 
 
 // -------------------------------------------------------------
