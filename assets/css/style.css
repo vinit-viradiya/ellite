@@ -578,6 +578,15 @@
   .aspect-\[1\.55\/1\] {
     aspect-ratio: 1.55/1;
   }
+  .aspect-\[1\.83\/1\] {
+    aspect-ratio: 1.83/1;
+  }
+  .aspect-\[2\.48\/1\] {
+    aspect-ratio: 2.48/1;
+  }
+  .aspect-\[3\.2\/1\] {
+    aspect-ratio: 3.2/1;
+  }
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
@@ -2034,6 +2043,11 @@
       aspect-ratio: 1.08/1;
     }
   }
+  .md\:aspect-\[2\.48\/1\] {
+    @media (width >= 768px) {
+      aspect-ratio: 2.48/1;
+    }
+  }
   .md\:h-\[calc\(100dvh-40px\)\] {
     @media (width >= 768px) {
       height: calc(100dvh - 40px);
@@ -2358,6 +2372,16 @@
   .xl\:hidden {
     @media (width >= 1200px) {
       display: none;
+    }
+  }
+  .xl\:aspect-\[3\.2\/1\] {
+    @media (width >= 1200px) {
+      aspect-ratio: 3.2/1;
+    }
+  }
+  .xl\:aspect-auto {
+    @media (width >= 1200px) {
+      aspect-ratio: auto;
     }
   }
   .xl\:h-600 {
