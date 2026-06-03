@@ -25,7 +25,7 @@
 
 <body>
 
-    <div id="loader" class="fixed inset-0 bg-white z-9999999 grid place-items-center">
+    <!-- <div id="loader" class="fixed inset-0 bg-white z-9999999 grid place-items-center">
         <div class="relative scale-200">
             <svg width="126" viewBox="0 0 127 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -44,8 +44,8 @@
                     d="M70.0947 39.8201L70.0448 39.2504C69.3951 39.3603 68.7654 39.4103 68.1757 39.4103C66.2667 39.4103 64.9673 38.8106 64.2677 37.6012C63.568 36.4018 63.3281 34.4128 63.3681 31.6242V14.073H69.4651V12.8236H63.3681V2.80859L58.2007 5.80709V31.8341C58.2007 34.5527 59.0203 36.5917 60.6595 37.951C62.2886 39.3203 64.5575 39.99 67.4361 39.99C68.2557 39.99 69.1552 39.95 70.0847 39.8401H70.0947V39.8201Z"
                     fill="#231F20" />
             </svg>
-            <svg class="hidden absolute top-[9%] left-[36%] origin-center" id="star" width="10" height="10" viewBox="0 0 10 10"
-                fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="hidden absolute top-[9%] left-[36%] origin-center" id="star" width="10" height="10"
+                viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_3024_5370)">
                     <mask id="mask0_3024_5370" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
                         width="10" height="10">
@@ -64,7 +64,7 @@
                 </defs>
             </svg>
         </div>
-    </div>
+    </div> -->
 
     <div class="topbar text-center bg-brand-100 py-8 px-gutter text-14">
         <div class="max-w-500 border-x border-brand-500 mx-auto">
@@ -893,20 +893,32 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="banner_wrapper">
-                            <img fetchpriority="high" src="assets/images/banner1.webp" alt="Banner image 1"
-                                class="w-full h-400 xl:h-600 object-cover">
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="assets/images/banner_xl_1.webp">
+                                <source media="(min-width: 768px)" srcset="assets/images/banner_md_1.webp">
+                                <img src="assets/images/banner_sm_1.webp" alt="Banner img"
+                                    class="w-full" fetchpriority="high">
+                            </picture>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="banner_wrapper">
-                            <img fetchpriority="high" src="assets/images/banner2.webp" alt="Banner image 2"
-                                class="w-full h-400 xl:h-600 object-cover">
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="assets/images/banner_xl_2.webp">
+                                <source media="(min-width: 768px)" srcset="assets/images/banner_md_2.webp">
+                                <img src="assets/images/banner_sm_2.webp" alt="Banner img"
+                                    class="w-full" fetchpriority="high">
+                            </picture>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="banner_wrapper">
-                            <img fetchpriority="high" src="assets/images/banner3.webp" alt="Banner image 3"
-                                class="w-full h-400 xl:h-600 object-cover">
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="assets/images/banner_xl_3.webp">
+                                <source media="(min-width: 768px)" srcset="assets/images/banner_md_3.webp">
+                                <img src="assets/images/banner_sm_3.webp" alt="Banner img"
+                                    class="w-full" fetchpriority="high">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -2315,12 +2327,12 @@
             top: -200,
             opacity: 0,
         })
-        
+
         tl.to("#loader", {
             duration: .5,
             opacity: 0,
         })
-        
+
         tl.to("#loader", {
             display: "none"
         })
