@@ -1789,6 +1789,11 @@
       }
     }
   }
+  .not-md\:p-10 {
+    @media not (width >= 768px) {
+      padding: calc(var(--spacing) * 10);
+    }
+  }
   .not-md\:text-sm {
     @media not (width >= 768px) {
       font-size: var(--text-sm);
@@ -2011,6 +2016,11 @@
   .sm\:py-24 {
     @media (width >= 576px) {
       padding-block: calc(var(--spacing) * 24);
+    }
+  }
+  .md\:absolute {
+    @media (width >= 768px) {
+      position: absolute;
     }
   }
   .md\:sticky {
