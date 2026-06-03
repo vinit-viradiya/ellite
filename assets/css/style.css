@@ -2554,7 +2554,6 @@ html {
 [x-cloak] {
   display: none !important;
 }
-@layer utilities;
 @layer components {
   * {
     scrollbar-width: thin;
@@ -2673,6 +2672,27 @@ html {
     border-color: var(--color-yellow-400);
     background-color: var(--color-yellow-50);
     color: var(--color-yellow-700);
+  }
+  header .link {
+    position: relative;
+  }
+  header .link::after {
+    position: absolute;
+    right: 100%;
+    bottom: calc(var(--spacing) * -4);
+    left: calc(var(--spacing) * 0);
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+    --tw-content: '';
+    content: var(--tw-content);
+  }
+  header .link:hover::after {
+    right: calc(var(--spacing) * 0);
   }
 }
 @layer base {

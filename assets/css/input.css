@@ -82,8 +82,6 @@ html {
 
 }
 
-@layer utilities {}
-
 @layer components {
     * {
         @apply scrollbar-thin;
@@ -154,6 +152,18 @@ html {
 
     .badge.yellow {
         @apply bg-yellow-50 border-yellow-400 text-yellow-700
+    }
+
+    header .link{
+        @apply relative
+    }
+
+    header .link::after{
+        @apply content-[''] absolute -bottom-4 left-0 right-full border-b transition-all duration-500
+    }
+
+    header .link:hover::after{
+        @apply right-0
     }
 }
 
