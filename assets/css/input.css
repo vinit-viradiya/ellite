@@ -99,7 +99,7 @@ html {
     }
 
     .btn.style_1 {
-        @apply bg-black text-white py-8 px-16 rounded-full flex gap-8 items-center w-fit justify-center text-center relative overflow-hidden;
+        @apply bg-black text-white py-8 px-16 rounded-full flex gap-8 items-center w-fit justify-center text-center relative overflow-hidden transition-colors duration-300 outline-2 outline-transparent outline-offset-2 hover:outline-black;
     }
 
     .btn:focus {
