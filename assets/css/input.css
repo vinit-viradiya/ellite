@@ -119,7 +119,7 @@ html {
         animation-name: marquee;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
-        animation-duration: 25s;
+        animation-duration: 30s;
     }
 
     @keyframes marquee {
