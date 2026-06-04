@@ -154,19 +154,19 @@ html {
         @apply bg-yellow-50 border-yellow-400 text-yellow-700
     }
 
-    header .link{
+    header .link {
         @apply relative
     }
 
-    header .link::after{
+    header .link::after {
         @apply content-[''] absolute -bottom-4 left-0 right-full border-b transition-all duration-500
     }
 
-    header .link:hover::after{
+    header .link:hover::after {
         @apply right-0
     }
 
-    header .link.active::after{
+    header .link.active::after {
         @apply right-0
     }
 }
@@ -278,6 +278,7 @@ html {
     .iphone-mock-up::after {
         @apply content-[''] absolute bg-[url(../images/iphone-frame.webp)] bg-no-repeat bg-center bg-contain inset-0;
     }
+
 }
 
 .hero_swiper .swiper-pagination-bullet {
@@ -348,4 +349,12 @@ html {
 .reels_popup_swiper .swiper-slide.swiper-slide-active {
     height: 100%;
     opacity: 1;
+}
+
+.tngredients_grid[columns="3"] {
+    @apply 3xl:grid-cols-3;
+}
+
+.tngredients_grid[columns="4"] {
+    @apply 3xl:grid-cols-4;
 }

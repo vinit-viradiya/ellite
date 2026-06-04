@@ -570,6 +570,9 @@
   .aspect-\[\.84\/1\] {
     aspect-ratio: .84/1;
   }
+  .aspect-\[\.94\/1\] {
+    aspect-ratio: .94/1;
+  }
   .aspect-\[1\.7\/1\] {
     aspect-ratio: 1.7/1;
   }
@@ -1405,6 +1408,9 @@
   .py-100 {
     padding-block: var(--spacing-100);
   }
+  .pt-0 {
+    padding-top: calc(var(--spacing) * 0);
+  }
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
   }
@@ -1974,14 +1980,14 @@
       padding: calc(var(--spacing) * 20);
     }
   }
-  .sm\:py-8 {
-    @media (width >= 576px) {
-      padding-block: calc(var(--spacing) * 8);
-    }
-  }
   .sm\:py-24 {
     @media (width >= 576px) {
       padding-block: calc(var(--spacing) * 24);
+    }
+  }
+  .sm\:pt-0 {
+    @media (width >= 576px) {
+      padding-top: calc(var(--spacing) * 0);
     }
   }
   .md\:absolute {
@@ -2365,11 +2371,6 @@
       height: calc(var(--spacing) * 600);
     }
   }
-  .xl\:w-1 {
-    @media (width >= 1200px) {
-      width: calc(var(--spacing) * 1);
-    }
-  }
   .xl\:w-32 {
     @media (width >= 1200px) {
       width: calc(var(--spacing) * 32);
@@ -2560,11 +2561,6 @@
   .\33 xl\:grid-cols-3 {
     @media (width >= 1600px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  .\33 xl\:grid-cols-4 {
-    @media (width >= 1600px) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
   .\33 xl\:gap-30 {
@@ -2997,6 +2993,16 @@ html {
 .reels_popup_swiper .swiper-slide.swiper-slide-active {
   height: 100%;
   opacity: 1;
+}
+.tngredients_grid[columns="3"] {
+  @media (width >= 1600px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.tngredients_grid[columns="4"] {
+  @media (width >= 1600px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
