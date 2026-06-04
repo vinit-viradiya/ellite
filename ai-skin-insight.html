@@ -491,23 +491,32 @@
                     Visible patterns commonly linked to acne-prone and imbalanced skin.
                 </p>
             </div>
-            <div class="container overflow-x-auto scrollbar-none mask-(--mask-1)">
+            <div class="container overflow-x-auto pb-12 mask-(--mask-1)">
                 <!-- Tabs -->
                 <div class="tab_btns flex flex-wrap gap-32 xl:gap-68 justify-center items-center min-w-max">
                     <button @click="set('tab1')" :data-active="is('tab1')">
-                        Acne
+                        Acne & Breakouts
                     </button>
                     <button @click="set('tab2')" :data-active="is('tab2')">
-                        Post-Acne Marks
+                        Pigmentation
                     </button>
                     <button @click="set('tab3')" :data-active="is('tab3')">
-                        Oil Balance
+                        Uneven Texture
                     </button>
                     <button @click="set('tab4')" :data-active="is('tab4')">
-                        Redness
+                        Pores
                     </button>
                     <button @click="set('tab5')" :data-active="is('tab5')">
-                        Uneven texture
+                        Redness
+                    </button>
+                    <button @click="set('tab6')" :data-active="is('tab6')">
+                        Uneven Skin Tone
+                    </button>
+                    <button @click="set('tab7')" :data-active="is('tab7')">
+                        Fine Lines
+                    </button>
+                    <button @click="set('tab8')" :data-active="is('tab8')">
+                        Hydration
                     </button>
                 </div>
             </div>
