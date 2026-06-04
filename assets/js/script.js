@@ -504,3 +504,41 @@ function tabs() {
         }
     }
 }
+
+// -------------------------------------------------------------
+// tes_zoomed_swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.tes_zoomed_swiper')) {
+    var swiper = new Swiper(".tes_zoomed_swiper", {
+        loop: true,
+        spaceBetween: 12,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            576: {
+                slidesPerView: 5,
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 4,
+            },
+            992: {
+                slidesPerView: 5,
+            },
+        },
+    });
+    var productSwiper = new Swiper(".tes_zoomed_swiper2", {
+        loop: true,
+        zoom: true,
+        spaceBetween: 12,
+        thumbs: {
+            swiper: swiper,
+        },
+        navigation: {
+            prevEl: ".tes_zoomed_swiper_prev",
+            nextEl: ".tes_zoomed_swiper_next",
+        },
+    });
+}
