@@ -490,6 +490,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- Profile -->
                     <div x-data="dropdown()" class="flex relative">
                         <button @click="toggle" aria-label="Your profile">
@@ -519,6 +520,7 @@
                             </a>
                         </div>
                     </div>
+
                     <!-- Cart -->
                     <div class="flex" x-data="offcanvas" @click.outside="hide">
                         <button @click="show" class="relative" aria-label="Your cart">
@@ -839,7 +841,7 @@
                     </div>
 
                     <!-- Mobile menu -->
-                    <div class="flex" x-data="offcanvas">
+                    <div class="flex" x-data="offcanvas()">
                         <button class="xl:hidden" @click="show" aria-label="Open menu">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -854,11 +856,11 @@
                         <div x-cloak x-show="open" x-transition.opacity @click="hide"
                             class="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm">
                         </div>
-                        <aside x-cloak x-show="open" x-transition:enter="transition duration-300"
+                        <aside x-cloak x-show="true" x-transition:enter="transition duration-300"
                             x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
                             x-transition:leave="transition duration-300" x-transition:leave-start="translate-x-0"
                             x-transition:leave-end="-translate-x-full"
-                            class="fixed left-0 top-0 h-full w-288 bg-white shadow-2xl p-24 text-black z-50">
+                            class="fixed left-0 top-0 h-full w-288 bg-white shadow-2xl p-24 text-black z-50 flex flex-col">
                             <button @click="hide" class="absolute top-24 right-24" aria-label="Close menu">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -869,14 +871,36 @@
                                 </svg>
                             </button>
                             <nav>
-                                <ul class="space-y-12">
-                                    <li><a href="shop-products.html">Shop Products</a></li>
-                                    <li><a href="new-launches.html">New Launches</a></li>
-                                    <li><a href="ai-skin-insight.html">AI Skin Insight</a></li>
-                                    <li><a href="testimonial.html">Testimonial</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
+                                <ul class="divide-y divide-gray-300">
+                                    <li class="py-12 first:pt-0" ><a href="shop-products.html">Shop Products</a></li>
+                                    <li class="py-12 first:pt-0" ><a href="new-launches.html">New Launches</a></li>
+                                    <li class="py-12 first:pt-0" ><a href="ai-skin-insight.html">AI Skin Insight</a></li>
+                                    <li class="py-12 first:pt-0" ><a href="testimonial.html">Testimonial</a></li>
+                                    <li class="py-12 first:pt-0" ><a href="about-us.html">About Us</a></li>
                                 </ul>
                             </nav>
+                            <ul class="flex mt-auto gap-16 justify-center opacity-85">
+                                <li>
+                                    <a href="#" target="_blank" class="border rounded-full grid p-10">
+                                        <img src="assets/icons/ig.svg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="border rounded-full grid p-10">
+                                        <img src="assets/icons/li.svg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="border rounded-full grid p-10">
+                                        <img src="assets/icons/fb.svg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="border rounded-full grid p-10">
+                                        <img src="assets/icons/youtube.svg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
                         </aside>
                     </div>
 
@@ -2197,7 +2221,7 @@
                         </li>
                         <li>
                             <a href="javascript:;" target="_blank" aria-label="LinkedIn account">
-                                <img src="assets/icons/linkedin.svg" alt="">
+                                <img src="assets/icons/li.svg" alt="">
                             </a>
                         </li>
                         <li>
