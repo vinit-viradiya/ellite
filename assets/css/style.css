@@ -519,6 +519,12 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
   .line-clamp-4 {
     overflow: hidden;
     display: -webkit-box;
@@ -530,6 +536,12 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
+  }
+  .line-clamp-13 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 13;
   }
   .block {
     display: block;
@@ -567,8 +579,8 @@
   .aspect-\[\.82\/1\] {
     aspect-ratio: .82/1;
   }
-  .aspect-\[\.84\/1\] {
-    aspect-ratio: .84/1;
+  .aspect-\[\.83\/1\] {
+    aspect-ratio: .83/1;
   }
   .aspect-\[\.94\/1\] {
     aspect-ratio: .94/1;
@@ -625,6 +637,9 @@
   .h-auto\! {
     height: auto !important;
   }
+  .h-dvh {
+    height: 100dvh;
+  }
   .h-full {
     height: 100%;
   }
@@ -634,11 +649,17 @@
   .max-h-800 {
     max-height: calc(var(--spacing) * 800);
   }
+  .max-h-\[calc\(100dvh-48px\)\] {
+    max-height: calc(100dvh - 48px);
+  }
   .max-h-\[calc\(100dvh-120px\)\] {
     max-height: calc(100dvh - 120px);
   }
   .max-h-\[calc\(100vh-40px\)\] {
     max-height: calc(100vh - 40px);
+  }
+  .max-h-\[clac\(100dvh-48px\)\] {
+    max-height: clac(100dvh-48px);
   }
   .max-h-full {
     max-height: 100%;
@@ -667,8 +688,8 @@
   .w-32 {
     width: calc(var(--spacing) * 32);
   }
-  .w-55 {
-    width: calc(var(--spacing) * 55);
+  .w-53 {
+    width: calc(var(--spacing) * 53);
   }
   .w-80 {
     width: calc(var(--spacing) * 80);
@@ -750,6 +771,9 @@
   }
   .max-w-580 {
     max-width: calc(var(--spacing) * 580);
+  }
+  .max-w-800 {
+    max-width: calc(var(--spacing) * 800);
   }
   .max-w-992 {
     max-width: calc(var(--spacing) * 992);
@@ -1092,11 +1116,6 @@
       border-color: var(--color-gray-300);
     }
   }
-  .divide-gray-500 {
-    :where(& > :not(:last-child)) {
-      border-color: var(--color-gray-500);
-    }
-  }
   .divide-slate-500 {
     :where(& > :not(:last-child)) {
       border-color: var(--color-slate-500);
@@ -1151,10 +1170,6 @@
   .border-x {
     border-inline-style: var(--tw-border-style);
     border-inline-width: 1px;
-  }
-  .border-y {
-    border-block-style: var(--tw-border-style);
-    border-block-width: 1px;
   }
   .border-t {
     border-top-style: var(--tw-border-style);
@@ -1271,6 +1286,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
     }
+  }
+  .bg-yellow-50 {
+    background-color: var(--color-yellow-50);
   }
   .bg-zinc-50 {
     background-color: var(--color-zinc-50);
@@ -1531,6 +1549,9 @@
   .text-\[11px\] {
     font-size: 11px;
   }
+  .text-\[32px\] {
+    font-size: 32px;
+  }
   .font-light {
     --tw-font-weight: var(--font-weight-light);
     font-weight: var(--font-weight-light);
@@ -1606,17 +1627,8 @@
   .opacity-0 {
     opacity: 0%;
   }
-  .opacity-50 {
-    opacity: 50%;
-  }
-  .opacity-80 {
-    opacity: 80%;
-  }
   .opacity-85 {
     opacity: 85%;
-  }
-  .opacity-90 {
-    opacity: 90%;
   }
   .opacity-100 {
     opacity: 100%;
@@ -2061,6 +2073,11 @@
       aspect-ratio: 2.48/1;
     }
   }
+  .md\:aspect-square {
+    @media (width >= 768px) {
+      aspect-ratio: 1 / 1;
+    }
+  }
   .md\:h-\[calc\(100dvh-40px\)\] {
     @media (width >= 768px) {
       height: calc(100dvh - 40px);
@@ -2128,6 +2145,15 @@
       gap: calc(var(--spacing) * 24);
     }
   }
+  .md\:space-y-24 {
+    @media (width >= 768px) {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(calc(var(--spacing) * 24) * var(--tw-space-y-reverse));
+        margin-block-end: calc(calc(var(--spacing) * 24) * calc(1 - var(--tw-space-y-reverse)));
+      }
+    }
+  }
   .md\:divide-x {
     @media (width >= 768px) {
       :where(& > :not(:last-child)) {
@@ -2182,6 +2208,11 @@
     @media (width >= 768px) {
       font-size: var(--text-20);
       line-height: var(--tw-leading, var(--text-20--line-height));
+    }
+  }
+  .md\:text-\[32px\] {
+    @media (width >= 768px) {
+      font-size: 32px;
     }
   }
   .lg\:static {
@@ -2325,6 +2356,11 @@
   .lg\:pr-32 {
     @media (width >= 992px) {
       padding-right: calc(var(--spacing) * 32);
+    }
+  }
+  .lg\:text-\[32px\] {
+    @media (width >= 992px) {
+      font-size: 32px;
     }
   }
   .xl\:right-30 {
