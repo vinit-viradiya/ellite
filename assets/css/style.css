@@ -1008,6 +1008,9 @@
   .gap-28 {
     gap: calc(var(--spacing) * 28);
   }
+  .gap-30 {
+    gap: calc(var(--spacing) * 30);
+  }
   .gap-32 {
     gap: calc(var(--spacing) * 32);
   }
@@ -2584,6 +2587,11 @@
       gap: calc(var(--spacing) * 68);
     }
   }
+  .xl\:gap-80 {
+    @media (width >= 1200px) {
+      gap: calc(var(--spacing) * 80);
+    }
+  }
   .xl\:space-y-12 {
     @media (width >= 1200px) {
       :where(& > :not(:last-child)) {
@@ -2791,6 +2799,11 @@
       width: 100%;
     }
   }
+  .\34 xl\:gap-5 {
+    @media (width >= 1740px) {
+      gap: calc(var(--spacing) * 5);
+    }
+  }
   .\34 xl\:gap-8 {
     @media (width >= 1740px) {
       gap: calc(var(--spacing) * 8);
@@ -2804,6 +2817,11 @@
   .\34 xl\:gap-40 {
     @media (width >= 1740px) {
       gap: calc(var(--spacing) * 40);
+    }
+  }
+  .\34 xl\:gap-80 {
+    @media (width >= 1740px) {
+      gap: calc(var(--spacing) * 80);
     }
   }
   .\34 xl\:p-40 {
