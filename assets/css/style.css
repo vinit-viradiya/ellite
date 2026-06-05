@@ -571,6 +571,12 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
   }
+  .line-clamp-9 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 9;
+  }
   .block {
     display: block;
   }
@@ -2302,6 +2308,11 @@
     @media (width >= 768px) {
       font-size: var(--text-20);
       line-height: var(--tw-leading, var(--text-20--line-height));
+    }
+  }
+  .md\:text-\[32px\] {
+    @media (width >= 768px) {
+      font-size: 32px;
     }
   }
   .lg\:static {
