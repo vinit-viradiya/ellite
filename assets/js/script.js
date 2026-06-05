@@ -61,9 +61,9 @@ if (document.querySelector('.offers_swiper')) {
     var swiper = new Swiper(".offers_swiper", {
         spaceBetween: 30,
         loop: true,
-        autoplay: {
-            delay: 5000,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        // },
     });
 }
 
@@ -77,9 +77,9 @@ if (document.querySelector('.hero_swiper')) {
         spaceBetween: 30,
         effect: "fade",
         loop: true,
-        autoplay: {
-            delay: 3500,
-        },
+        // autoplay: {
+        //     delay: 3500,
+        // },
         pagination: {
             el: ".swiper-pagination",
         },
@@ -100,9 +100,9 @@ if (document.querySelector('.solution_swiper')) {
         slidesPerView: 1.8,
         spaceBetween: 16,
         loop: true,
-        autoplay: {
-            delay: 3500,
-        },
+        // autoplay: {
+        //     delay: 3500,
+        // },
         navigation: {
             prevEl: ".solution_swiper_prev",
             nextEl: ".solution_swiper_next",
@@ -134,9 +134,9 @@ if (document.querySelector('.new_pro_swiper')) {
         slidesPerView: 1.2,
         spaceBetween: 16,
         loop: true,
-        autoplay: {
-            delay: 3500,
-        },
+        // autoplay: {
+        //     delay: 3500,
+        // },
         navigation: {
             prevEl: ".new_pro_swiper_prev",
             nextEl: ".new_pro_swiper_next",
@@ -171,9 +171,9 @@ if (document.querySelector('.top_seller_swiper')) {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 20,
-        autoplay: {
-            delay: 3500,
-        },
+        // autoplay: {
+        //     delay: 3500,
+        // },
         navigation: {
             prevEl: ".top_seller_swiper_prev",
             nextEl: ".top_seller_swiper_next",
@@ -205,9 +205,9 @@ if (document.querySelector('.testimonials_swiper')) {
     var swiper = new Swiper(".testimonials_swiper", {
         loop: true,
         slidesPerView: 1,
-        autoplay: {
-            delay: 3500,
-        },
+        // autoplay: {
+        //     delay: 3500,
+        // },
         navigation: {
             prevEl: ".testimonials_swiper_prev",
             nextEl: ".testimonials_swiper_next",
@@ -261,9 +261,9 @@ if (document.querySelector('.coupons_swiper')) {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 20,
-        autoplay: {
-            delay: 5000,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        // },
         pagination: {
             el: ".swiper-pagination",
         },
