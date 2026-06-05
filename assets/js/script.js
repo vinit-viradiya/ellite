@@ -348,28 +348,24 @@ if (productSwiper) {
 if (document.querySelector('.reels_swiper')) {
     var reels_swiper = new Swiper(".reels_swiper", {
         loop: true,
-        slidesPerView: 2,
-        spaceBetween: 10,
+        slidesPerView: 3,
+        spaceBetween: 16,
         navigation: {
             prevEl: ".reels_swiper_prev",
             nextEl: ".reels_swiper_next",
         },
         breakpoints: {
             576: {
-                slidesPerView: 3,
-                spaceBetween: 12,
+                slidesPerView: 4,
             },
             768: {
-                slidesPerView: 4,
-                spaceBetween: 12,
+                slidesPerView: 5,
             },
             992: {
-                slidesPerView: 4,
-                spaceBetween: 22,
+                slidesPerView: 6,
             },
             1600: {
-                slidesPerView: 4,
-                spaceBetween: 32,
+                slidesPerView: 7,
             },
         },
     });
