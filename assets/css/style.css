@@ -2516,6 +2516,11 @@
       aspect-ratio: 3.84/1;
     }
   }
+  .xl\:aspect-\[4\.8\/1\] {
+    @media (width >= 1200px) {
+      aspect-ratio: 4.8/1;
+    }
+  }
   .xl\:h-500 {
     @media (width >= 1200px) {
       height: calc(var(--spacing) * 500);
