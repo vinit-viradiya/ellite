@@ -117,7 +117,7 @@ if (document.querySelector('.solution_swiper')) {
                 spaceBetween: 25,
             },
             1600: {
-                slidesPerView: 2.35,
+                slidesPerView: 3.6,
                 spaceBetween: 40,
             },
         },
