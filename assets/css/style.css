@@ -2668,6 +2668,11 @@
       padding-block: calc(var(--spacing) * 165);
     }
   }
+  .xl\:pb-48 {
+    @media (width >= 1200px) {
+      padding-bottom: calc(var(--spacing) * 48);
+    }
+  }
   .xl\:pb-80 {
     @media (width >= 1200px) {
       padding-bottom: calc(var(--spacing) * 80);
