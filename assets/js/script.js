@@ -155,7 +155,7 @@ if (document.querySelector('.new_pro_swiper')) {
                 spaceBetween: 16,
             },
             1600: {
-                slidesPerView: 2.3,
+                slidesPerView: 3,
                 spaceBetween: 40,
             },
         },
@@ -205,6 +205,7 @@ if (document.querySelector('.testimonials_swiper')) {
     var swiper = new Swiper(".testimonials_swiper", {
         loop: true,
         slidesPerView: 1,
+        spaceBetween: 16,
         // autoplay: {
         //     delay: 3500,
         // },
@@ -215,12 +216,15 @@ if (document.querySelector('.testimonials_swiper')) {
         breakpoints: {
             768: {
                 slidesPerView: 1.5,
+                spaceBetween: 16,
             },
             992: {
                 slidesPerView: 1.8,
+                spaceBetween: 32,
             },
             1200: {
                 slidesPerView: 2.2,
+                spaceBetween: 64,
             },
         },
     });
