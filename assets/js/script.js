@@ -413,7 +413,7 @@ if (document.querySelector('.reels_popup_swiper')) {
         },
     });
     function playActiveVideo(swiper) {
-        document.querySelectorAll('.swiper video').forEach(video => {
+        document.querySelectorAll('.reels_popup_swiper video').forEach(video => {
             video.pause();
         });
         const activeVideo = swiper.slides[swiper.activeIndex].querySelector('video');
