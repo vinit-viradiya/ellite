@@ -349,7 +349,7 @@ if (document.querySelector('.reels_swiper')) {
     var reels_swiper = new Swiper(".reels_swiper", {
         loop: true,
         slidesPerView: 3,
-        spaceBetween: 16,
+        spaceBetween: 4,
         navigation: {
             prevEl: ".reels_swiper_prev",
             nextEl: ".reels_swiper_next",
@@ -360,12 +360,14 @@ if (document.querySelector('.reels_swiper')) {
             },
             768: {
                 slidesPerView: 5,
+                spaceBetween: 8,
             },
             992: {
                 slidesPerView: 6,
             },
             1600: {
                 slidesPerView: 7,
+                spaceBetween: 16,
             },
         },
     });
