@@ -460,7 +460,7 @@ if (document.querySelector('.reels_swiper_nrw')) {
                 slidesPerView: 4,
                 spaceBetween: 22,
             },
-              992: {
+            992: {
                 slidesPerView: 5,
                 spaceBetween: 32,
             }
@@ -632,4 +632,36 @@ if (document.querySelector('.tes_zoomed_swiper')) {
             nextEl: ".tes_zoomed_swiper_next",
         },
     });
+}
+
+// -------------------------------------------------------------
+// process_swiper
+// -------------------------------------------------------------
+
+var progressBar = document.querySelector(".progress_bar");
+
+var swiper = new Swiper(".process_swiper", {
+    slidesPerView: 1,
+    effect: "fade",
+    loop: true,
+
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+
+    on: {
+        init() {
+            restartProgress();
+        },
+        slideChangeTransitionStart() {
+            restartProgress();
+        }
+    }
+});
+
+function restartProgress() {
+    progressBar.classList.remove("animate");
+    void progressBar.offsetWidth;
+    progressBar.classList.add("animate");
 }

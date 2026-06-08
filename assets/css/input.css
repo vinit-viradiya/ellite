@@ -80,7 +80,7 @@ html {
 
     --mask-1: linear-gradient(90deg, rgba(0, 0, 0, 1) calc(100% - var(--spacing-gutter)), rgba(0, 0, 0, 0) 100%);
 
-    --mask-2: linear-gradient(90deg,rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, .3) 100%);
+    --mask-2: linear-gradient(90deg, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, .3) 100%);
 
 }
 
@@ -337,7 +337,7 @@ html {
     }
 }
 
-.reels_nrw_popup_swiper .swiper-slide ,
+.reels_nrw_popup_swiper .swiper-slide,
 .reels_popup_swiper .swiper-slide {
     height: 80%;
     transition: all .3s ease-in-out;
@@ -345,12 +345,12 @@ html {
     margin: auto;
 }
 
-.reels_nrw_popup_swiper :is(.swiper-slide-prev, .swiper-slide-next) ,
+.reels_nrw_popup_swiper :is(.swiper-slide-prev, .swiper-slide-next),
 .reels_popup_swiper :is(.swiper-slide-prev, .swiper-slide-next) {
     height: 90%;
 }
 
-.reels_nrw_popup_swiper .swiper-slide.swiper-slide-active ,
+.reels_nrw_popup_swiper .swiper-slide.swiper-slide-active,
 .reels_popup_swiper .swiper-slide.swiper-slide-active {
     height: 100%;
     opacity: 1;
@@ -362,4 +362,24 @@ html {
 
 .tngredients_grid[columns="4"] {
     @apply 3xl:grid-cols-4;
+}
+
+.progress_bar {
+    width: 0;
+    height: 100%;
+    background: #000;
+}
+
+.progress_bar.animate {
+    animation: progressFill 3s linear forwards;
+}
+
+@keyframes progressFill {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
 }
