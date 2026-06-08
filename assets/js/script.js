@@ -199,41 +199,6 @@ if (document.querySelector('.top_seller_swiper')) {
     });
 }
 
-
-// -------------------------------------------------------------
-// testimonials_swiper
-// -------------------------------------------------------------
-
-if (document.querySelector('.testimonials_swiper')) {
-    var swiper = new Swiper(".testimonials_swiper", {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 16,
-        // autoplay: {
-        //     delay: 3500,
-        // },
-        navigation: {
-            prevEl: ".testimonials_swiper_prev",
-            nextEl: ".testimonials_swiper_next",
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 1.5,
-                spaceBetween: 16,
-            },
-            992: {
-                slidesPerView: 1.8,
-                spaceBetween: 32,
-            },
-            1200: {
-                slidesPerView: 2.2,
-                spaceBetween: 64,
-            },
-        },
-    });
-}
-
-
 // -------------------------------------------------------------
 // Back to top button
 // -------------------------------------------------------------
@@ -664,4 +629,176 @@ function restartProgress() {
     progressBar.classList.remove("animate");
     void progressBar.offsetWidth;
     progressBar.classList.add("animate");
+}
+
+// -------------------------------------------------------------
+// testimonials_swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.testimonials_swiper')) {
+    var swiper = new Swiper(".testimonials_swiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 16,
+        // autoplay: {
+        //     delay: 3500,
+        // },
+        navigation: {
+            prevEl: ".testimonials_swiper_prev",
+            nextEl: ".testimonials_swiper_next",
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1.5,
+                spaceBetween: 16,
+            },
+            992: {
+                slidesPerView: 1.8,
+                spaceBetween: 32,
+            },
+            1200: {
+                slidesPerView: 2.2,
+                spaceBetween: 64,
+            },
+        },
+    });
+}
+
+
+// -------------------------------------------------------------
+// reviewGallery
+// -------------------------------------------------------------
+
+function reviewGallery() {
+    return {
+        open: false,
+        swiper: null,
+        activeReview: 0,
+        reviews: [
+            {
+                name: 'Ananya, 26',
+                title: 'Skin finally feels calm again.',
+                comment: 'I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel less aggressive now.',
+                images: [
+                    'assets/images/pro_sm_1.webp',
+                    'assets/images/pro_sm_2.webp',
+                ]
+            },
+            {
+                name: 'Durga Prajapati',
+                title: 'Skin finally feels calm again.',
+                comment: 'I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel less aggressive now.',
+                images: [
+                    'assets/images/pro_sm_1.webp',
+                    'assets/images/pro_sm_2.webp',
+                    'assets/images/pro_sm_3.webp',
+                    'assets/images/pro_sm_4.webp',
+                ]
+            },
+            {
+                name: 'Priyanshu solanki',
+                title: 'Skin finally feels calm again.',
+                comment: 'I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel less aggressive now.',
+                images: [
+                    'assets/images/pro_sm_1.webp',
+                    'assets/images/pro_sm_2.webp',
+                    'assets/images/pro_sm_3.webp',
+                ]
+            }
+        ],
+
+        get activeImages() {
+            return this.reviews[this.activeReview].images;
+        },
+
+        openReview(index) {
+            this.activeReview = index;
+            this.open = true;
+            this.$nextTick(() => {
+                this.initSwiper();
+            });
+        },
+
+        closeModal() {
+            this.open = false;
+            if (this.swiper) {
+                this.swiper.destroy(true, true);
+                this.swiper = null;
+            }
+        },
+
+        initSwiper() {
+            if (this.swiper) {
+                this.swiper.destroy(true, true);
+            }
+            var swiper = new Swiper(".tes_zoomed_swiper", {
+                loop: true,
+                spaceBetween: 12,
+                slidesPerView: 4,
+                freeMode: true,
+                watchSlidesProgress: true,
+                breakpoints: {
+                    576: {
+                        slidesPerView: 5,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 4,
+                    },
+                    992: {
+                        slidesPerView: 5,
+                    },
+                },
+            });
+            this.swiper = new Swiper('.reviewSwiper', {
+                slidesPerView: 1,
+                speed: 500,
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
+        },
+
+        nextItem() {
+            const isLastSlide =
+                this.swiper.activeIndex ===
+                this.activeImages.length - 1;
+            if (!isLastSlide) {
+                this.swiper.slideNext();
+                return;
+            }
+            const isLastReview =
+                this.activeReview ===
+                this.reviews.length - 1;
+
+            if (isLastReview) {
+                this.closeModal();
+                return;
+            }
+            this.activeReview++;
+            this.$nextTick(() => {
+                requestAnimationFrame(() => {
+                    this.initSwiper();
+                });
+            });
+        },
+
+        prevItem() {
+            if (this.swiper.activeIndex > 0) {
+                this.swiper.slidePrev();
+                return;
+            }
+            if (this.activeReview === 0) {
+                return;
+            }
+            this.activeReview--;
+            this.$nextTick(() => {
+                this.initSwiper();
+                this.swiper.slideTo(
+                    this.activeImages.length - 1,
+                    0
+                );
+            });
+        }
+    }
 }

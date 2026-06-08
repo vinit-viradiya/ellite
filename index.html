@@ -2088,7 +2088,7 @@
         </section>
 
         <!-- Results -->
-        <section class="py-100" x-data="popup">
+        <section class="py-100" x-data="reviewGallery()">
             <div class="container">
                 <div class="swiper testimonials_swiper">
                     <div class="flex items-end mb-24 xl:mb-48 gap-y-20 justify-between gap-x-24">
@@ -2121,169 +2121,33 @@
                         </div>
                     </div>
                     <div class="swiper-wrapper text-gray-950">
-                        <div @click="show" class="swiper-slide h-auto! cursor-pointer">
-                            <div class="bg-white p-16 flex flex-col gap-16 h-full rounded-3xl border-2 border-slate-50">
-                                <div class="flex items-center justify-between gap-32">
-                                    <div class="line-clamp-1 text-20">Durga Prajapati</div>
-                                    <div class="flex gap-2 shrink-0">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-unfilled.svg" alt="" class="w-16">
+                        <template x-for="(review,index) in reviews" :key="index">
+                            <div @click="openReview(index)" class="swiper-slide h-auto! cursor-pointer">
+                                <div
+                                    class="bg-white p-16 flex flex-col gap-16 h-full rounded-3xl border-2 border-slate-50">
+                                    <div class="flex items-center justify-between gap-32">
+                                        <div class="line-clamp-1 text-20" x-text="review.name">Durga Prajapati</div>
+                                        <div class="flex gap-2 shrink-0">
+                                            <img src="assets/icons/star-filled.svg" alt="" class="w-16">
+                                            <img src="assets/icons/star-filled.svg" alt="" class="w-16">
+                                            <img src="assets/icons/star-filled.svg" alt="" class="w-16">
+                                            <img src="assets/icons/star-filled.svg" alt="" class="w-16">
+                                            <img src="assets/icons/star-unfilled.svg" alt="" class="w-16">
+                                        </div>
                                     </div>
-                                </div>
-                                <h3 class="text-20">
-                                    Skin finally feels calm again.
-                                </h3>
-                                <p class="line-clamp-5 font-light text-gray-700">
-                                    I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
-                                    CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
-                                    less aggressive now.I struggled with acne flare-ups and oiliness for years. Using
-                                    ClearGel™ and
-                                    CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
-                                    less aggressive now.
-                                </p>
-                                <div class="flex gap-12 mt-auto">
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
+                                    <h3 class="text-20" x-text="review.title"></h3>
+                                    <p class="line-clamp-5 font-light text-gray-700" x-text="review.comment"></p>
+                                    <div class="flex gap-12 mt-auto">
+                                        <template x-for="(image, imgIndex) in review.images" :key="imgIndex">
+                                            <div class="w-53 aspect-[.83/1] relative">
+                                                <img :src="image" alt=""
+                                                    class="rounded absolute inset-0 size-full object-cover">
+                                            </div>
+                                        </template>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div @click="show" class="swiper-slide h-auto! cursor-pointer">
-                            <div class="bg-white p-16 flex flex-col gap-16 h-full rounded-3xl border-2 border-slate-50">
-                                <div class="flex items-center justify-between gap-32">
-                                    <div class="line-clamp-1 text-20">Durga Prajapati</div>
-                                    <div class="flex gap-2 shrink-0">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-unfilled.svg" alt="" class="w-16">
-                                    </div>
-                                </div>
-                                <h3 class="text-20">
-                                    Skin finally feels calm again.
-                                </h3>
-                                <p class="line-clamp-5 font-light text-gray-700">
-                                    I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
-                                    CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
-                                    less aggressive now.
-                                </p>
-                                <div class="flex gap-12 mt-auto">
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div @click="show" class="swiper-slide h-auto! cursor-pointer">
-                            <div class="bg-white p-16 flex flex-col gap-16 h-full rounded-3xl border-2 border-slate-50">
-                                <div class="flex items-center justify-between gap-32">
-                                    <div class="line-clamp-1 text-20">Durga Prajapati</div>
-                                    <div class="flex gap-2 shrink-0">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-unfilled.svg" alt="" class="w-16">
-                                    </div>
-                                </div>
-                                <h3 class="text-20">
-                                    Skin finally feels calm again.
-                                </h3>
-                                <p class="line-clamp-5 font-light text-gray-700">
-                                    I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
-                                    CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
-                                    less aggressive now.
-                                </p>
-                                <div class="flex gap-12 mt-auto">
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div @click="show" class="swiper-slide h-auto! cursor-pointer">
-                            <div class="bg-white p-16 flex flex-col gap-16 h-full rounded-3xl border-2 border-slate-50">
-                                <div class="flex items-center justify-between gap-32">
-                                    <div class="line-clamp-1 text-20">Durga Prajapati</div>
-                                    <div class="flex gap-2 shrink-0">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-filled.svg" alt="" class="w-16">
-                                        <img src="assets/icons/star-unfilled.svg" alt="" class="w-16">
-                                    </div>
-                                </div>
-                                <h3 class="text-20">
-                                    Skin finally feels calm again.
-                                </h3>
-                                <p class="line-clamp-5 font-light text-gray-700">
-                                    I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and
-                                    CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel
-                                    less aggressive now.
-                                </p>
-                                <div class="flex gap-12 mt-auto">
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                    <div class="w-53 aspect-[.83/1] relative">
-                                        <img src="assets/images/testimonial1.png" alt=""
-                                            class="rounded absolute inset-0 size-full object-cover">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -2293,112 +2157,36 @@
                     class="grid grid-cols-1 md:grid-cols-2 bg-white p-24 w-full max-w-800 rounded-xl shadow-lg border border-gray-300 gap-24 max-h-[calc(100dvh-48px)] overflow-y-auto relative">
                     <div class="space-y-12 md:space-y-24 cursor-pointer relative">
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                            class="swiper tes_zoomed_swiper2">
+                            class="swiper reviewSwiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="aspect-square md:aspect-square relative swiper-zoom-container">
-                                        <img fetchpriority="high" src="assets/images/pro_sm_1.webp"
-                                            class="absolute inset-0 size-full object-contain"
-                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                <template x-for="(image,index) in activeImages" :key="index">
+                                    <div class="swiper-slide">
+                                        <div class="aspect-square md:aspect-square relative swiper-zoom-container">
+                                            <img fetchpriority="high" :src="image"
+                                                class="absolute inset-0 size-full object-contain"
+                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="aspect-square md:aspect-square relative swiper-zoom-container">
-                                        <img fetchpriority="high" src="assets/images/pro_sm_2.webp"
-                                            class="absolute inset-0 size-full object-contain"
-                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="aspect-square md:aspect-square relative swiper-zoom-container">
-                                        <img fetchpriority="high" src="assets/images/pro_sm_3.webp"
-                                            class="absolute inset-0 size-full object-contain"
-                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="aspect-square md:aspect-square relative swiper-zoom-container">
-                                        <img fetchpriority="high" src="assets/images/pro_sm_4.webp"
-                                            class="absolute inset-0 size-full object-contain"
-                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="aspect-square md:aspect-square relative swiper-zoom-container">
-                                        <img fetchpriority="high" src="assets/images/pro_sm_5.webp"
-                                            class="absolute inset-0 size-full object-contain"
-                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="aspect-square md:aspect-square relative swiper-zoom-container">
-                                        <img fetchpriority="high" src="assets/images/pro_sm_6.webp"
-                                            class="absolute inset-0 size-full object-contain"
-                                            alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                    </div>
-                                </div>
+                                </template>
                             </div>
                         </div>
                         <div class="swiper tes_zoomed_swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="bg-slate-50 rounded-lg p-4">
-                                        <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                            <img fetchpriority="high" src="assets/images/pro_sm_1.webp"
-                                                class="absolute size-full inset-0 object-contain"
-                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                <template x-for="(image,index) in activeImages" :key="index">
+                                    <div class="swiper-slide">
+                                        <div class="bg-slate-50 rounded-lg p-4">
+                                            <div class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                                <img fetchpriority="high" :src="image"
+                                                    class="absolute size-full inset-0 object-contain"
+                                                    alt="CalmGel Anti-Acne Gel Moisturizer" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="bg-slate-50 rounded-lg p-4">
-                                        <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                            <img fetchpriority="high" src="assets/images/pro_sm_2.webp"
-                                                class="absolute size-full inset-0 object-contain"
-                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="bg-slate-50 rounded-lg p-4">
-                                        <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                            <img fetchpriority="high" src="assets/images/pro_sm_3.webp"
-                                                class="absolute size-full inset-0 object-contain"
-                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="bg-slate-50 rounded-lg p-4">
-                                        <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                            <img fetchpriority="high" src="assets/images/pro_sm_4.webp"
-                                                class="absolute size-full inset-0 object-contain"
-                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="bg-slate-50 rounded-lg p-4">
-                                        <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                            <img fetchpriority="high" src="assets/images/pro_sm_5.webp"
-                                                class="absolute size-full inset-0 object-contain"
-                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="bg-slate-50 rounded-lg p-4">
-                                        <div class="bg-white rounded-md overflow-hidden aspect-square relative">
-                                            <img fetchpriority="high" src="assets/images/pro_sm_6.webp"
-                                                class="absolute size-full inset-0 object-contain"
-                                                alt="CalmGel Anti-Acne Gel Moisturizer" />
-                                        </div>
-                                    </div>
-                                </div>
+                                </template>
                             </div>
                         </div>
-                        <button
-                            class="tes_zoomed_swiper_prev absolute top-1/2 -translate-y-1/2 left-12 z-9 bg-slate-50 p-10 rounded-full">
+                        <button @click="prevItem()"
+                            class="absolute top-1/2 -translate-y-1/2 left-12 z-9 bg-slate-50 p-10 rounded-full">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.1665 9.99967H15.8332" stroke="#323232" stroke-width="1.5"
@@ -2409,8 +2197,8 @@
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <button
-                            class="tes_zoomed_swiper_next absolute top-1/2 -translate-y-1/2 right-12 z-9 bg-slate-50 p-10 rounded-full">
+                        <button @click="nextItem()"
+                            class="absolute top-1/2 -translate-y-1/2 right-12 z-9 bg-slate-50 p-10 rounded-full">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.8332 9.99967H4.1665" stroke="#323232" stroke-width="1.5"
@@ -2435,7 +2223,7 @@
                                 <span>4.0</span>
                             </div>
                             <button class="bg-slate-50 p-4 rounded-full not-md:absolute top-24 right-24 z-99"
-                                @click="hide">
+                                @click="closeModal()">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 8L16 16" stroke="black" stroke-width="1.2" stroke-linecap="round"
@@ -2450,22 +2238,17 @@
                                 B
                             </div>
                             <div class="flex flex-col gap-2">
-                                <span class="sm:text-20">Bhavik</span>
+                                <span class="sm:text-20" x-text="reviews[activeReview].name">Bhavik</span>
                                 <span class="text-xs font-light">03/15/2026</span>
                             </div>
                         </div>
                         <div class="sm:space-y-16">
-                            <p class="text-20 md:text-[32px]">
-                                Works within only just 3 days use
-                            </p>
-                            <p class="text-gray-700 font-light line-clamp-9">
-                                Great product. Skin friendly and non sticky.. works within only just 3 days use...All
-                                products are good for daily use.... Go for it
-                            </p>
+                            <span class="sm:text-20" x-text="reviews[activeReview].title"></span>
+                            <p class="text-gray-700 font-light line-clamp-9" x-text="reviews[activeReview].comment"></p>
                         </div>
                     </div>
                 </div>
-                <div @click="hide" class="absolute inset-0 -z-1"></div>
+                <div @click="closeModal()" class="absolute inset-0 -z-1"></div>
             </div>
         </section>
 
