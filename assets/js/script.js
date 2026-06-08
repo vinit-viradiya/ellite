@@ -142,6 +142,9 @@ if (document.querySelector('.new_pro_swiper')) {
             nextEl: ".new_pro_swiper_next",
         },
         breakpoints: {
+            576: {
+                slidesPerView: 1.6,
+            },
             768: {
                 slidesPerView: 2.2,
             },
