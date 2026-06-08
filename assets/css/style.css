@@ -592,6 +592,9 @@
   .aspect-\[\.67\/1\] {
     aspect-ratio: .67/1;
   }
+  .aspect-\[\.72\/1\] {
+    aspect-ratio: .72/1;
+  }
   .aspect-\[\.78\/1\] {
     aspect-ratio: .78/1;
   }
@@ -604,6 +607,9 @@
   .aspect-\[\.90\/1\] {
     aspect-ratio: .90/1;
   }
+  .aspect-\[\.92\/1\] {
+    aspect-ratio: .92/1;
+  }
   .aspect-\[\.94\/1\] {
     aspect-ratio: .94/1;
   }
@@ -615,6 +621,9 @@
   }
   .aspect-\[1\.83\/1\] {
     aspect-ratio: 1.83/1;
+  }
+  .aspect-\[2\.11\/1\] {
+    aspect-ratio: 2.11/1;
   }
   .aspect-square {
     aspect-ratio: 1 / 1;
@@ -930,6 +939,9 @@
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
   .grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -1101,6 +1113,13 @@
       margin-block-end: calc(calc(var(--spacing) * 48) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .space-y-210 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 210) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 210) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
   .gap-x-12 {
     column-gap: calc(var(--spacing) * 12);
   }
@@ -1191,6 +1210,10 @@
   .rounded-t-2xl {
     border-top-left-radius: var(--radius-2xl);
     border-top-right-radius: var(--radius-2xl);
+  }
+  .rounded-b-3xl {
+    border-bottom-right-radius: var(--radius-3xl);
+    border-bottom-left-radius: var(--radius-3xl);
   }
   .border {
     border-style: var(--tw-border-style);
@@ -2039,6 +2062,11 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+  .sm\:grid-cols-4 {
+    @media (width >= 576px) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
   .sm\:flex-row {
     @media (width >= 576px) {
       flex-direction: row;
@@ -2127,6 +2155,16 @@
   .md\:aspect-\[1\.08\/1\] {
     @media (width >= 768px) {
       aspect-ratio: 1.08/1;
+    }
+  }
+  .md\:aspect-\[1\.24\/1\] {
+    @media (width >= 768px) {
+      aspect-ratio: 1.24/1;
+    }
+  }
+  .md\:aspect-\[2\.11\/1\] {
+    @media (width >= 768px) {
+      aspect-ratio: 2.11/1;
     }
   }
   .md\:aspect-\[2\.48\/1\] {
@@ -2489,6 +2527,11 @@
       display: none;
     }
   }
+  .xl\:aspect-\[2\.11\/1\] {
+    @media (width >= 1200px) {
+      aspect-ratio: 2.11/1;
+    }
+  }
   .xl\:aspect-\[3\.2\/1\] {
     @media (width >= 1200px) {
       aspect-ratio: 3.2/1;
@@ -2522,6 +2565,11 @@
   .xl\:w-200 {
     @media (width >= 1200px) {
       width: calc(var(--spacing) * 200);
+    }
+  }
+  .xl\:grid-cols-3 {
+    @media (width >= 1200px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .xl\:gap-12 {
@@ -2721,6 +2769,11 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+  .\33 xl\:grid-cols-4 {
+    @media (width >= 1600px) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
   .\33 xl\:gap-24 {
     @media (width >= 1600px) {
       gap: calc(var(--spacing) * 24);
@@ -2734,6 +2787,11 @@
   .\33 xl\:gap-32 {
     @media (width >= 1600px) {
       gap: calc(var(--spacing) * 32);
+    }
+  }
+  .\33 xl\:gap-40 {
+    @media (width >= 1600px) {
+      gap: calc(var(--spacing) * 40);
     }
   }
   .\33 xl\:gap-48 {
