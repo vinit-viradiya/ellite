@@ -283,7 +283,6 @@ if (document.querySelector('.coupons_swiper')) {
 
 if (document.querySelector('.product_imgs_swiper')) {
     var swiper = new Swiper(".product_imgs_swiper", {
-        loop: true,
         spaceBetween: 12,
         slidesPerView: 4,
         freeMode: true,
@@ -302,7 +301,6 @@ if (document.querySelector('.product_imgs_swiper')) {
         },
     });
     var productSwiper = new Swiper(".product_imgs_swiper2", {
-        loop: true,
         zoom: true,
         spaceBetween: 12,
         thumbs: {
@@ -317,7 +315,6 @@ if (document.querySelector('.product_imgs_swiper')) {
 
 if (document.querySelector('.zoomed_product_swiper')) {
     var swiper = new Swiper(".zoomed_product_swiper", {
-        loop: true,
         spaceBetween: 12,
         slidesPerView: 4.3,
         freeMode: true,
@@ -325,7 +322,6 @@ if (document.querySelector('.zoomed_product_swiper')) {
         direction: "vertical",
     });
     var productSwiperZoomed = new Swiper(".zoomed_product_swiper2", {
-        loop: true,
         zoom: true,
         spaceBetween: 12,
         thumbs: {
