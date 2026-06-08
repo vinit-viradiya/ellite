@@ -2860,6 +2860,11 @@
       padding: calc(var(--spacing) * 40);
     }
   }
+  .\34 xl\:pl-\[calc\(\(100vw-1640px\)\/2\)\] {
+    @media (width >= 1740px) {
+      padding-left: calc((100vw - 1640px) / 2);
+    }
+  }
 }
 html {
   scrollbar-gutter: stable;
