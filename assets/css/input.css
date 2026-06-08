@@ -337,6 +337,7 @@ html {
     }
 }
 
+.reels_nrw_popup_swiper .swiper-slide ,
 .reels_popup_swiper .swiper-slide {
     height: 80%;
     transition: all .3s ease-in-out;
@@ -344,10 +345,12 @@ html {
     margin: auto;
 }
 
+.reels_nrw_popup_swiper :is(.swiper-slide-prev, .swiper-slide-next) ,
 .reels_popup_swiper :is(.swiper-slide-prev, .swiper-slide-next) {
     height: 90%;
 }
 
+.reels_nrw_popup_swiper .swiper-slide.swiper-slide-active ,
 .reels_popup_swiper .swiper-slide.swiper-slide-active {
     height: 100%;
     opacity: 1;

@@ -3085,16 +3085,16 @@ html {
     transform: rotate(1turn);
   }
 }
-.reels_popup_swiper .swiper-slide {
+.reels_nrw_popup_swiper .swiper-slide , .reels_popup_swiper .swiper-slide {
   height: 80%;
   transition: all .3s ease-in-out;
   opacity: .5;
   margin: auto;
 }
-.reels_popup_swiper :is(.swiper-slide-prev, .swiper-slide-next) {
+.reels_nrw_popup_swiper :is(.swiper-slide-prev, .swiper-slide-next) , .reels_popup_swiper :is(.swiper-slide-prev, .swiper-slide-next) {
   height: 90%;
 }
-.reels_popup_swiper .swiper-slide.swiper-slide-active {
+.reels_nrw_popup_swiper .swiper-slide.swiper-slide-active , .reels_popup_swiper .swiper-slide.swiper-slide-active {
   height: 100%;
   opacity: 1;
 }
