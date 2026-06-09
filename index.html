@@ -2154,12 +2154,14 @@
             <div x-cloak x-show="open" x-transition.opacity
                 class="fixed inset-0 bg-black/30 backdrop-blur-sm z-999999 grid place-items-center p-20 h-dvh">
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 bg-white p-24 w-full max-w-800 rounded-xl shadow-lg border border-gray-300 gap-24 max-h-[calc(100dvh-48px)] overflow-y-auto relative">
-                    <div class="space-y-12 md:space-y-24 cursor-pointer relative">
+                    class="grid grid-cols-1 md:grid-cols-2 bg-white p-24 w-full max-w-800 rounded-xl shadow-lg border border-gray-300 gap-24 max-h-[calc(100dvh-48px)] overflow-y-auto
+                     relative">
+                    <div class="space-y-12 md:space-y-24 cursor-pointer relative transition-opacity duration-150 ease-in-out" 
+     :class="isSwapping ? 'opacity-0' : 'opacity-100'">
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
                             class="swiper reviewSwiper">
                             <div class="swiper-wrapper">
-                                <template x-for="(image,index) in activeImages" :key="index">
+                                <template x-for="image in activeImages" :key="image">
                                     <div class="swiper-slide">
                                         <div class="aspect-square md:aspect-square relative swiper-zoom-container">
                                             <img fetchpriority="high" :src="image"
@@ -2172,7 +2174,7 @@
                         </div>
                         <div class="swiper tes_zoomed_swiper">
                             <div class="swiper-wrapper">
-                                <template x-for="(image,index) in activeImages" :key="index">
+                                <template x-for="image in activeImages" :key="image">
                                     <div class="swiper-slide">
                                         <div class="bg-slate-50 rounded-lg p-4">
                                             <div class="bg-white rounded-md overflow-hidden aspect-square relative">

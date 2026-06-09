@@ -634,15 +634,11 @@ function restartProgress() {
 // -------------------------------------------------------------
 // testimonials_swiper
 // -------------------------------------------------------------
-
 if (document.querySelector('.testimonials_swiper')) {
     var swiper = new Swiper(".testimonials_swiper", {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 16,
-        // autoplay: {
-        //     delay: 3500,
-        // },
         navigation: {
             prevEl: ".testimonials_swiper_prev",
             nextEl: ".testimonials_swiper_next",
@@ -666,14 +662,16 @@ if (document.querySelector('.testimonials_swiper')) {
 
 
 // -------------------------------------------------------------
-// reviewGallery
+// reviewGallery Component
 // -------------------------------------------------------------
-
 function reviewGallery() {
     return {
         open: false,
         swiper: null,
+        thumbsSwiper: null,
         activeReview: 0,
+        isSwapping: false, // Prevents layout flashing by tracking data transitions
+
         reviews: [
             {
                 name: 'Ananya, 26',
@@ -707,98 +705,129 @@ function reviewGallery() {
             }
         ],
 
+        // Computed getter for active images
         get activeImages() {
             return this.reviews[this.activeReview].images;
         },
 
+        // Triggered when clicking a grid review card
         openReview(index) {
             this.activeReview = index;
             this.open = true;
+
             this.$nextTick(() => {
-                this.initSwiper();
+                if (!this.swiper) {
+                    this.initSwiper();
+                } else {
+                    this.refreshSwiper();
+                }
             });
         },
 
         closeModal() {
             this.open = false;
-            if (this.swiper) {
-                this.swiper.destroy(true, true);
-                this.swiper = null;
-            }
         },
 
+        // Initialize Swipers with native mutation observers
         initSwiper() {
-            if (this.swiper) {
-                this.swiper.destroy(true, true);
-            }
-            var swiper = new Swiper(".tes_zoomed_swiper", {
-                loop: true,
+            this.thumbsSwiper = new Swiper(".tes_zoomed_swiper", {
                 spaceBetween: 12,
                 slidesPerView: 4,
                 freeMode: true,
                 watchSlidesProgress: true,
+                observer: true,
+                observeParents: true,
+                observeSlideChildren: true,
                 breakpoints: {
-                    576: {
-                        slidesPerView: 5,
-                    },
-                    768: {
-                        slidesPerView: 4,
-                        spaceBetween: 4,
-                    },
-                    992: {
-                        slidesPerView: 5,
-                    },
+                    576: { slidesPerView: 5 },
+                    768: { slidesPerView: 4, spaceBetween: 4 },
+                    992: { slidesPerView: 5 },
                 },
             });
-            this.swiper = new Swiper('.reviewSwiper', {
+
+            this.swiper = new Swiper(".reviewSwiper", {
                 slidesPerView: 1,
                 speed: 500,
+                observer: true,
+                observeParents: true,
+                observeSlideChildren: true,
                 thumbs: {
-                    swiper: swiper,
+                    swiper: this.thumbsSwiper,
                 },
             });
         },
 
+        // Safeguarded logic for repositioning Swiper slides
+        refreshSwiper() {
+            this.$nextTick(() => {
+                if (this.swiper) this.swiper.update();
+                if (this.thumbsSwiper) this.thumbsSwiper.update();
+
+                if (this.swiper) this.swiper.slideTo(0, 0);
+                if (this.thumbsSwiper) this.thumbsSwiper.slideTo(0, 0);
+            });
+        },
+
+        // Handles intra-gallery sliding and inter-review swapping forwards
         nextItem() {
-            const isLastSlide =
-                this.swiper.activeIndex ===
-                this.activeImages.length - 1;
-            if (!isLastSlide) {
+            const currentSlide = this.swiper ? this.swiper.realIndex : 0;
+            const lastSlide = this.activeImages.length - 1;
+
+            if (currentSlide < lastSlide) {
                 this.swiper.slideNext();
                 return;
             }
-            const isLastReview =
-                this.activeReview ===
-                this.reviews.length - 1;
 
-            if (isLastReview) {
+            if (this.activeReview >= this.reviews.length - 1) {
                 this.closeModal();
                 return;
             }
-            this.activeReview++;
-            this.$nextTick(() => {
+
+            // Mask the DOM layout breakdown by fading out the slider frame
+            this.isSwapping = true;
+
+            setTimeout(() => {
+                this.activeReview++;
+                this.refreshSwiper();
+
                 requestAnimationFrame(() => {
-                    this.initSwiper();
+                    setTimeout(() => { this.isSwapping = false; }, 50);
                 });
-            });
+            }, 150);
         },
 
+        // Handles intra-gallery sliding and inter-review swapping backwards
         prevItem() {
-            if (this.swiper.activeIndex > 0) {
+            const currentSlide = this.swiper ? this.swiper.realIndex : 0;
+
+            if (currentSlide > 0) {
                 this.swiper.slidePrev();
                 return;
             }
+
             if (this.activeReview === 0) {
                 return;
             }
-            this.activeReview--;
-            this.$nextTick(() => {
-                this.initSwiper();
-                this.swiper.slideTo(
-                    this.activeImages.length - 1,
-                    0
-                );
-            });
+
+            // Mask the DOM layout breakdown by fading out the slider frame
+            this.isSwapping = true;
+
+            setTimeout(() => {
+                this.activeReview--;
+
+                this.$nextTick(() => {
+                    if (this.swiper) this.swiper.update();
+                    if (this.thumbsSwiper) this.thumbsSwiper.update();
+
+                    const lastIndex = this.activeImages.length - 1;
+                    if (this.swiper) this.swiper.slideTo(lastIndex, 0);
+                    if (this.thumbsSwiper) this.thumbsSwiper.slideTo(lastIndex, 0);
+
+                    requestAnimationFrame(() => {
+                        setTimeout(() => { this.isSwapping = false; }, 50);
+                    });
+                });
+            }, 150);
         }
-    }
+    };
 }
