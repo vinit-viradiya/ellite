@@ -4,253 +4,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <title>Amazon Review Gallery</title>
+    <title>Document</title>
+    <script defer src="assets/js/alpine.js"></script>
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 
-<body class="bg-gray-100 p-10">
-
-    <div x-data="reviewGallery()">
-
-        <!-- Reviews Grid -->
-        <div class="grid md:grid-cols-3 gap-6">
-
-            <template x-for="(review,index) in reviews" :key="index">
-
-                <div class="bg-white rounded-xl shadow cursor-pointer overflow-hidden" @click="openReview(index)">
-
-                    <img :src="review.images[0]" class="w-full h-56 object-cover">
-
-                    <div class="p-4">
-                        <h3 class="font-bold" x-text="review.author"></h3>
-
-                        <p class="text-sm text-gray-600 mt-2" x-text="review.comment"></p>
+<body>
+    <section class="py-100" x-data="popup">
+        <div class="container">
+            <div class="swiper testimonials_swiper">
+                <div class="flex items-end mb-24 xl:mb-48 gap-y-20 justify-between gap-x-24">
+                    <h2 class="text-heading text-36">
+                        Real Results. Real Skin Journeys.
+                    </h2>
+                    <div class="flex gap-12 sm:gap-24 items-center justify-end">
+                        <button class="testimonials_swiper_prev p-12 rounded-full bg-zinc-50">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10 7L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10 17L5 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button class="testimonials_swiper_next p-12 rounded-full bg-zinc-50">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 17L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 7L19 12" stroke="#323232" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
                     </div>
-
                 </div>
-
-            </template>
-
-        </div>
-
-        <!-- Modal -->
-        <div x-show="open" x-transition class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-
-            <div class="bg-white rounded-2xl w-full max-w-5xl overflow-hidden relative">
-
-                <!-- Close -->
-                <button @click="closeModal()"
-                    class="absolute right-4 top-4 z-20 bg-black text-white w-10 h-10 rounded-full">
-                    ✕
-                </button>
-
-                <!-- Swiper -->
-                <div class="swiper reviewSwiper">
-
-                    <div class="swiper-wrapper">
-
-                        <template x-for="(image,index) in activeImages" :key="index">
-
-                            <div class="swiper-slide">
-
-                                <img :src="image" class="w-full h-[600px] object-contain bg-black">
-
+                
+                <div class="swiper-wrapper text-gray-950">
+                    <template x-for="review in reviews" :key="review.id">
+                        <div @click="show(review)" class="swiper-slide h-auto! cursor-pointer">
+                            <div class="bg-white p-16 flex flex-col gap-16 h-full rounded-3xl border-2 border-slate-100">
+                                <div class="flex items-center justify-between gap-32">
+                                    <div class="line-clamp-1 text-20" x-text="review.name"></div>
+                                    <div class="flex gap-2 shrink-0">
+                                        <template x-for="star in 5">
+                                            <img :src="star <= review.rating ? 'assets/icons/star-filled.svg' : 'assets/icons/star-unfilled.svg'" alt="" class="w-16">
+                                        </template>
+                                    </div>
+                                </div>
+                                <h3 class="text-20" x-text="review.title"></h3>
+                                <p class="line-clamp-5 font-light text-gray-700" x-text="review.text"></p>
+                                
+                                <div class="flex gap-12 mt-auto">
+                                    <template x-for="(img, idx) in review.images" :key="idx">
+                                        <div class="w-53 aspect-[.83/1] relative">
+                                            <img :src="img" alt="" class="rounded absolute inset-0 size-full object-cover">
+                                        </div>
+                                    </template>
+                                </div>
                             </div>
-
-                        </template>
-
-                    </div>
-
-                </div>
-
-                <!-- Footer -->
-                <div class="p-5 border-t">
-
-                    <div class="flex justify-between items-center">
-
-                        <button @click="prevItem()" class="px-4 py-2 rounded-lg bg-gray-200">
-                            Prev
-                        </button>
-
-                        <div>
-
-                            Review
-                            <span x-text="activeReview + 1"></span>
-
-                            /
-
-                            <span x-text="reviews.length"></span>
-
                         </div>
-
-                        <button @click="nextItem()" class="px-4 py-2 rounded-lg bg-gray-200">
-                            Next
-                        </button>
-
-                    </div>
-
+                    </template>
                 </div>
-
             </div>
-
         </div>
 
-    </div>
+        <div x-cloak x-show="open" x-transition.opacity
+            class="fixed inset-0 bg-black/30 backdrop-blur-sm z-999999 grid place-items-center p-20 h-dvh">
+            <div class="grid grid-cols-1 md:grid-cols-2 bg-white p-24 w-full max-w-800 rounded-xl shadow-lg border border-gray-300 gap-24 max-h-[calc(100dvh-48px)] overflow-y-auto relative"
+                 @click.away="hide">
+                
+                <div class="space-y-12 md:space-y-24 cursor-pointer relative">
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                        class="swiper tes_zoomed_swiper2">
+                        <div class="swiper-wrapper">
+                            <template x-for="(img, idx) in activeReview?.images || []" :key="'zoom-'+idx">
+                                <div class="swiper-slide">
+                                    <div class="aspect-square md:aspect-square relative swiper-zoom-container">
+                                        <img fetchpriority="high" :src="img" class="absolute inset-0 size-full object-contain" alt="Product Image Zoomed" />
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper tes_zoomed_swiper">
+                        <div class="swiper-wrapper">
+                            <template x-for="(img, idx) in activeReview?.images || []" :key="'thumb-'+idx">
+                                <div class="swiper-slide">
+                                    <div class="bg-slate-100 rounded-lg p-4">
+                                        <div class="bg-white rounded-md overflow-hidden aspect-square relative">
+                                            <img fetchpriority="high" :src="img" class="absolute size-full inset-0 object-contain" alt="Product Thumbnail" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    
+                    <button class="tes_zoomed_swiper_prev absolute top-1/2 -translate-y-1/2 left-12 z-9 bg-slate-100 p-10 rounded-full">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.1665 9.99967H15.8332" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8.33317 5.83301L4.1665 9.99967" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8.33317 14.1667L4.1665 10" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="tes_zoomed_swiper_next absolute top-1/2 -translate-y-1/2 right-12 z-9 bg-slate-100 p-10 rounded-full">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.8332 9.99967H4.1665" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M11.6665 14.1667L15.8332 10" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M11.6665 5.83301L15.8332 9.99967" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="flex flex-col gap-12 md:gap-24">
+                    <div class="flex items-center justify-between gap-24">
+                        <div class="flex gap-12 items-center">
+                            <div class="flex gap-2">
+                                <template x-for="star in 5">
+                                    <img :src="activeReview && star <= activeReview.rating ? 'assets/icons/star-filled.svg' : 'assets/icons/star-unfilled.svg'" alt="">
+                                </template>
+                            </div>
+                            <span x-text="activeReview ? activeReview.rating.toFixed(1) : '0.0'"></span>
+                        </div>
+                        <button class="bg-slate-100 p-4 rounded-full not-md:absolute top-24 right-24 z-99" @click="hide">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 8L16 16" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M16 8L8 16" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="flex gap-12">
+                        <div class="bg-yellow-50 size-48 grid place-items-center rounded-full text-2xl shrink-0" x-text="activeReview ? activeReview.name.charAt(0).toUpperCase() : ''"></div>
+                        <div class="flex flex-col gap-2">
+                            <span class="sm:text-20" x-text="activeReview?.name"></span>
+                            <span class="text-xs font-light" x-text="activeReview?.date"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="sm:space-y-16">
+                        <p class="text-20 md:text-[32px]" x-text="activeReview?.title"></p>
+                        <p class="text-gray-700 font-light line-clamp-9" x-text="activeReview?.text"></p>
+                    </div>
+                </div>
+            </div>
+            <div @click="hide" class="absolute inset-0 -z-1"></div>
+        </div>
+    </section>
 
+    <script src="assets/js/swiper.js"></script>
     <script>
-        function reviewGallery() {
-
-            return {
-
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('popup', () => ({
                 open: false,
-
-                swiper: null,
-
-                activeReview: 0,
-
+                activeReview: null,
+                zoomSwiper: null,
+                thumbSwiper: null,
+                
+                // Centralized Array Data
                 reviews: [
-
                     {
-                        author: 'John',
-                        comment: 'Amazing product',
-                        images: [
-                            'https://picsum.photos/id/1015/1000/700',
-                            'https://picsum.photos/id/1016/1000/700',
-                            'https://picsum.photos/id/1018/1000/700'
-                        ]
+                        id: 1,
+                        name: "Vinit Viradiya",
+                        rating: 4,
+                        title: "Review title 1",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, molestiae? Dynamic content pipeline configuration testing.",
+                        date: "03/15/2026",
+                        images: ["assets/images/product-img-1.webp", "assets/images/product-img-2.webp"]
                     },
-
                     {
-                        author: 'Sarah',
-                        comment: 'Very happy with quality',
-                        images: [
-                            'https://picsum.photos/id/1025/1000/700',
-                            'https://picsum.photos/id/1035/1000/700'
-                        ]
-                    },
-
-                    {
-                        author: 'David',
-                        comment: 'Worth the money',
-                        images: [
-                            'https://picsum.photos/id/1045/1000/700',
-                            'https://picsum.photos/id/1055/1000/700',
-                            'https://picsum.photos/id/1065/1000/700'
-                        ]
+                        id: 2,
+                        name: "Yash monpara",
+                        rating: 5,
+                        title: "Review title 2",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, molestiae? Excellent results achieved with consistent usage patterns.",
+                        date: "04/10/2026",
+                        images: ["assets/images/product-img-2.webp", "assets/images/product-img-1.webp"]
                     }
-
                 ],
 
-                get activeImages() {
-                    return this.reviews[this.activeReview].images;
+                init() {
+                    // Initialize outer main layout slider once DOM structures generate
+                    this.$nextTick(() => {
+                        if (document.querySelector('.testimonials_swiper')) {
+                            new Swiper(".testimonials_swiper", {
+                                slidesPerView: 2,
+                                spaceBetween: 12,
+                                navigation: {
+                                    prevEl: ".testimonials_swiper_prev",
+                                    nextEl: ".testimonials_swiper_next",
+                                },
+                            });
+                        }
+                    });
                 },
 
-                openReview(index) {
-
-                    this.activeReview = index;
+                show(review) {
+                    this.activeReview = review;
                     this.open = true;
 
+                    // Execute Swiper DOM attachment safely post content mutation layout cycle
                     this.$nextTick(() => {
-
-                        this.initSwiper();
-
+                        if (!this.zoomSwiper) {
+                            this.thumbSwiper = new Swiper(".tes_zoomed_swiper", {
+                                spaceBetween: 12,
+                                slidesPerView: 5,
+                                freeMode: true,
+                                watchSlidesProgress: true,
+                            });
+                            this.zoomSwiper = new Swiper(".tes_zoomed_swiper2", {
+                                zoom: true,
+                                spaceBetween: 12,
+                                thumbs: {
+                                    swiper: this.thumbSwiper,
+                                },
+                                navigation: {
+                                    prevEl: ".tes_zoomed_swiper_prev",
+                                    nextEl: ".tes_zoomed_swiper_next",
+                                },
+                            });
+                        } else {
+                            this.thumbSwiper.update();
+                            this.zoomSwiper.update();
+                            this.zoomSwiper.slideTo(0, 0); 
+                        }
                     });
-
                 },
 
-                closeModal() {
-
+                hide() {
                     this.open = false;
-
-                    if (this.swiper) {
-                        this.swiper.destroy(true, true);
-                        this.swiper = null;
-                    }
-
-                },
-
-                initSwiper() {
-
-                    if (this.swiper) {
-                        this.swiper.destroy(true, true);
-                    }
-
-                    this.swiper = new Swiper('.reviewSwiper', {
-                        slidesPerView: 1,
-                        speed: 500
-                    });
-
-                },
-
-                nextItem() {
-
-                    const isLastSlide =
-                        this.swiper.activeIndex ===
-                        this.activeImages.length - 1;
-
-                    if (!isLastSlide) {
-                        this.swiper.slideNext();
-                        return;
-                    }
-
-                    const isLastReview =
-                        this.activeReview ===
-                        this.reviews.length - 1;
-
-                    if (isLastReview) {
-                        this.closeModal();
-                        return;
-                    }
-
-                    this.activeReview++;
-
-                    this.$nextTick(() => {
-
-                        this.initSwiper();
-
-                    });
-
-                },
-
-                prevItem() {
-
-                    if (this.swiper.activeIndex > 0) {
-                        this.swiper.slidePrev();
-                        return;
-                    }
-
-                    if (this.activeReview === 0) {
-                        return;
-                    }
-
-                    this.activeReview--;
-
-                    this.$nextTick(() => {
-
-                        this.initSwiper();
-
-                        this.swiper.slideTo(
-                            this.activeImages.length - 1,
-                            0
-                        );
-
-                    });
-
                 }
-
-            }
-
-        }
+            }));
+        });
     </script>
-
 </body>
 
 </html>

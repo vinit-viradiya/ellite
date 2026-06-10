@@ -562,6 +562,68 @@ function tabs() {
 }
 
 // -------------------------------------------------------------
+// process_swiper
+// -------------------------------------------------------------
+
+var progressBar = document.querySelector(".progress_bar");
+
+var swiper = new Swiper(".process_swiper", {
+    slidesPerView: 1,
+    effect: "fade",
+    loop: true,
+
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+
+    on: {
+        init() {
+            restartProgress();
+        },
+        slideChangeTransitionStart() {
+            restartProgress();
+        }
+    }
+});
+
+function restartProgress() {
+    progressBar.classList.remove("animate");
+    void progressBar.offsetWidth;
+    progressBar.classList.add("animate");
+}
+
+// -------------------------------------------------------------
+// testimonials_swiper
+// -------------------------------------------------------------
+
+if (document.querySelector('.testimonials_swiper')) {
+    var swiper = new Swiper(".testimonials_swiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 12,
+        navigation: {
+            prevEl: ".testimonials_swiper_prev",
+            nextEl: ".testimonials_swiper_next",
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1.5,
+                spaceBetween: 16,
+            },
+            992: {
+                slidesPerView: 1.8,
+                spaceBetween: 20,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        },
+    });
+}
+
+// -------------------------------------------------------------
 // tes_zoomed_swiper
 // -------------------------------------------------------------
 
@@ -597,237 +659,4 @@ if (document.querySelector('.tes_zoomed_swiper')) {
             nextEl: ".tes_zoomed_swiper_next",
         },
     });
-}
-
-// -------------------------------------------------------------
-// process_swiper
-// -------------------------------------------------------------
-
-var progressBar = document.querySelector(".progress_bar");
-
-var swiper = new Swiper(".process_swiper", {
-    slidesPerView: 1,
-    effect: "fade",
-    loop: true,
-
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-
-    on: {
-        init() {
-            restartProgress();
-        },
-        slideChangeTransitionStart() {
-            restartProgress();
-        }
-    }
-});
-
-function restartProgress() {
-    progressBar.classList.remove("animate");
-    void progressBar.offsetWidth;
-    progressBar.classList.add("animate");
-}
-
-// -------------------------------------------------------------
-// testimonials_swiper
-// -------------------------------------------------------------
-if (document.querySelector('.testimonials_swiper')) {
-    var swiper = new Swiper(".testimonials_swiper", {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 16,
-        navigation: {
-            prevEl: ".testimonials_swiper_prev",
-            nextEl: ".testimonials_swiper_next",
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 1.5,
-                spaceBetween: 16,
-            },
-            992: {
-                slidesPerView: 1.8,
-                spaceBetween: 32,
-            },
-            1200: {
-                slidesPerView: 2.2,
-                spaceBetween: 64,
-            },
-        },
-    });
-}
-
-
-// -------------------------------------------------------------
-// reviewGallery Component
-// -------------------------------------------------------------
-function reviewGallery() {
-    return {
-        open: false,
-        swiper: null,
-        thumbsSwiper: null,
-        activeReview: 0,
-        isSwapping: false, // Prevents layout flashing by tracking data transitions
-
-        reviews: [
-            {
-                name: 'Ananya, 26',
-                title: 'Skin finally feels calm again.',
-                comment: 'I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel less aggressive now.',
-                images: [
-                    'assets/images/pro_sm_1.webp',
-                    'assets/images/pro_sm_2.webp',
-                ]
-            },
-            {
-                name: 'Durga Prajapati',
-                title: 'Skin finally feels calm again.',
-                comment: 'I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel less aggressive now.',
-                images: [
-                    'assets/images/pro_sm_1.webp',
-                    'assets/images/pro_sm_2.webp',
-                    'assets/images/pro_sm_3.webp',
-                    'assets/images/pro_sm_4.webp',
-                ]
-            },
-            {
-                name: 'Priyanshu solanki',
-                title: 'Skin finally feels calm again.',
-                comment: 'I struggled with acne flare-ups and oiliness for years. Using ClearGel™ and CalmGel™ together helped my skin feel cleaner without dryness. Breakouts feel less aggressive now.',
-                images: [
-                    'assets/images/pro_sm_1.webp',
-                    'assets/images/pro_sm_2.webp',
-                    'assets/images/pro_sm_3.webp',
-                ]
-            }
-        ],
-
-        // Computed getter for active images
-        get activeImages() {
-            return this.reviews[this.activeReview].images;
-        },
-
-        // Triggered when clicking a grid review card
-        openReview(index) {
-            this.activeReview = index;
-            this.open = true;
-
-            this.$nextTick(() => {
-                if (!this.swiper) {
-                    this.initSwiper();
-                } else {
-                    this.refreshSwiper();
-                }
-            });
-        },
-
-        closeModal() {
-            this.open = false;
-        },
-
-        // Initialize Swipers with native mutation observers
-        initSwiper() {
-            this.thumbsSwiper = new Swiper(".tes_zoomed_swiper", {
-                spaceBetween: 12,
-                slidesPerView: 4,
-                freeMode: true,
-                watchSlidesProgress: true,
-                observer: true,
-                observeParents: true,
-                observeSlideChildren: true,
-                breakpoints: {
-                    576: { slidesPerView: 5 },
-                    768: { slidesPerView: 4, spaceBetween: 4 },
-                    992: { slidesPerView: 5 },
-                },
-            });
-
-            this.swiper = new Swiper(".reviewSwiper", {
-                slidesPerView: 1,
-                speed: 500,
-                observer: true,
-                observeParents: true,
-                observeSlideChildren: true,
-                thumbs: {
-                    swiper: this.thumbsSwiper,
-                },
-            });
-        },
-
-        // Safeguarded logic for repositioning Swiper slides
-        refreshSwiper() {
-            this.$nextTick(() => {
-                if (this.swiper) this.swiper.update();
-                if (this.thumbsSwiper) this.thumbsSwiper.update();
-
-                if (this.swiper) this.swiper.slideTo(0, 0);
-                if (this.thumbsSwiper) this.thumbsSwiper.slideTo(0, 0);
-            });
-        },
-
-        // Handles intra-gallery sliding and inter-review swapping forwards
-        nextItem() {
-            const currentSlide = this.swiper ? this.swiper.realIndex : 0;
-            const lastSlide = this.activeImages.length - 1;
-
-            if (currentSlide < lastSlide) {
-                this.swiper.slideNext();
-                return;
-            }
-
-            if (this.activeReview >= this.reviews.length - 1) {
-                this.closeModal();
-                return;
-            }
-
-            // Mask the DOM layout breakdown by fading out the slider frame
-            this.isSwapping = true;
-
-            setTimeout(() => {
-                this.activeReview++;
-                this.refreshSwiper();
-
-                requestAnimationFrame(() => {
-                    setTimeout(() => { this.isSwapping = false; }, 50);
-                });
-            }, 150);
-        },
-
-        // Handles intra-gallery sliding and inter-review swapping backwards
-        prevItem() {
-            const currentSlide = this.swiper ? this.swiper.realIndex : 0;
-
-            if (currentSlide > 0) {
-                this.swiper.slidePrev();
-                return;
-            }
-
-            if (this.activeReview === 0) {
-                return;
-            }
-
-            // Mask the DOM layout breakdown by fading out the slider frame
-            this.isSwapping = true;
-
-            setTimeout(() => {
-                this.activeReview--;
-
-                this.$nextTick(() => {
-                    if (this.swiper) this.swiper.update();
-                    if (this.thumbsSwiper) this.thumbsSwiper.update();
-
-                    const lastIndex = this.activeImages.length - 1;
-                    if (this.swiper) this.swiper.slideTo(lastIndex, 0);
-                    if (this.thumbsSwiper) this.thumbsSwiper.slideTo(lastIndex, 0);
-
-                    requestAnimationFrame(() => {
-                        setTimeout(() => { this.isSwapping = false; }, 50);
-                    });
-                });
-            }, 150);
-        }
-    };
 }
