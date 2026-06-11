@@ -234,7 +234,7 @@ html {
     }
 
     .free_text p,
-    .free_text .ul_wrapper {
+    .free_text ul {
         @apply font-light text-gray-700 mb-12
     }
 
