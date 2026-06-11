@@ -132,7 +132,7 @@ if (document.querySelector('.solution_swiper')) {
 if (document.querySelector('.new_pro_swiper')) {
     var swiper = new Swiper(".new_pro_swiper", {
         loop: true,
-        slidesPerView: 1.2,
+        slidesPerView: 2,
         spaceBetween: 20,
         // autoplay: {
         //     delay: 3500,
@@ -516,7 +516,7 @@ function accordionSlider() {
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('quickCartHandler', () => ({
-        showCart: true,
+        showCart: false,
 
         init() {
             window.addEventListener('scroll', () => {
@@ -533,7 +533,7 @@ document.addEventListener('alpine:init', () => {
             const pageHeight =
                 document.documentElement.scrollHeight;
 
-            this.showCart = scrollBottom < (pageHeight - 100);
+            this.showCart = window.scrollY > 1500 && scrollBottom < (pageHeight - 100);
         }
     }));
 });
@@ -565,8 +565,6 @@ function tabs() {
 // process_swiper
 // -------------------------------------------------------------
 
-var progressBar = document.querySelector(".progress_bar");
-
 var swiper = new Swiper(".process_swiper", {
     slidesPerView: 1,
     effect: "fade",
@@ -579,18 +577,32 @@ var swiper = new Swiper(".process_swiper", {
 
     on: {
         init() {
-            restartProgress();
+            restartProgress(this);
         },
         slideChangeTransitionStart() {
-            restartProgress();
+            restartProgress(this);
         }
     }
 });
 
-function restartProgress() {
-    progressBar.classList.remove("animate");
-    void progressBar.offsetWidth;
-    progressBar.classList.add("animate");
+function restartProgress(swiper) {
+    const progressBars = document.querySelectorAll(".progress_bar");
+
+    // Remove animation from all bars
+    progressBars.forEach(bar => {
+        bar.classList.remove("animate");
+    });
+
+    // Get active slide
+    const activeSlide = swiper.slides[swiper.activeIndex];
+
+    // Find progress bar inside active slide
+    const activeBar = activeSlide.querySelector(".progress_bar");
+
+    if (activeBar) {
+        void activeBar.offsetWidth; // reflow
+        activeBar.classList.add("animate");
+    }
 }
 
 // -------------------------------------------------------------
