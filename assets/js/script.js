@@ -172,8 +172,8 @@ if (document.querySelector('.new_pro_swiper')) {
 if (document.querySelector('.top_seller_swiper')) {
     var swiper = new Swiper(".top_seller_swiper", {
         loop: true,
-        slidesPerView: 1.2,
-        spaceBetween: 20,
+        slidesPerView: 2,
+        spaceBetween: 15,
         // autoplay: {
         //     delay: 3500,
         // },
