@@ -97,7 +97,7 @@ if (document.querySelector('.hero_swiper')) {
 
 if (document.querySelector('.solution_swiper')) {
     var swiper = new Swiper(".solution_swiper", {
-        slidesPerView: 1.8,
+        slidesPerView: 2,
         spaceBetween: 16,
         loop: true,
         // autoplay: {

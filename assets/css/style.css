@@ -2372,6 +2372,11 @@
       border-radius: var(--radius-xl);
     }
   }
+  .md\:mask-\(--mask-2\) {
+    @media (width >= 768px) {
+      mask-image: var(--mask-2);
+    }
+  }
   .md\:p-16 {
     @media (width >= 768px) {
       padding: calc(var(--spacing) * 16);
