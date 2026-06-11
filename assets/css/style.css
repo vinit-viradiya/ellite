@@ -2590,6 +2590,11 @@
       width: calc(var(--spacing) * 200);
     }
   }
+  .xl\:grid-cols-12 {
+    @media (width >= 1200px) {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
   .xl\:gap-12 {
     @media (width >= 1200px) {
       gap: calc(var(--spacing) * 12);
@@ -2720,6 +2725,16 @@
   .\32 xl\:col-span-3 {
     @media (width >= 1400px) {
       grid-column: span 3 / span 3;
+    }
+  }
+  .\32 xl\:col-span-5 {
+    @media (width >= 1400px) {
+      grid-column: span 5 / span 5;
+    }
+  }
+  .\32 xl\:col-span-7 {
+    @media (width >= 1400px) {
+      grid-column: span 7 / span 7;
     }
   }
   .\32 xl\:col-span-9 {
