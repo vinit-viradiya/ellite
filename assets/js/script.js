@@ -296,7 +296,7 @@ if (document.querySelector('.zoomed_product_swiper')) {
 }
 
 // -------------------------------------------------------------
-// Reels swiper sync (Above both)
+// Product swiper sync (Above both)
 // -------------------------------------------------------------
 
 if (productSwiper) {

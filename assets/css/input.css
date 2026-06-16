@@ -241,6 +241,10 @@ html {
         @apply content-[''] absolute bg-[url(../images/iphone-frame.webp)] bg-no-repeat bg-center bg-contain inset-0;
     }
 
+    .table_of_concept li:not(.ml-20){
+        @apply text-18
+    }
+
     .free_text p,
     .free_text ul {
         @apply font-light text-gray-700 mb-12
