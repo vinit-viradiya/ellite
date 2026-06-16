@@ -3164,6 +3164,10 @@ html {
     font-size: var(--text-18);
     line-height: var(--tw-leading, var(--text-18--line-height));
   }
+  .table_of_concept {
+    max-height: calc(100vh - 255px);
+    overflow-y: auto;
+  }
   .free_text p, .free_text ul {
     margin-bottom: calc(var(--spacing) * 12);
     --tw-font-weight: var(--font-weight-light);
