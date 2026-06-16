@@ -471,6 +471,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .my-20 {
+    margin-block: calc(var(--spacing) * 20);
+  }
   .my-56 {
     margin-block: calc(var(--spacing) * 56);
   }
@@ -3158,7 +3161,7 @@ html {
     content: var(--tw-content);
   }
   .free_text p, .free_text ul {
-    margin-bottom: calc(var(--spacing) * 8);
+    margin-bottom: calc(var(--spacing) * 12);
     --tw-font-weight: var(--font-weight-light);
     font-weight: var(--font-weight-light);
     color: var(--color-gray-700);
@@ -3195,27 +3198,30 @@ html {
     margin-bottom: calc(var(--spacing) * 10);
   }
   .free_text h1 {
-    font-size: clamp(1.625rem, 1.4473rem + 0.6689vw, 2.25rem);
+    font-size: var(--text-36);
+    line-height: var(--tw-leading, var(--text-36--line-height));
   }
   .free_text h2 {
-    font-size: clamp(1.5rem, 1.4289rem + 0.2676vw, 1.75rem);
     margin-top: calc(var(--spacing) * 32);
+    font-size: var(--text-28);
+    line-height: var(--tw-leading, var(--text-28--line-height));
   }
   .free_text h3 {
-    font-size: clamp(1.25rem, 1.1789rem + 0.2676vw, 1.5rem);
     margin-top: calc(var(--spacing) * 28);
+    font-size: 22px;
   }
   .free_text h4 {
-    font-size: clamp(1.125rem, 1.0895rem + 0.1338vw, 1.25rem);
     margin-top: calc(var(--spacing) * 24);
+    font-size: var(--text-18);
+    line-height: var(--tw-leading, var(--text-18--line-height));
   }
   .free_text :is(h5, h6) {
     margin-top: calc(var(--spacing) * 20);
     font-size: 16px;
   }
   .free_text :is(b, strong) {
-    --tw-font-weight: var(--font-weight-semibold);
-    font-weight: var(--font-weight-semibold);
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
     color: var(--color-heading);
   }
   .free_text a {
