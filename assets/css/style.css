@@ -3195,7 +3195,7 @@ html {
     }
   }
   .free_text :is(h1, h2, h3, h4, h5, h6) {
-    margin-bottom: calc(var(--spacing) * 10);
+    margin-bottom: calc(var(--spacing) * 12);
   }
   .free_text h1 {
     font-size: var(--text-36);
